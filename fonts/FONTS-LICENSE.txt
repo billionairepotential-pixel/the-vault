@@ -1,0 +1,9 @@
+These fonts are bundled so The Vault looks right with no internet connection.
+They were downloaded from Google Fonts (Latin and Latin Extended subsets, WOFF2).
+
+Fraunces        by Undercase Type      - SIL Open Font License 1.1
+Manrope         by Mikhail Sharanda    - SIL Open Font License 1.1
+JetBrains Mono  by JetBrains           - SIL Open Font License 1.1
+
+The SIL Open Font License allows these fonts to be bundled and redistributed with
+this site. Full license text: https://openfontlicense.org
