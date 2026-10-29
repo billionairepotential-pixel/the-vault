@@ -1,0 +1,1230 @@
+{
+  "weights": {
+    "cons": 0.18,
+    "ceil": 0.12,
+    "floor": 0.12,
+    "g1": 0.14,
+    "g2": 0.14,
+    "res": 0.1,
+    "int": 0.08,
+    "meta": 0.12
+  },
+  "rank": [
+    "scareclaw-kashtira",
+    "branded-dracotail",
+    "kashtira-maliss",
+    "tenpai-wyrm",
+    "spright",
+    "radiant-typhoon",
+    "dinomorphia-ryzeal",
+    "white-forest",
+    "horus-mitsurugi",
+    "earthbound-resonator",
+    "ignister",
+    "blackwing-angelechy",
+    "swordsoul-tenyi",
+    "primite-blue-eyes",
+    "runick-typhoon",
+    "metalmorph-fiendsmith",
+    "gren-maju",
+    "ryu-ge-mitsurugi",
+    "synchron",
+    "lunalight"
+  ],
+  "decks": {
+    "scareclaw-kashtira": {
+      "cons": 8.5,
+      "ceil": 8.0,
+      "floor": 8.0,
+      "g1": 8.0,
+      "g2": 8.5,
+      "res": 8.0,
+      "int": 9.0,
+      "meta": 5.5,
+      "diff": 7,
+      "overall": 7.94,
+      "rank": 1,
+      "tier": "A",
+      "verdict": "The most complete deck in the collection: two opening engines, deep interaction (17 pieces), and an OTK going second.",
+      "edge": "20 one-card starters (97.6% to open one) and 17 interaction pieces; it has the second-best odds in the collection of opening both a play and interaction (92.9%).",
+      "risk": "Scareclaw's zone-placement rules make the first Summon fragile, and Tri-Heart's Scareclaw-only lock punishes wrong sequencing.",
+      "nat": [
+        "Day 2 contender",
+        "Strong on both sides of the die roll, which is what survives 9+ rounds. The ceiling is lower than the format's top Angelechy and Elfnote boards, so a top cut needs good pairings."
+      ],
+      "reg": [
+        "Top 8 contender",
+        "Regional fields have fewer fully optimized meta builds, and Super Polymerization ×3 plus Kashtira banishes answer most of what shows up."
+      ],
+      "loc": [
+        "Favorite to win",
+        "Low brick risk and deep interaction make it the safest deck to bring to an unknown room."
+      ],
+      "roles": {
+        "starters": [
+          "Scareclaw Acro",
+          "Scareclaw Belone",
+          "Scareclaw Astra",
+          "Scareclaw Reichheart",
+          "Visas Starfrost",
+          "Visas Samsara",
+          "Primitive Planet Reichphobia",
+          "Reinforcement of the Army",
+          "Kashtira Fenrir",
+          "Kashtira Unicorn",
+          "Kashtira Birth"
+        ],
+        "pieces": [
+          "Scareclaw Kashtira",
+          "Scareclaw Straddle",
+          "Scareclaw Arrival"
+        ],
+        "interaction": [
+          "Effect Veiler",
+          "Ash Blossom & Joyous Spring",
+          "Nibiru, the Primal Being",
+          "Ghost Belle & Haunted Mansion",
+          "Droll & Lock Bird",
+          "Ghost Ogre & Snow Rabbit",
+          "Super Polymerization",
+          "Infinite Impermanence"
+        ],
+        "breakerCount": 5
+      }
+    },
+    "branded-dracotail": {
+      "cons": 8.5,
+      "ceil": 9.0,
+      "floor": 7.0,
+      "g1": 8.5,
+      "g2": 7.5,
+      "res": 8.0,
+      "int": 7.5,
+      "meta": 6.5,
+      "diff": 8,
+      "overall": 7.87,
+      "rank": 2,
+      "tier": "A",
+      "verdict": "The best mix of ceiling and consistency in the collection (9.0 and 8.5). Two Fusion engines rarely get stopped by a single hand trap.",
+      "edge": "18 one-card starters (96.0%), Quick-Effect Fusions on the opponent's turn, and six Mulcharmy draws going second.",
+      "risk": "Heavy discard costs drain the hand in long games, and banish or GY hate hits both engines. Branded lost Albion and Branded Opening went to 1 on the Oct 19 list.",
+      "nat": [
+        "Day 2 contender",
+        "Branded still put several decks in the YCS Houston top 32. The Dracotail engine adds resilience the stock lists don't have."
+      ],
+      "reg": [
+        "Top 8 contender",
+        "It opens a full board almost every game, which is how most regionals are won."
+      ],
+      "loc": [
+        "Favorite to win",
+        "Very few local decks can stop two separate Fusion engines."
+      ],
+      "roles": {
+        "starters": [
+          "Fallen of Albaz",
+          "Aluber the Jester of Despia",
+          "Branded Fusion",
+          "Branded Opening",
+          "Guiding Quem, the Virtuous",
+          "Blazing Cartesia, the Virtuous",
+          "Dracotail Faimena",
+          "Dracotail Lukias",
+          "Ketu Dracotail",
+          "Rahu Dracotail",
+          "Fusion Deployment"
+        ],
+        "pieces": [
+          "Incredible Ecclesia, the Virtuous",
+          "Springans Kitt",
+          "Dracotail Urgula",
+          "Dracotail Pan",
+          "Dracotail Mululu",
+          "The Fallen & The Virtuous",
+          "Dracotail Horn"
+        ],
+        "interaction": [
+          "Droll & Lock Bird",
+          "Ash Blossom & Joyous Spring",
+          "Effect Veiler",
+          "Mulcharmy Fuwalos",
+          "Mulcharmy Purulia",
+          "Super Polymerization"
+        ],
+        "breakerCount": 3
+      }
+    },
+    "kashtira-maliss": {
+      "cons": 8.0,
+      "ceil": 8.5,
+      "floor": 7.5,
+      "g1": 8.5,
+      "g2": 7.0,
+      "res": 7.5,
+      "int": 8.0,
+      "meta": 6.5,
+      "diff": 9,
+      "overall": 7.7,
+      "rank": 3,
+      "tier": "A",
+      "verdict": "A banish-loop Link deck with an unusually thick hand-trap suite. It's strong going first and holds up going second.",
+      "edge": "13 hand traps plus Bystials, and the Kashtira package gives free bodies on an empty field.",
+      "risk": "Only one real going-second board breaker (Nibiru; 15% to see it in 6 cards), and the Link-only and Xyz-only locks need careful ordering.",
+      "nat": [
+        "Day 2 bubble",
+        "Maliss reached the top 32 at YCS Columbus in May but not at Houston in October. It's playable at a national event, not a favorite."
+      ],
+      "reg": [
+        "Top 16 contender",
+        "Its going-first board plus 13 hand traps is better than most regional fields."
+      ],
+      "loc": [
+        "Top 4 regular",
+        "Consistent and interactive, though the complex sequencing makes misplays costly."
+      ],
+      "roles": {
+        "starters": [
+          "Maliss <P> White Rabbit",
+          "Maliss <P> Dormouse",
+          "Cynet Mining",
+          "Backup @Ignister",
+          "Maliss in Underground",
+          "Terraforming",
+          "Gold Sarcophagus",
+          "Kashtira Fenrir",
+          "Kashtira Unicorn"
+        ],
+        "pieces": [
+          "Maliss <P> March Hare",
+          "Maliss <P> Chessy Cat",
+          "Maliss in the Mirror",
+          "Maliss <C> MTP-07",
+          "Maliss <C> TB-11",
+          "Bystial Druiswurm",
+          "Bystial Magnamhut",
+          "Pressured Planet Wraitsoth",
+          "Kashtiratheosis"
+        ],
+        "interaction": [
+          "Effect Veiler",
+          "Ghost Ogre & Snow Rabbit",
+          "Nibiru, the Primal Being",
+          "Ash Blossom & Joyous Spring",
+          "Droll & Lock Bird",
+          "Ghost Belle & Haunted Mansion",
+          "Infinite Impermanence"
+        ],
+        "breakerCount": 1
+      }
+    },
+    "tenpai-wyrm": {
+      "cons": 7.0,
+      "ceil": 9.5,
+      "floor": 7.0,
+      "g1": 7.5,
+      "g2": 8.5,
+      "res": 7.5,
+      "int": 8.0,
+      "meta": 6.0,
+      "diff": 9,
+      "overall": 7.59,
+      "rank": 4,
+      "tier": "B+",
+      "verdict": "The biggest high roll in the collection: Swordsoul builds on the Main Phase, then Tenpai Synchros mid-Battle Phase for the kill.",
+      "edge": "Ceiling 9.5. The Battle-Phase OTK can win going second through boards that Main-Phase decks can't break.",
+      "risk": "Only 9 true starters (74.2%), four engines to sequence, and Sky Striker Engage is now Semi-Limited (this build already runs 2).",
+      "nat": [
+        "Day 2 bubble",
+        "Sky Striker shells made YCS top cuts in 2026, and the OTK steals rounds. Execution difficulty is the limiting factor over a long event."
+      ],
+      "reg": [
+        "Top 16 contender",
+        "The Battle-Phase kill punishes players who don't keep Battle-Phase interaction, which is common at regionals."
+      ],
+      "loc": [
+        "Can win",
+        "Explosive enough to beat anyone, but the 25.8% chance of no one-card starter means some hands lose to themselves."
+      ],
+      "roles": {
+        "starters": [
+          "Swordsoul of Mo Ye",
+          "Swordsoul Emergence",
+          "Sangen Summoning",
+          "Sky Striker Mobilize - Engage!"
+        ],
+        "pieces": [
+          "Swordsoul of Taia",
+          "Swordsoul Strategist Longyuan",
+          "Tenyi Spirit - Adhara",
+          "Tenyi Spirit - Vishuda",
+          "Tenyi Spirit - Ashuna",
+          "Tenpai Dragon Chundra",
+          "Tenpai Dragon Paidra",
+          "Tenpai Dragon Fadra",
+          "Sangen Kaimen",
+          "Sky Striker Mecha - Hornet Drones",
+          "Swordsoul Blackout"
+        ],
+        "interaction": [
+          "Droll & Lock Bird",
+          "Nibiru, the Primal Being",
+          "Effect Veiler",
+          "Ash Blossom & Joyous Spring",
+          "Sky Striker Mecha - Widow Anchor",
+          "Lightning Storm",
+          "Infinite Impermanence",
+          "Swordsoul Blackout"
+        ],
+        "breakerCount": 2
+      }
+    },
+    "spright": {
+      "cons": 7.5,
+      "ceil": 8.0,
+      "floor": 7.5,
+      "g1": 7.0,
+      "g2": 9.0,
+      "res": 7.5,
+      "int": 9.5,
+      "meta": 5.0,
+      "diff": 6,
+      "overall": 7.56,
+      "rank": 5,
+      "tier": "B+",
+      "verdict": "A hand-trap-first deck: the best going-second deck in the collection, with a solid Level 2 combo when it goes first.",
+      "edge": "20 interaction pieces and 11 board breakers. It's 87.6% to hold a breaker going second, the best in the collection.",
+      "risk": "The highest brick rate here (7.6%). With only 5 engine pieces, a hand without a starter rarely recovers, and the Dogmatika locks clash with Spright plays.",
+      "nat": [
+        "Unlikely to top cut",
+        "Spright is several formats old, and its end board is smaller than current Tier 1 decks. The going-second strength keeps it winning rounds."
+      ],
+      "reg": [
+        "Top 32 possible",
+        "3 Nibiru and 3 Evenly Matched punish regional decks that commit everything to one board."
+      ],
+      "loc": [
+        "Top 4 regular",
+        "A field of combo decks with few backrow answers is exactly where this deck thrives."
+      ],
+      "roles": {
+        "starters": [
+          "Spright Blue",
+          "Spright Jet",
+          "Spright Starter",
+          "Dogmatika Ecclesia, the Virtuous",
+          "Nadir Servant"
+        ],
+        "pieces": [
+          "Spright Red",
+          "Spright Carrot",
+          "Dogmatika Fleurdelis, the Knighted",
+          "Dogmatika Maximus",
+          "Dogmatika Punishment"
+        ],
+        "interaction": [
+          "Effect Veiler",
+          "Nibiru, the Primal Being",
+          "Ash Blossom & Joyous Spring",
+          "Ghost Ogre & Snow Rabbit",
+          "Droll & Lock Bird",
+          "Super Polymerization",
+          "Harpie's Feather Duster",
+          "Forbidden Droplet",
+          "Infinite Impermanence",
+          "Evenly Matched"
+        ],
+        "breakerCount": 11
+      }
+    },
+    "radiant-typhoon": {
+      "cons": 7.5,
+      "ceil": 8.5,
+      "floor": 7.0,
+      "g1": 7.0,
+      "g2": 8.0,
+      "res": 8.0,
+      "int": 6.5,
+      "meta": 7.0,
+      "diff": 8,
+      "overall": 7.47,
+      "rank": 6,
+      "tier": "B+",
+      "verdict": "Three independent engines (Radiant Typhoon, Angelechy and Albaz Fusion), and the most going-second breakers of the Angelechy pair.",
+      "edge": "Angelechy is the strongest engine left after the Oct 19 list (9 of the YCS Houston top 32), and Sky Striker Radiant Typhoon also made that top 32.",
+      "risk": "No Traps, only 10 one-card starters (78.3%), and Meghala's WIND-only lock blocks every Angelechy and Fusion play that turn.",
+      "nat": [
+        "Day 2 contender",
+        "It shares the format's best surviving engine and has 7 breakers going second. A purer Angelechy list would still be favored over this hybrid."
+      ],
+      "reg": [
+        "Top 8 contender",
+        "Its going-second suite (3 Droplet, 3 Super Poly, Nibiru) handles regional end boards well."
+      ],
+      "loc": [
+        "Favorite to win",
+        "Most local fields can't keep up with three engines plus going-second removal."
+      ],
+      "roles": {
+        "starters": [
+          "Radiant Typhoon Eldam",
+          "Radiant Typhoon Swen",
+          "Angelechy Problem",
+          "Terraforming",
+          "Fallen of Albaz"
+        ],
+        "pieces": [
+          "Radiant Typhoon Fonix, the Great Flame",
+          "Radiant Typhoon Varuroon, the Vibrant Vortex",
+          "Radiant Typhoon Meghala",
+          "Radiant Typhoon Chant",
+          "Radiant Typhoon Vision",
+          "Mystical Space Typhoon",
+          "Radiant Typhoon Manifestation",
+          "Angelechy Opposition",
+          "The Fallen & The Virtuous"
+        ],
+        "interaction": [
+          "Droll & Lock Bird",
+          "Nibiru, the Primal Being",
+          "Ash Blossom & Joyous Spring",
+          "Super Polymerization",
+          "Forbidden Droplet"
+        ],
+        "breakerCount": 7
+      }
+    },
+    "dinomorphia-ryzeal": {
+      "cons": 7.5,
+      "ceil": 8.0,
+      "floor": 7.5,
+      "g1": 8.0,
+      "g2": 7.5,
+      "res": 6.5,
+      "int": 9.5,
+      "meta": 5.5,
+      "diff": 8,
+      "overall": 7.45,
+      "rank": 7,
+      "tier": "B+",
+      "verdict": "A Trap-lock control deck that spends Life Points as a resource. It's tied with Spright for the most interaction in the collection.",
+      "edge": "94.8% to open a play plus interaction, the best here, and 90.9% to hold 2+ interaction going second. Rexterm's negation shuts down combo turns.",
+      "risk": "No going-second board breakers. It also keeps its own LP low, so burn or a single big attack can end it.",
+      "nat": [
+        "Day 2 bubble",
+        "Rexterm locks out combo-heavy fields, which is most of the current format. Missing breakers costs rounds against established boards."
+      ],
+      "reg": [
+        "Top 16 contender",
+        "Strong against regional combo decks that aren't prepared for Trap-based negation."
+      ],
+      "loc": [
+        "Top 4 regular",
+        "Very hard to beat for players who don't side in backrow removal."
+      ],
+      "roles": {
+        "starters": [
+          "Dinomorphia Therizia",
+          "Fossil Dig",
+          "Sword Ryzeal",
+          "Ice Ryzeal",
+          "Bonfire",
+          "Dinomorphia Frenzy",
+          "Dinomorphia Domain"
+        ],
+        "pieces": [
+          "Dinomorphia Diplos",
+          "Miscellaneousaurus",
+          "Dinomorphia Alert",
+          "Trap Trick",
+          "Ext Ryzeal",
+          "Kashtira Fenrir",
+          "Pressured Planet Wraitsoth"
+        ],
+        "interaction": [
+          "Ash Blossom & Joyous Spring",
+          "Effect Veiler",
+          "Ghost Ogre & Snow Rabbit",
+          "Droll & Lock Bird",
+          "Ghost Belle & Haunted Mansion",
+          "Dinomorphia Domain",
+          "Dinomorphia Frenzy",
+          "Infinite Impermanence"
+        ],
+        "breakerCount": 0
+      }
+    },
+    "white-forest": {
+      "cons": 7.5,
+      "ceil": 9.0,
+      "floor": 6.5,
+      "g1": 8.0,
+      "g2": 7.0,
+      "res": 7.0,
+      "int": 7.0,
+      "meta": 5.5,
+      "diff": 8,
+      "overall": 7.23,
+      "rank": 8,
+      "tier": "B+",
+      "verdict": "A high-ceiling Synchro and Fusion combo deck where Super Polymerization doubles as an extender and a going-second answer.",
+      "edge": "Ceiling 9.0, with 15 starters and two engines (White Forest Synchro and Diabellstar).",
+      "risk": "The third-highest brick rate here (3.8%). The DARK Extra Deck lock and three competing Field Spells punish sequencing mistakes, and Azamina Ilia Silvia is now Forbidden.",
+      "nat": [
+        "Unlikely to top cut",
+        "The Azamina hit removed part of its ceiling, and White Forest isn't a current national-level archetype. It can still take rounds off strong decks."
+      ],
+      "reg": [
+        "Top 32 possible",
+        "When it opens well, its high-roll boards beat most regional decks."
+      ],
+      "loc": [
+        "Top 4 regular",
+        "Its explosive turns outclass most local boards."
+      ],
+      "roles": {
+        "starters": [
+          "Elzette of the White Forest",
+          "Silvy of the White Forest",
+          "Witch of the White Forest",
+          "Diabellstar the Black Witch",
+          "WANTED: Seeker of Sinful Spoils",
+          "Tales of the White Forest"
+        ],
+        "pieces": [
+          "Elzette, Azamina of the White Forest",
+          "Astellar of the White Forest",
+          "Diabellze the White Witch",
+          "Diabellstar Vengeance",
+          "Filia Diabell",
+          "Sinful Spoils of Subversion - Snake-Eye",
+          "Sinful Spoils of Slumber - Morrian",
+          "Curse of Diabell"
+        ],
+        "interaction": [
+          "Nibiru, the Primal Being",
+          "Mulcharmy Fuwalos",
+          "Effect Veiler",
+          "Droll & Lock Bird",
+          "Ghost Ogre & Snow Rabbit",
+          "Ash Blossom & Joyous Spring",
+          "Super Polymerization"
+        ],
+        "breakerCount": 4
+      }
+    },
+    "horus-mitsurugi": {
+      "cons": 7.5,
+      "ceil": 8.0,
+      "floor": 6.0,
+      "g1": 7.0,
+      "g2": 7.0,
+      "res": 7.5,
+      "int": 6.5,
+      "meta": 5.5,
+      "diff": 7,
+      "overall": 6.92,
+      "rank": 9,
+      "tier": "B",
+      "verdict": "A grinding deck: GY recursion plus Ritual board wipes. It's very consistent but its interaction is thin.",
+      "edge": "1.0% brick rate, and Horus recursion is hard to remove for good.",
+      "risk": "Only 11 interaction pieces, Rituals can be hit by Ash at several points, and several Extra Deck effects are dead text.",
+      "nat": [
+        "Unlikely to top cut",
+        "Horus and Mitsurugi pieces appeared in YCS Houston's Light and Darkness Ritual decks, but the Oct 19 list hit that shell. This standalone build lacks its power."
+      ],
+      "reg": [
+        "Top 32 possible",
+        "Recursion wins long games against regional decks without banish effects."
+      ],
+      "loc": [
+        "Top 4 regular",
+        "Few local decks can grind through repeated GY revivals."
+      ],
+      "roles": {
+        "starters": [
+          "Imsety, Glory of Horus",
+          "King's Sarcophagus",
+          "Walls of the Imperial Tomb",
+          "Terraforming",
+          "Ragged Records of Rites",
+          "Pre-Preparation of Rites"
+        ],
+        "pieces": [
+          "Hapi, Guidance of Horus",
+          "Ame no Murakumo no Mitsurugi",
+          "Futsu no Mitama no Mitsurugi",
+          "Mitsurugi no Mikoto, Aramasa",
+          "Mitsurugi no Mikoto, Saji",
+          "Mitsurugi no Mikoto, Kusanagi",
+          "Mitsurugi Mirror",
+          "Mitsurugi Ritual",
+          "Mitsurugi Prayers"
+        ],
+        "interaction": [
+          "Ash Blossom & Joyous Spring",
+          "Droll & Lock Bird",
+          "Nibiru, the Primal Being",
+          "Super Polymerization",
+          "Infinite Impermanence"
+        ],
+        "breakerCount": 4
+      }
+    },
+    "earthbound-resonator": {
+      "cons": 7.0,
+      "ceil": 8.5,
+      "floor": 6.0,
+      "g1": 7.5,
+      "g2": 6.5,
+      "res": 7.0,
+      "int": 7.5,
+      "meta": 4.5,
+      "diff": 8,
+      "overall": 6.8,
+      "rank": 10,
+      "tier": "B",
+      "verdict": "A Red Dragon Archfiend Synchro grind deck with a separate Horus engine as insurance.",
+      "edge": "Ceiling 8.5, and the Horus half builds a board even if the Resonator chain is stopped.",
+      "risk": "Resonator effects lock you to DARK Dragon Synchros, and GY hate shuts off most of both engines.",
+      "nat": [
+        "Unlikely to top cut",
+        "Neither Resonator nor RDA is a current national-level deck, and Necrovalley-style hate is common at that level."
+      ],
+      "reg": [
+        "Top 64 possible",
+        "Good enough to win rounds, but the lock-heavy combo is easy to disrupt."
+      ],
+      "loc": [
+        "Can win",
+        "The independent Horus engine is a real edge against local hand-trap counts."
+      ],
+      "roles": {
+        "starters": [
+          "Soul Resonator",
+          "Resonator Call",
+          "Crimson Gaia",
+          "Imsety, Glory of Horus",
+          "King's Sarcophagus",
+          "Earthbound Prisoner Stone Sweeper"
+        ],
+        "pieces": [
+          "Bone Archfiend",
+          "Crimson Resonator",
+          "Vision Resonator",
+          "Darkness Resonator",
+          "Earthbound Immortal Red Nova",
+          "Power Vice Dragon",
+          "Fiend Piece Golem",
+          "Hapi, Guidance of Horus"
+        ],
+        "interaction": [
+          "Ash Blossom & Joyous Spring",
+          "Droll & Lock Bird",
+          "Nibiru, the Primal Being",
+          "Effect Veiler",
+          "Ghost Ogre & Snow Rabbit",
+          "Super Polymerization",
+          "Infinite Impermanence"
+        ],
+        "breakerCount": 4
+      }
+    },
+    "ignister": {
+      "cons": 8.0,
+      "ceil": 8.0,
+      "floor": 5.5,
+      "g1": 7.5,
+      "g2": 6.5,
+      "res": 5.5,
+      "int": 8.0,
+      "meta": 4.5,
+      "diff": 7,
+      "overall": 6.75,
+      "rank": 11,
+      "tier": "C",
+      "verdict": "A fast Cyberse Link combo with many one-card starters and a strong hand-trap suite.",
+      "edge": "17 starters (94.9%) and 14 interaction pieces, plus Ra Sphere Mode as an unusual going-second breaker.",
+      "risk": "One of the lowest floors here: one interruption plus single copies of the WATER and WIND pieces makes recovery hard. A.I. Meet You's lock also blanks your own hand traps.",
+      "nat": [
+        "Unlikely to top cut",
+        "Not a current national-level archetype, and its recovery after a hand trap is poor."
+      ],
+      "reg": [
+        "Top 64 possible",
+        "Its speed can beat opponents who don't keep hand traps."
+      ],
+      "loc": [
+        "Can win",
+        "Consistent openers win many local rounds."
+      ],
+      "roles": {
+        "starters": [
+          "Achichi @Ignister",
+          "Pikari @Ignister",
+          "Backup @Ignister",
+          "Cynet Mining",
+          "A.I. Meet You",
+          "Ignister A.I.Land"
+        ],
+        "pieces": [
+          "Hiyari @Ignister",
+          "Bururu @Ignister",
+          "Doyon @Ignister",
+          "Doshin @Ignister",
+          "Linkslayer @Ignister",
+          "Wizard @Ignister",
+          "FA.I.ghting Spirit",
+          "A.I.dle Reborn"
+        ],
+        "interaction": [
+          "Effect Veiler",
+          "Ash Blossom & Joyous Spring",
+          "Ghost Belle & Haunted Mansion",
+          "Droll & Lock Bird",
+          "Nibiru, the Primal Being",
+          "The Winged Dragon of Ra - Sphere Mode",
+          "Infinite Impermanence"
+        ],
+        "breakerCount": 3
+      }
+    },
+    "blackwing-angelechy": {
+      "cons": 7.0,
+      "ceil": 8.5,
+      "floor": 6.0,
+      "g1": 7.5,
+      "g2": 5.5,
+      "res": 6.5,
+      "int": 6.0,
+      "meta": 6.5,
+      "diff": 7,
+      "overall": 6.73,
+      "rank": 12,
+      "tier": "C",
+      "verdict": "A Blackwing Synchro swarm with Angelechy as a parallel value engine. It's explosive going first.",
+      "edge": "Ceiling 8.5, and it shares the Angelechy engine that dominates the current format.",
+      "risk": "Nibiru was cut, leaving few going-second answers (39.4% to see a breaker), and two different Extra Deck locks constrain its lines.",
+      "nat": [
+        "Unlikely to top cut",
+        "Angelechy is top tier, but the Blackwing half dilutes it. Players who want Angelechy at a national event play the pure version."
+      ],
+      "reg": [
+        "Top 32 possible",
+        "Strong going first. Losing the die roll is its main risk."
+      ],
+      "loc": [
+        "Top 4 regular",
+        "Its Synchro swarm overwhelms most local boards."
+      ],
+      "roles": {
+        "starters": [
+          "Blackwing - Simoon the Poison Wind",
+          "Blackwing - Sudri the Phantom Glimmer",
+          "Angelechy Problem",
+          "Terraforming"
+        ],
+        "pieces": [
+          "Blackwing - Vata the Emblem of Wandering",
+          "Blackwing - Shamal the Sandstorm",
+          "Blackwing - Oroshi the Squall",
+          "Blackwing - Zephyros the Elite",
+          "Blackwing - Harmattan the Dust",
+          "Blackwing - Sharnga the Waning Moon",
+          "Black Whirlwind",
+          "Black Feather Whirlwind",
+          "Angelechy Opposition",
+          "Angelechy Strategy Score"
+        ],
+        "interaction": [
+          "Ash Blossom & Joyous Spring",
+          "Droll & Lock Bird",
+          "Super Polymerization",
+          "Infinite Impermanence"
+        ],
+        "breakerCount": 3
+      }
+    },
+    "swordsoul-tenyi": {
+      "cons": 6.5,
+      "ceil": 6.5,
+      "floor": 8.0,
+      "g1": 6.0,
+      "g2": 8.0,
+      "res": 6.0,
+      "int": 9.0,
+      "meta": 4.0,
+      "diff": 6,
+      "overall": 6.67,
+      "rank": 13,
+      "tier": "C",
+      "verdict": "A grinding control deck with deep interaction (tied for third-most) and the fewest true starters in the collection.",
+      "edge": "Floor 8.0, with 17 interaction pieces and 3 Evenly Matched. It wins long games.",
+      "risk": "Only 6 one-card starters (57.7%), so many hands need two engine cards, and its end board is small.",
+      "nat": [
+        "Unlikely to top cut",
+        "The low ceiling can't keep up with current Tier 1 boards."
+      ],
+      "reg": [
+        "Top 64 possible",
+        "Hand-trap density steals rounds against combo decks."
+      ],
+      "loc": [
+        "Top 8 regular",
+        "Very hard to blow out, even if it rarely dominates."
+      ],
+      "roles": {
+        "starters": [
+          "Swordsoul of Mo Ye",
+          "Swordsoul Emergence"
+        ],
+        "pieces": [
+          "Swordsoul of Taia",
+          "Swordsoul Strategist Longyuan",
+          "Incredible Ecclesia, the Virtuous",
+          "Tenyi Spirit - Adhara",
+          "Tenyi Spirit - Vishuda",
+          "Tenyi Spirit - Ashuna",
+          "Tenyi Spirit - Suruya",
+          "Swordsoul Blackout"
+        ],
+        "interaction": [
+          "Ash Blossom & Joyous Spring",
+          "Bystial Magnamhut",
+          "Bystial Druiswurm",
+          "Ghost Ogre & Snow Rabbit",
+          "Droll & Lock Bird",
+          "Nibiru, the Primal Being",
+          "Harpie's Feather Duster",
+          "Infinite Impermanence",
+          "Swordsoul Blackout",
+          "Evenly Matched"
+        ],
+        "breakerCount": 5
+      }
+    },
+    "primite-blue-eyes": {
+      "cons": 7.5,
+      "ceil": 8.0,
+      "floor": 6.0,
+      "g1": 8.0,
+      "g2": 5.0,
+      "res": 7.0,
+      "int": 6.5,
+      "meta": 4.5,
+      "diff": 6,
+      "overall": 6.61,
+      "rank": 14,
+      "tier": "C",
+      "verdict": "A classic Blue-Eyes control deck with two engines that reach the same double-negate board.",
+      "edge": "Strong going first (Spirit Dragon, Ultimate Spirit Dragon, Stardust Sifr) with 15 starters.",
+      "risk": "Zero going-second board breakers. Behind a strong board, it relies on Tyrant Dragon and Drillbeam alone.",
+      "nat": [
+        "Unlikely to top cut",
+        "Without going-second breakers it loses too many rounds on the die roll."
+      ],
+      "reg": [
+        "Top 64 possible",
+        "Its going-first board holds against regional decks, but its going-second games are weak."
+      ],
+      "loc": [
+        "Can win",
+        "A board with multiple negates beats most local decks."
+      ],
+      "roles": {
+        "starters": [
+          "Sage with Eyes of Blue",
+          "Wishes for Eyes of Blue",
+          "Bingo Machine, Go!!!",
+          "Primite Dragon Ether Beryl",
+          "Primite Lordly Lode"
+        ],
+        "pieces": [
+          "Blue-Eyes White Dragon",
+          "Maiden of White",
+          "Neo Kaiser Sea Horse",
+          "Mausoleum of White",
+          "Roar of the Blue-Eyed Dragons",
+          "Primite Roar",
+          "Synchro Rumble",
+          "True Light"
+        ],
+        "interaction": [
+          "Ash Blossom & Joyous Spring",
+          "Effect Veiler",
+          "Ghost Ogre & Snow Rabbit",
+          "Droll & Lock Bird",
+          "Primite Drillbeam",
+          "Infinite Impermanence"
+        ],
+        "breakerCount": 0
+      }
+    },
+    "runick-typhoon": {
+      "cons": 7.5,
+      "ceil": 7.5,
+      "floor": 6.5,
+      "g1": 8.0,
+      "g2": 4.5,
+      "res": 7.0,
+      "int": 6.5,
+      "meta": 5.0,
+      "diff": 8,
+      "overall": 6.6,
+      "rank": 15,
+      "tier": "C",
+      "verdict": "A floodgate control deck that wins by milling. It almost never bricks, but it can't break a board.",
+      "edge": "0% brick rate, and Inspector Boarder plus Dimensional Fissure lock out decks that use the Extra Deck or GY heavily.",
+      "risk": "No board breakers, and its own Boarder limits Fonix. Opponents who play around Boarder's count or bring backrow removal beat it.",
+      "nat": [
+        "Unlikely to top cut",
+        "Floodgate decks get sided against heavily over a long event, and it has no way to break a board going second."
+      ],
+      "reg": [
+        "Top 32 possible",
+        "Many regional players don't side in answers to Boarder or Fissure."
+      ],
+      "loc": [
+        "Can win",
+        "Can lock out unprepared opponents completely."
+      ],
+      "roles": {
+        "starters": [
+          "Runick Fountain",
+          "Runick Tip",
+          "Inspector Boarder",
+          "Dimensional Fissure",
+          "Pot of Desires",
+          "Pot of Duality"
+        ],
+        "pieces": [
+          "Runick Freezing Curses",
+          "Runick Dispelling",
+          "Runick Golden Droplet",
+          "Runick Smiting Storm",
+          "Runick Slumber",
+          "Runick Flashing Fire",
+          "Runick Destruction",
+          "Runick Allure",
+          "Radiant Typhoon Vision",
+          "Radiant Typhoon Fonix, the Great Flame",
+          "Multi-Universe",
+          "Terraforming",
+          "Card Scanner",
+          "One Day of Peace"
+        ],
+        "interaction": [
+          "Runick Freezing Curses",
+          "Runick Dispelling",
+          "Runick Smiting Storm",
+          "Runick Flashing Fire",
+          "Runick Destruction"
+        ],
+        "breakerCount": 0
+      }
+    },
+    "metalmorph-fiendsmith": {
+      "cons": 8.5,
+      "ceil": 8.0,
+      "floor": 5.5,
+      "g1": 7.5,
+      "g2": 5.0,
+      "res": 6.5,
+      "int": 6.0,
+      "meta": 3.5,
+      "diff": 7,
+      "overall": 6.45,
+      "rank": 16,
+      "tier": "C",
+      "verdict": "A Max Metalmorph Trap toolbox designed to avoid dead draws. It's very consistent but has a thin hand-trap suite.",
+      "edge": "0.6% brick rate, and its bosses come out at Trap speed, which avoids Extra Deck hate.",
+      "risk": "Only 12 interaction pieces and few going-second outs beyond Super Polymerization and Nibiru.",
+      "nat": [
+        "Unlikely to top cut",
+        "Not a meta deck, and its going-second games against strong boards are poor."
+      ],
+      "reg": [
+        "Top 64 possible",
+        "Consistency carries it through weaker rounds."
+      ],
+      "loc": [
+        "Can win",
+        "Its Trap-speed bosses surprise players who don't know the deck."
+      ],
+      "roles": {
+        "starters": [
+          "Metal Illusionist",
+          "Zoa the Fiendish Beast",
+          "Incoming Machine!",
+          "Metalflame Swordsman",
+          "Fiendsmith Engraver"
+        ],
+        "pieces": [
+          "Max Metalmorph",
+          "Red-Eyes Metal Claws Dragon",
+          "Black Metal Dragon",
+          "Red-Eyes Darkness Metal Dragon",
+          "Red-Eyes Black Fullmetal Dragon",
+          "Metalzoa X",
+          "Fabled Lurrie",
+          "Lacrima the Crimson Tears",
+          "Fiendsmith's Tract",
+          "One for One",
+          "The Bystial Lubellion",
+          "Bystial Druiswurm"
+        ],
+        "interaction": [
+          "Nibiru, the Primal Being",
+          "Droll & Lock Bird",
+          "Ash Blossom & Joyous Spring",
+          "Super Polymerization",
+          "Max Metalmorph",
+          "Infinite Impermanence"
+        ],
+        "breakerCount": 4
+      }
+    },
+    "gren-maju": {
+      "cons": 7.0,
+      "ceil": 9.0,
+      "floor": 4.5,
+      "g1": 8.5,
+      "g2": 5.0,
+      "res": 5.5,
+      "int": 6.5,
+      "meta": 5.0,
+      "diff": 9,
+      "overall": 6.44,
+      "rank": 17,
+      "tier": "C",
+      "verdict": "A layered floodgate lock with a scaling beater. It's devastating when it locks and helpless when it doesn't.",
+      "edge": "Ceiling 9.0: Macro Cosmos, Necrovalley and Boarder together lock out GY decks almost completely.",
+      "risk": "The lowest floor here (4.5). Its floodgates turn off its own cards, and it's weak going second.",
+      "nat": [
+        "Unlikely to top cut",
+        "Floodgate decks get sided against, and the current top decks have answers."
+      ],
+      "reg": [
+        "Top 64 possible",
+        "It can win rounds outright against GY-dependent regional decks."
+      ],
+      "loc": [
+        "Can win",
+        "Opponents unfamiliar with stacked floodgates often can't play at all."
+      ],
+      "roles": {
+        "starters": [
+          "Inspector Boarder",
+          "Macro Cosmos",
+          "Necrovalley",
+          "Pot of Duality",
+          "Pot of Desires",
+          "Card of Demise",
+          "Pot of Prosperity"
+        ],
+        "pieces": [
+          "Gren Maju Da Eiza",
+          "Gizmek Orochi, the Serpentron Sky Slasher",
+          "Clockwork Night",
+          "Decisive Battle of Golgonda",
+          "Fallen of Albaz"
+        ],
+        "interaction": [
+          "Nibiru, the Primal Being",
+          "Ghost Ogre & Snow Rabbit",
+          "Droll & Lock Bird",
+          "Ash Blossom & Joyous Spring",
+          "Effect Veiler",
+          "Raigeki",
+          "Super Polymerization",
+          "Evenly Matched",
+          "Infinite Impermanence",
+          "Solemn Judgment"
+        ],
+        "breakerCount": 6
+      }
+    },
+    "ryu-ge-mitsurugi": {
+      "cons": 6.0,
+      "ceil": 8.5,
+      "floor": 5.5,
+      "g1": 7.5,
+      "g2": 6.0,
+      "res": 7.0,
+      "int": 4.5,
+      "meta": 5.0,
+      "diff": 8,
+      "overall": 6.31,
+      "rank": 18,
+      "tier": "C",
+      "verdict": "A Level 10 Pendulum control deck plus a Mitsurugi Ritual engine. It has a high ceiling but few true starters.",
+      "edge": "Ceiling 8.5, and two independent engines reach a wide Rank 10–12 toolbox.",
+      "risk": "Only 8 starters (69.4%) and 6 interaction pieces, the fewest in the collection (65% to see one in 6 cards).",
+      "nat": [
+        "Unlikely to top cut",
+        "A Mitsurugi deck reached the top cut at YCS Columbus in May, but this hybrid lacks the interaction for a long event."
+      ],
+      "reg": [
+        "Top 64 possible",
+        "Its board wipes win rounds, but light interaction leaves it exposed."
+      ],
+      "loc": [
+        "Can win",
+        "Board wipes and big bodies overwhelm many local decks."
+      ],
+      "roles": {
+        "starters": [
+          "Ryu-Ge Rising",
+          "The Melody of Awakening Dragon",
+          "Pre-Preparation of Rites"
+        ],
+        "pieces": [
+          "Tensei Ryu-Ge Anva",
+          "Genro Ryu-Ge Hakva",
+          "Kairo Ryu-Ge Emva",
+          "Kyoro Ryu-Ge Kaiva",
+          "Ryu-Ge War Zone",
+          "Ryu-Ge Realm - Dino Domains",
+          "Ryu-Ge Realm - Wyrm Winds",
+          "Ryu-Ge Realm - Sea Spires",
+          "Ame no Murakumo no Mitsurugi",
+          "Futsu no Mitama no Mitsurugi",
+          "Mitsurugi Ritual",
+          "Mitsurugi Prayers",
+          "Mitsurugi Mirror",
+          "Mitsurugi no Mikoto, Aramasa",
+          "Mitsurugi no Mikoto, Saji",
+          "Mitsurugi no Mikoto, Kusanagi"
+        ],
+        "interaction": [
+          "Bystial Magnamhut",
+          "Ash Blossom & Joyous Spring",
+          "Droll & Lock Bird",
+          "Nibiru, the Primal Being"
+        ],
+        "breakerCount": 1
+      }
+    },
+    "synchron": {
+      "cons": 7.0,
+      "ceil": 7.0,
+      "floor": 6.0,
+      "g1": 6.5,
+      "g2": 5.5,
+      "res": 6.0,
+      "int": 6.5,
+      "meta": 3.5,
+      "diff": 7,
+      "overall": 6.04,
+      "rank": 19,
+      "tier": "C",
+      "verdict": "A generic Synchron toolbox. It's flexible and consistent, but its ceiling is low and many of its effects lock it into Synchros.",
+      "edge": "0.7% brick rate and 16 starters. It almost always does something.",
+      "risk": "Several dead-text effects and Synchro-only locks hold back its power.",
+      "nat": [
+        "Unlikely to top cut",
+        "Its end boards are too small for current Tier 1 decks."
+      ],
+      "reg": [
+        "Top 64 possible",
+        "Consistency wins rounds against weaker decks."
+      ],
+      "loc": [
+        "Top 8 regular",
+        "Reliable, and fun to pilot."
+      ],
+      "roles": {
+        "starters": [
+          "Junk Synchron",
+          "Full-Speed Warrior",
+          "Synchro Fellowship",
+          "Tuning",
+          "Reinforcement of the Army",
+          "Stardust Synchron",
+          "Rite of Aramesir"
+        ],
+        "pieces": [
+          "Wheel Synchron",
+          "Revolution Synchron",
+          "Assault Synchron",
+          "Scrap Synchron",
+          "Junk Meister",
+          "Water Enchantress of the Temple",
+          "Wandering Gryphon Rider",
+          "Fateful Adventure",
+          "Synchro Emergency"
+        ],
+        "interaction": [
+          "Ash Blossom & Joyous Spring",
+          "Droll & Lock Bird",
+          "Ghost Belle & Haunted Mansion",
+          "Effect Veiler",
+          "Super Polymerization",
+          "Infinite Impermanence"
+        ],
+        "breakerCount": 2
+      }
+    },
+    "lunalight": {
+      "cons": 6.0,
+      "ceil": 7.5,
+      "floor": 6.0,
+      "g1": 6.5,
+      "g2": 6.0,
+      "res": 5.5,
+      "int": 6.5,
+      "meta": 3.5,
+      "diff": 7,
+      "overall": 5.94,
+      "rank": 20,
+      "tier": "C",
+      "verdict": "The Lunalight Fusion chain from Cat Dancer to Liger Dancer, with a deep hand-trap suite. Its combo is the least consistent in the collection.",
+      "edge": "Liger and Leo Dancer clear boards, and its 11 interaction pieces give it a real going-second plan.",
+      "risk": "The named-material Dancer chain and only two Fusion Spells make it the hardest combo here to assemble.",
+      "nat": [
+        "Unlikely to top cut",
+        "Not a current national-level deck, and its combo is too fragile."
+      ],
+      "reg": [
+        "Top 64 possible",
+        "Liger Dancer board wipes can steal games."
+      ],
+      "loc": [
+        "Can win",
+        "Fun, and capable of big swing turns."
+      ],
+      "roles": {
+        "starters": [
+          "Lunalight Gold Leo",
+          "Lunalight Black Sheep",
+          "Fire Formation - Tenki",
+          "Lunalight Kaleido Chick"
+        ],
+        "pieces": [
+          "Lunalight Yellow Marten",
+          "Lunalight Emerald Bird",
+          "Lunalight Silver Hound",
+          "Lunalight Wolf",
+          "Lunalight Tiger",
+          "Tri-Brigade Fraktall",
+          "Lunalight Scarlet Tiger",
+          "Luna Light Perfume",
+          "Lunalight Masquerade",
+          "Lunalight Fusion",
+          "Foolish Burial",
+          "Polymerization",
+          "Heavy Polymerization"
+        ],
+        "interaction": [
+          "Ash Blossom & Joyous Spring",
+          "Mulcharmy Fuwalos",
+          "Nibiru, the Primal Being",
+          "Droll & Lock Bird",
+          "Ghost Belle & Haunted Mansion",
+          "Infinite Impermanence"
+        ],
+        "breakerCount": 1
+      }
+    }
+  },
+  "asOf": "2026-10-27"
+}

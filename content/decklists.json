@@ -1,0 +1,3719 @@
+{
+ "white-forest": {
+  "monsters": [
+   {
+    "q": 1,
+    "n": "Elzette, Azamina of the White Forest",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Elzette of the White Forest",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Silvy of the White Forest",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Astellar of the White Forest",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Diabellstar the Black Witch",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Diabellze the White Witch",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Diabellstar Vengeance",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Kashtira Fenrir",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Mulcharmy Fuwalos",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Effect Veiler",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Ghost Ogre & Snow Rabbit",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   }
+  ],
+  "spells": [
+   {
+    "q": 1,
+    "n": "Tales of the White Forest",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Witch of the White Forest",
+    "t": "Field Spell"
+   },
+   {
+    "q": 3,
+    "n": "WANTED: Seeker of Sinful Spoils",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Chicken Game",
+    "t": "Field Spell"
+   },
+   {
+    "q": 1,
+    "n": "Filia Diabell",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 2,
+    "n": "Pressured Planet Wraitsoth",
+    "t": "Field Spell"
+   },
+   {
+    "q": 1,
+    "n": "Sinful Spoils of Subversion - Snake-Eye",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Super Polymerization",
+    "t": "Quick-Play Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 1,
+    "n": "Sinful Spoils of Slumber - Morrian",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 1,
+    "n": "Curse of Diabell",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Rciela, Sinister Soul of the White Forest",
+    "t": "Synchro Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Silvera, Wolf Tamer of the White Forest",
+    "t": "Synchro Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Diabell, Queen of the White Forest",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Poplar of the White Forest",
+    "t": "Synchro Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Snake-Eyes Vengeance Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Chaos Angel",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "S:P Little Knight",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Tri-Edge Master",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Swordsoul Supreme Sovereign - Chengying",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Snake-Eyes Doomed Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Garura, Wings of Resonant Life",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Mudragon of the Swamp",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Starving Venom Fusion Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Favorite HERO Flame Wingman",
+    "t": "Fusion"
+   }
+  ]
+ },
+ "horus-mitsurugi": {
+  "monsters": [
+   {
+    "q": 3,
+    "n": "Imsety, Glory of Horus",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Ame no Murakumo no Mitsurugi",
+    "t": "Ritual Effect"
+   },
+   {
+    "q": 1,
+    "n": "Futsu no Mitama no Mitsurugi",
+    "t": "Ritual Effect"
+   },
+   {
+    "q": 1,
+    "n": "Mitsurugi no Mikoto, Aramasa",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Mitsurugi no Mikoto, Saji",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Mitsurugi no Mikoto, Kusanagi",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Hapi, Guidance of Horus",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 3,
+    "n": "Walls of the Imperial Tomb",
+    "t": "Field Spell"
+   },
+   {
+    "q": 3,
+    "n": "King's Sarcophagus",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 3,
+    "n": "Ragged Records of Rites",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Mitsurugi Mirror",
+    "t": "Ritual Spell"
+   },
+   {
+    "q": 2,
+    "n": "Mitsurugi Ritual",
+    "t": "Ritual Spell"
+   },
+   {
+    "q": 3,
+    "n": "Mitsurugi Prayers",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Pot of Prosperity",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Pre-Preparation of Rites",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Super Polymerization",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Terraforming",
+    "t": "Normal Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 3,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Number 100: Numeron Dragon",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Number 97: Draglubion",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Number 84: Pain Gainer",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Number 77: The Seven Sins",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Number 90: Galaxy-Eyes Photon Lord",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Dingirsu, the Orcust of the Evening Star",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Number 38: Hope Harbinger Dragon Titanic Galaxy",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Divine Arsenal AA-ZEUS - Sky Thunder",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "S:P Little Knight",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "I:P Masquerena",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Garura, Wings of Resonant Life",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Mudragon of the Swamp",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Starving Venom Fusion Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Favorite HERO Flame Wingman",
+    "t": "Fusion"
+   }
+  ]
+ },
+ "kashtira-maliss": {
+  "monsters": [
+   {
+    "q": 3,
+    "n": "Maliss <P> March Hare",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Effect Veiler",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Ghost Ogre & Snow Rabbit",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Maliss <P> Chessy Cat",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Maliss <P> White Rabbit",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Maliss <P> Dormouse",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Bystial Druiswurm",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Bystial Magnamhut",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Kashtira Fenrir",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Kashtira Unicorn",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Backup @Ignister",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Ghost Belle & Haunted Mansion",
+    "t": "Tuner"
+   }
+  ],
+  "spells": [
+   {
+    "q": 3,
+    "n": "Cynet Mining",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Terraforming",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Gold Sarcophagus",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Maliss in the Mirror",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 2,
+    "n": "Maliss in Underground",
+    "t": "Field Spell"
+   },
+   {
+    "q": 2,
+    "n": "Pressured Planet Wraitsoth",
+    "t": "Field Spell"
+   },
+   {
+    "q": 1,
+    "n": "Kashtiratheosis",
+    "t": "Normal Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 3,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 1,
+    "n": "Maliss <C> MTP-07",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 1,
+    "n": "Maliss <C> TB-11",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Accesscode Talker",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Maliss <Q> Hearts Crypter",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Maliss <Q> Red Ransom",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "I:P Masquerena",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Dharc the Dark Charmer, Gloomy",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Haggard Lizardose",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Cherubini, Ebon Angel of the Burning Abyss",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Link Spider",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Salamangreat Almiraj",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Borrelend Dragon",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Underworld Goddess of the Closed World",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Selene, Queen of the Master Magicians",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Dragon Gate",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Topologic Zeroboros",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Topologic Bomber Dragon",
+    "t": "Link"
+   }
+  ]
+ },
+ "runick-typhoon": {
+  "monsters": [
+   {
+    "q": 3,
+    "n": "Inspector Boarder",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Radiant Typhoon Fonix, the Great Flame",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 3,
+    "n": "Runick Freezing Curses",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Runick Dispelling",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Runick Golden Droplet",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Runick Smiting Storm",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "One Day of Peace",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Runick Tip",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Runick Slumber",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Runick Flashing Fire",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Runick Destruction",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Runick Allure",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 2,
+    "n": "Runick Fountain",
+    "t": "Field Spell"
+   },
+   {
+    "q": 3,
+    "n": "Radiant Typhoon Vision",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 2,
+    "n": "Dimensional Fissure",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 1,
+    "n": "Multi-Universe",
+    "t": "Field Spell"
+   },
+   {
+    "q": 1,
+    "n": "Terraforming",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 2,
+    "n": "Pot of Desires",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Pot of Duality",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Card Scanner",
+    "t": "Continuous Spell"
+   }
+  ],
+  "traps": [],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Sleipnir the Runick Mane",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Freki the Runick Fangs",
+    "t": "Fusion"
+   },
+   {
+    "q": 3,
+    "n": "Geri the Runick Fangs",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Munin the Runick Wings",
+    "t": "Fusion"
+   },
+   {
+    "q": 3,
+    "n": "Hugin the Runick Wings",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Enigmaster Packbit",
+    "t": "Synchro"
+   },
+   {
+    "q": 3,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   },
+   {
+    "q": 2,
+    "n": "S:P Little Knight",
+    "t": "Link"
+   }
+  ]
+ },
+ "ryu-ge-mitsurugi": {
+  "monsters": [
+   {
+    "q": 2,
+    "n": "Sosei Ryu-Ge Mistva",
+    "t": "Pendulum Effect Ritual"
+   },
+   {
+    "q": 1,
+    "n": "Bystial Magnamhut",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Ringowurm, the Dragon Guarding the Hundred Apples",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Tensei Ryu-Ge Anva",
+    "t": "Pendulum Effect"
+   },
+   {
+    "q": 2,
+    "n": "Genro Ryu-Ge Hakva",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Kairo Ryu-Ge Emva",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Kyoro Ryu-Ge Kaiva",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Ame no Murakumo no Mitsurugi",
+    "t": "Ritual Effect"
+   },
+   {
+    "q": 1,
+    "n": "Futsu no Mitama no Mitsurugi",
+    "t": "Ritual Effect"
+   },
+   {
+    "q": 1,
+    "n": "Mitsurugi no Mikoto, Aramasa",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Mitsurugi no Mikoto, Saji",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Mitsurugi no Mikoto, Kusanagi",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 2,
+    "n": "The Melody of Awakening Dragon",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Ryu-Ge War Zone",
+    "t": "Field Spell"
+   },
+   {
+    "q": 3,
+    "n": "Ryu-Ge Rising",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Pot of Prosperity",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Ryu-Ge Realm - Dino Domains",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 1,
+    "n": "Ryu-Ge Realm - Wyrm Winds",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 1,
+    "n": "Ryu-Ge Realm - Sea Spires",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 2,
+    "n": "Mitsurugi Ritual",
+    "t": "Ritual Spell"
+   },
+   {
+    "q": 3,
+    "n": "Mitsurugi Prayers",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Mitsurugi Mirror",
+    "t": "Ritual Spell"
+   },
+   {
+    "q": 3,
+    "n": "Pre-Preparation of Rites",
+    "t": "Normal Spell"
+   }
+  ],
+  "traps": [],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Cosmic Blazar Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Crimson Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Snake-Eyes Vengeance Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Superdreadnought Rail Cannon Gustav Max",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "S:P Little Knight",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "I:P Masquerena",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Underworld Goddess of the Closed World",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Number 35: Ravenous Tarantula",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Number 84: Pain Gainer",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Number 77: The Seven Sins",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Chaos Archfiend",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Chaos Angel",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Swordsoul Supreme Sovereign - Chengying",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Ruddy Rose Dragon",
+    "t": "Synchro"
+   }
+  ]
+ },
+ "scareclaw-kashtira": {
+  "monsters": [
+   {
+    "q": 1,
+    "n": "Visas Starfrost",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Effect Veiler",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 2,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Scareclaw Acro",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Scareclaw Belone",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Scareclaw Astra",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Scareclaw Kashtira",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Scareclaw Reichheart",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Ghost Belle & Haunted Mansion",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Visas Samsara",
+    "t": "Tuner"
+   },
+   {
+    "q": 2,
+    "n": "Ghost Ogre & Snow Rabbit",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Kashtira Fenrir",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Kashtira Unicorn",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 1,
+    "n": "Scareclaw Straddle",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Primitive Planet Reichphobia",
+    "t": "Field Spell"
+   },
+   {
+    "q": 1,
+    "n": "Scareclaw Arrival",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Reinforcement of the Army",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Super Polymerization",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Kashtira Birth",
+    "t": "Continuous Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 3,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Vicious Astraloud",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Favorite HERO Flame Wingman",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Garura, Wings of Resonant Life",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Mudragon of the Swamp",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Starving Venom Fusion Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   },
+   {
+    "q": 2,
+    "n": "Scareclaw Tri-Heart",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "S:P Little Knight",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Swordsoul Supreme Sovereign - Chengying",
+    "t": "Synchro"
+   },
+   {
+    "q": 2,
+    "n": "Scareclaw Light-Heart",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Accesscode Talker",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "I:P Masquerena",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Chaos Angel",
+    "t": "Synchro"
+   }
+  ]
+ },
+ "earthbound-resonator": {
+  "monsters": [
+   {
+    "q": 3,
+    "n": "Imsety, Glory of Horus",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Hapi, Guidance of Horus",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Bone Archfiend",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Soul Resonator",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Crimson Resonator",
+    "t": "Tuner"
+   },
+   {
+    "q": 2,
+    "n": "Vision Resonator",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Earthbound Prisoner Stone Sweeper",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Earthbound Immortal Red Nova",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Power Vice Dragon",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Darkness Resonator",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Fiend Piece Golem",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Effect Veiler",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Ghost Ogre & Snow Rabbit",
+    "t": "Tuner"
+   }
+  ],
+  "spells": [
+   {
+    "q": 2,
+    "n": "King's Sarcophagus",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 2,
+    "n": "Crimson Gaia",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 3,
+    "n": "Resonator Call",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Super Polymerization",
+    "t": "Quick-Play Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 2,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Red Supernova Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "The Crimson King",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Bystial Dis Pater",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Hot Red Dragon Archfiend Abyss",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Scarred Dragon Archfiend",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Red Dragon Archfiend",
+    "t": "Synchro"
+   },
+   {
+    "q": 2,
+    "n": "Red Rising Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Red Nova Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "S:P Little Knight",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Garura, Wings of Resonant Life",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Mudragon of the Swamp",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Favorite HERO Flame Wingman",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Swordsoul Supreme Sovereign - Chengying",
+    "t": "Synchro"
+   }
+  ]
+ },
+ "primite-blue-eyes": {
+  "monsters": [
+   {
+    "q": 3,
+    "n": "Primite Dragon Ether Beryl",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Blue-Eyes White Dragon",
+    "t": "Normal"
+   },
+   {
+    "q": 3,
+    "n": "Sage with Eyes of Blue",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Maiden of White",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Effect Veiler",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Ghost Ogre & Snow Rabbit",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Neo Kaiser Sea Horse",
+    "t": "Tuner"
+   }
+  ],
+  "spells": [
+   {
+    "q": 1,
+    "n": "Roar of the Blue-Eyed Dragons",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Primite Lordly Lode",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 3,
+    "n": "Wishes for Eyes of Blue",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Mausoleum of White",
+    "t": "Field Spell"
+   },
+   {
+    "q": 3,
+    "n": "Bingo Machine, Go!!!",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Primite Roar",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Primite Drillbeam",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Synchro Rumble",
+    "t": "Normal Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 1,
+    "n": "True Light",
+    "t": "Continuous Trap"
+   },
+   {
+    "q": 3,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 1,
+    "n": "The Ultimate Creature of Destruction",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 3,
+    "n": "Blue-Eyes Spirit Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Blue-Eyes Ultimate Spirit Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Lightstorm Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Stardust Sifr Divine Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Crimson Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Blue-Eyes Tyrant Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Neo Blue-Eyes Ultimate Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Indigo-Eyes Silver Dragon",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Hieratic Seal of the Heavenly Spheres",
+    "t": "Link"
+   },
+   {
+    "q": 2,
+    "n": "Spirit with Eyes of Blue",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "S:P Little Knight",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   }
+  ]
+ },
+ "swordsoul-tenyi": {
+  "monsters": [
+   {
+    "q": 1,
+    "n": "Tenyi Spirit - Adhara",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Bystial Magnamhut",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Swordsoul of Mo Ye",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Swordsoul of Taia",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Incredible Ecclesia, the Virtuous",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Bystial Druiswurm",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Swordsoul Strategist Longyuan",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Tenyi Spirit - Vishuda",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Tenyi Spirit - Ashuna",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Tenyi Spirit - Suruya",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Ghost Ogre & Snow Rabbit",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 1,
+    "n": "Pot of Desires",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Harpie's Feather Duster",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Swordsoul Emergence",
+    "t": "Normal Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 3,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 2,
+    "n": "Swordsoul Blackout",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 3,
+    "n": "Evenly Matched",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Draco Berserker of the Tenyi",
+    "t": "Synchro"
+   },
+   {
+    "q": 2,
+    "n": "Swordsoul Grandmaster - Chixiao",
+    "t": "Synchro"
+   },
+   {
+    "q": 2,
+    "n": "Swordsoul Supreme Sovereign - Chengying",
+    "t": "Synchro"
+   },
+   {
+    "q": 2,
+    "n": "Baxia, Brightness of the Yang Zing",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Icejade Gymir Aegirine",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Monk of the Tenyi",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Psychic End Punisher",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "S:P Little Knight",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "I:P Masquerena",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Knightmare Unicorn",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Accesscode Talker",
+    "t": "Link"
+   }
+  ]
+ },
+ "tenpai-wyrm": {
+  "monsters": [
+   {
+    "q": 1,
+    "n": "Tenyi Spirit - Adhara",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Effect Veiler",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Swordsoul of Mo Ye",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Swordsoul of Taia",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Tenpai Dragon Chundra",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Swordsoul Strategist Longyuan",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Tenyi Spirit - Vishuda",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Tenyi Spirit - Ashuna",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Tenpai Dragon Paidra",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Tenpai Dragon Fadra",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 2,
+    "n": "Pot of Desires",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 2,
+    "n": "Sky Striker Mobilize - Engage!",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 2,
+    "n": "Sky Striker Mecha - Widow Anchor",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Sangen Kaimen",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Lightning Storm",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Swordsoul Emergence",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Sangen Summoning",
+    "t": "Field Spell"
+   },
+   {
+    "q": 1,
+    "n": "Sky Striker Mecha - Hornet Drones",
+    "t": "Quick-Play Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 3,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 2,
+    "n": "Swordsoul Blackout",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Black Rose Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Kuibelt the Blade Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Sangenpai Bident Dragion",
+    "t": "Synchro Tuner"
+   },
+   {
+    "q": 2,
+    "n": "Swordsoul Grandmaster - Chixiao",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Trident Dragion",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Baxia, Brightness of the Yang Zing",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Swordsoul Supreme Sovereign - Chengying",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Swordsoul Sinister Sovereign - Qixing Longyuan",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Sangenpai Transcendent Dragion",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Monk of the Tenyi",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Sky Striker Ace - Camellia",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Sky Striker Ace - Kagari",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Sky Striker Ace = Zero",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   }
+  ]
+ },
+ "synchron": {
+  "monsters": [
+   {
+    "q": 1,
+    "n": "Wheel Synchron",
+    "t": "Tuner"
+   },
+   {
+    "q": 2,
+    "n": "Stardust Synchron",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Revolution Synchron",
+    "t": "Tuner"
+   },
+   {
+    "q": 2,
+    "n": "Junk Synchron",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Assault Synchron",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Scrap Synchron",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Full-Speed Warrior",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Ghost Belle & Haunted Mansion",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Junk Meister",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Effect Veiler",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Water Enchantress of the Temple",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Wandering Gryphon Rider",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 3,
+    "n": "Synchro Fellowship",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Tuning",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 2,
+    "n": "Super Polymerization",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 2,
+    "n": "Rite of Aramesir",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Fateful Adventure",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 1,
+    "n": "Reinforcement of the Army",
+    "t": "Normal Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 3,
+    "n": "Synchro Emergency",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 3,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Scrap Warrior",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Psychic End Punisher",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Junk Speeder",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Stardust Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Accel Synchro Stardust Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Stardust Dragon - Victim Sanctuary",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "T.G. Hyper Librarian",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Draco Berserker of the Tenyi",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Swordsoul Supreme Sovereign - Chengying",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Stardust Charge Warrior",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Clear Wing Synchro Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Chaos Angel",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Garura, Wings of Resonant Life",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Mudragon of the Swamp",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Starving Venom Fusion Dragon",
+    "t": "Fusion"
+   }
+  ]
+ },
+ "ignister": {
+  "monsters": [
+   {
+    "q": 1,
+    "n": "Wizard @Ignister",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Effect Veiler",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 2,
+    "n": "Ghost Belle & Haunted Mansion",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Achichi @Ignister",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Pikari @Ignister",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Backup @Ignister",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Hiyari @Ignister",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Bururu @Ignister",
+    "t": "Tuner"
+   },
+   {
+    "q": 2,
+    "n": "Doyon @Ignister",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Doshin @Ignister",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Linkslayer @Ignister",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "The Winged Dragon of Ra - Sphere Mode",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 1,
+    "n": "FA.I.ghting Spirit",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "A.I.dle Reborn",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 2,
+    "n": "Ignister A.I.Land",
+    "t": "Field Spell"
+   },
+   {
+    "q": 3,
+    "n": "Cynet Mining",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "A.I. Meet You",
+    "t": "Normal Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 2,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 2,
+    "n": "Dark Infant @Ignister",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Cyberse Wicckid",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Transcode Talker",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "The Arrival Cyberse @Ignister",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Dark Templar @Ignister",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Decode Talker Heatsoul",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Light Dragon @Ignister",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Wind Pegasus @Ignister",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Allied Code Talker @Ignister",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Accesscode Talker",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Firewall Dragon Darkfluid - Neo Tempest Terahertz",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Link Spider",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Firewall eXceed Dragon",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Cyberse Quantum Dragon",
+    "t": "Synchro"
+   }
+  ]
+ },
+ "branded-dracotail": {
+  "monsters": [
+   {
+    "q": 1,
+    "n": "Blazing Cartesia, the Virtuous",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Guiding Quem, the Virtuous",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Aluber the Jester of Despia",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Fallen of Albaz",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Incredible Ecclesia, the Virtuous",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 2,
+    "n": "Effect Veiler",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Dracotail Faimena",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Dracotail Urgula",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Dracotail Pan",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Dracotail Lukias",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Dracotail Mululu",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Mulcharmy Fuwalos",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Springans Kitt",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Mulcharmy Purulia",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 1,
+    "n": "Branded Fusion",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Branded Opening",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Fusion Deployment",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Super Polymerization",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Ketu Dracotail",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Rahu Dracotail",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "The Fallen & The Virtuous",
+    "t": "Quick-Play Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 1,
+    "n": "Dracotail Horn",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Albion the Sanctifire Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 2,
+    "n": "Mirrorjade the Iceblade Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "The Dragon that Devours the Dogma",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Secreterion Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Lubellion the Searing Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Granguignol the Dusk Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Titaniklad the Ash Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Rindbrumm the Striking Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Alba-Lenatus the Abyss Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Despian Quaeritis",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Garura, Wings of Resonant Life",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Mudragon of the Swamp",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Dracotail Arthalion",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Dracotail Gulamel",
+    "t": "Fusion"
+   }
+  ]
+ },
+ "dinomorphia-ryzeal": {
+  "monsters": [
+   {
+    "q": 1,
+    "n": "Miscellaneousaurus",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Dinomorphia Therizia",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Dinomorphia Diplos",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Kashtira Fenrir",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Effect Veiler",
+    "t": "Tuner"
+   },
+   {
+    "q": 2,
+    "n": "Ghost Ogre & Snow Rabbit",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Ghost Belle & Haunted Mansion",
+    "t": "Tuner"
+   },
+   {
+    "q": 2,
+    "n": "Sword Ryzeal",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Ice Ryzeal",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Ext Ryzeal",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 3,
+    "n": "Fossil Dig",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Pot of Prosperity",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Bonfire",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Pressured Planet Wraitsoth",
+    "t": "Field Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 2,
+    "n": "Dinomorphia Domain",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 1,
+    "n": "Dinomorphia Alert",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 3,
+    "n": "Dinomorphia Frenzy",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 1,
+    "n": "Trap Trick",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 3,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 3,
+    "n": "Dinomorphia Rexterm",
+    "t": "Fusion"
+   },
+   {
+    "q": 3,
+    "n": "Dinomorphia Kentregina",
+    "t": "Fusion"
+   },
+   {
+    "q": 2,
+    "n": "Dinomorphia Stealthbergia",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Salamangreat Almiraj",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Psychic End Punisher",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Dharc the Dark Charmer, Gloomy",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Ryzeal Detonator",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Mereologic Aggregator",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Ryzeal Duo Drive",
+    "t": "Xyz"
+   }
+  ]
+ },
+ "metalmorph-fiendsmith": {
+  "monsters": [
+   {
+    "q": 1,
+    "n": "Red-Eyes Black Fullmetal Dragon",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Metalzoa X",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Metalflame Swordsman",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Zoa the Fiendish Beast",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Red-Eyes Metal Claws Dragon",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Metal Illusionist",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Black Metal Dragon",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Red-Eyes Darkness Metal Dragon",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Bystial Druiswurm",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Fiendsmith Engraver",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Fabled Lurrie",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Lacrima the Crimson Tears",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "The Bystial Lubellion",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 3,
+    "n": "Incoming Machine!",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Pot of Prosperity",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "One for One",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Super Polymerization",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 1,
+    "n": "Fiendsmith's Tract",
+    "t": "Normal Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 3,
+    "n": "Max Metalmorph",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 1,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Garura, Wings of Resonant Life",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Mudragon of the Swamp",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Starving Venom Fusion Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Favorite HERO Flame Wingman",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Hieratic Seal of the Heavenly Spheres",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Striker Dragon",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "S:P Little Knight",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Relinquished Anima",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Chaos Angel",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Necroquip Princess",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Fiendsmith's Desirae",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Fiendsmith's Sequence",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Fiendsmith's Requiem",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Underworld Goddess of the Closed World",
+    "t": "Link"
+   }
+  ]
+ },
+ "blackwing-angelechy": {
+  "monsters": [
+   {
+    "q": 3,
+    "n": "Blackwing - Simoon the Poison Wind",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Blackwing - Oroshi the Squall",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Blackwing - Zephyros the Elite",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Blackwing - Shamal the Sandstorm",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Blackwing - Sudri the Phantom Glimmer",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Blackwing - Harmattan the Dust",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Blackwing - Vata the Emblem of Wandering",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Blackwing - Sharnga the Waning Moon",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 1,
+    "n": "Pot of Prosperity",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 2,
+    "n": "Angelechy Strategy Score",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Upstart Goblin",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Black Whirlwind",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 1,
+    "n": "Black Feather Whirlwind",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 3,
+    "n": "Angelechy Problem",
+    "t": "Field Spell"
+   },
+   {
+    "q": 1,
+    "n": "Terraforming",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Super Polymerization",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Angelechy Opposition",
+    "t": "Normal Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 3,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 2,
+    "n": "Black-Winged Assault Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Blackwing Full Armor Master",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Assault Blackwing - Kusanagi the Gathering Storm",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Black-Winged Dragon",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Blackwing - Boreastorm the Wicked Wind",
+    "t": "Synchro Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Angelechy Destrier",
+    "t": "Synchro"
+   },
+   {
+    "q": 2,
+    "n": "Angelechy Enlisted",
+    "t": "Synchro Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Angelechy Bastion",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Angelechy Shatranga",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Garura, Wings of Resonant Life",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Mudragon of the Swamp",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Starving Venom Fusion Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Favorite HERO Flame Wingman",
+    "t": "Fusion"
+   }
+  ]
+ },
+ "radiant-typhoon": {
+  "monsters": [
+   {
+    "q": 2,
+    "n": "Radiant Typhoon Fonix, the Great Flame",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Radiant Typhoon Varuroon, the Vibrant Vortex",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Radiant Typhoon Eldam",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Radiant Typhoon Swen",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Radiant Typhoon Meghala",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Fallen of Albaz",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 1,
+    "n": "Radiant Typhoon Chant",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Radiant Typhoon Vision",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Mystical Space Typhoon",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 2,
+    "n": "The Fallen & The Virtuous",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Super Polymerization",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Forbidden Droplet",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Angelechy Problem",
+    "t": "Field Spell"
+   },
+   {
+    "q": 1,
+    "n": "Terraforming",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 2,
+    "n": "Radiant Typhoon Manifestation",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Angelechy Opposition",
+    "t": "Normal Spell"
+   }
+  ],
+  "traps": [],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Titaniklad the Ash Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Mirrorjade the Iceblade Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Scareclaw Tri-Heart",
+    "t": "Link"
+   },
+   {
+    "q": 2,
+    "n": "Garura, Wings of Resonant Life",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Starving Venom Fusion Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Mudragon of the Swamp",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "S:P Little Knight",
+    "t": "Link"
+   },
+   {
+    "q": 2,
+    "n": "Angelechy Destrier",
+    "t": "Synchro"
+   },
+   {
+    "q": 2,
+    "n": "Angelechy Enlisted",
+    "t": "Synchro Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Angelechy Bastion",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Angelechy Seneschal",
+    "t": "Synchro"
+   }
+  ]
+ },
+ "lunalight": {
+  "monsters": [
+   {
+    "q": 3,
+    "n": "Lunalight Gold Leo",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Lunalight Kaleido Chick",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Lunalight Yellow Marten",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Lunalight Emerald Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Lunalight Silver Hound",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Lunalight Black Sheep",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Lunalight Wolf",
+    "t": "Pendulum Effect"
+   },
+   {
+    "q": 1,
+    "n": "Lunalight Tiger",
+    "t": "Pendulum Effect"
+   },
+   {
+    "q": 3,
+    "n": "Tri-Brigade Fraktall",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 2,
+    "n": "Mulcharmy Fuwalos",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Lunalight Scarlet Tiger",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Ghost Belle & Haunted Mansion",
+    "t": "Tuner"
+   }
+  ],
+  "spells": [
+   {
+    "q": 1,
+    "n": "Luna Light Perfume",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 2,
+    "n": "Lunalight Masquerade",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 1,
+    "n": "Lunalight Fusion",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 2,
+    "n": "Fire Formation - Tenki",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 1,
+    "n": "Foolish Burial",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Polymerization",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Heavy Polymerization",
+    "t": "Normal Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 3,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 2,
+    "n": "Lunalight Perfume Dancer",
+    "t": "Fusion"
+   },
+   {
+    "q": 2,
+    "n": "Lunalight Leo Dancer",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Lunalight Sabre Dancer",
+    "t": "Fusion"
+   },
+   {
+    "q": 2,
+    "n": "Lunalight Liger Dancer",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Lunalight Cat Dancer",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Lunalight Panther Dancer",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Guardian Chimera",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Chaos Angel",
+    "t": "Synchro"
+   },
+   {
+    "q": 1,
+    "n": "Brotherhood of the Fire Fist - Tiger King",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Underworld Goddess of the Closed World",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "S:P Little Knight",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "I:P Masquerena",
+    "t": "Link"
+   }
+  ]
+ },
+ "spright": {
+  "monsters": [
+   {
+    "q": 3,
+    "n": "Spright Blue",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Spright Jet",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Spright Red",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Spright Carrot",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Effect Veiler",
+    "t": "Tuner"
+   },
+   {
+    "q": 3,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Dogmatika Ecclesia, the Virtuous",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Dogmatika Fleurdelis, the Knighted",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Dogmatika Maximus",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Ghost Ogre & Snow Rabbit",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   }
+  ],
+  "spells": [
+   {
+    "q": 3,
+    "n": "Spright Starter",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Super Polymerization",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 3,
+    "n": "Nadir Servant",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Harpie's Feather Duster",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Pot of Prosperity",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Forbidden Droplet",
+    "t": "Quick-Play Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 1,
+    "n": "Dogmatika Punishment",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 3,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 3,
+    "n": "Evenly Matched",
+    "t": "Normal Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 2,
+    "n": "Gigantic Spright",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Garura, Wings of Resonant Life",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Mudragon of the Swamp",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Starving Venom Fusion Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "S:P Little Knight",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "I:P Masquerena",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Underworld Goddess of the Closed World",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "Knightmare Unicorn",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Accesscode Talker",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Knightmare Phoenix",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Elder Entity N'tss",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Spright Sprind",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Dharc the Dark Charmer, Gloomy",
+    "t": "Link"
+   }
+  ]
+ },
+ "gren-maju": {
+  "monsters": [
+   {
+    "q": 3,
+    "n": "Gren Maju Da Eiza",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Nibiru, the Primal Being",
+    "t": "Effect"
+   },
+   {
+    "q": 2,
+    "n": "Gizmek Orochi, the Serpentron Sky Slasher",
+    "t": "Effect"
+   },
+   {
+    "q": 3,
+    "n": "Inspector Boarder",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Fallen of Albaz",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Ghost Ogre & Snow Rabbit",
+    "t": "Tuner"
+   },
+   {
+    "q": 1,
+    "n": "Droll & Lock Bird",
+    "t": "Effect"
+   },
+   {
+    "q": 1,
+    "n": "Ash Blossom & Joyous Spring",
+    "t": "Tuner"
+   },
+   {
+    "q": 2,
+    "n": "Effect Veiler",
+    "t": "Tuner"
+   }
+  ],
+  "spells": [
+   {
+    "q": 1,
+    "n": "Raigeki",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 2,
+    "n": "Pot of Desires",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Card of Demise",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 1,
+    "n": "Pot of Prosperity",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Pot of Duality",
+    "t": "Normal Spell"
+   },
+   {
+    "q": 3,
+    "n": "Super Polymerization",
+    "t": "Quick-Play Spell"
+   },
+   {
+    "q": 2,
+    "n": "Decisive Battle of Golgonda",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 3,
+    "n": "Clockwork Night",
+    "t": "Continuous Spell"
+   },
+   {
+    "q": 3,
+    "n": "Necrovalley",
+    "t": "Field Spell"
+   }
+  ],
+  "traps": [
+   {
+    "q": 1,
+    "n": "Evenly Matched",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 1,
+    "n": "Infinite Impermanence",
+    "t": "Normal Trap"
+   },
+   {
+    "q": 3,
+    "n": "Macro Cosmos",
+    "t": "Continuous Trap"
+   },
+   {
+    "q": 1,
+    "n": "Solemn Judgment",
+    "t": "Counter Trap"
+   }
+  ],
+  "extra": [
+   {
+    "q": 1,
+    "n": "Mudragon of the Swamp",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Garura, Wings of Resonant Life",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Earth Golem @Ignister",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Starving Venom Fusion Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 2,
+    "n": "Mirrorjade the Iceblade Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Brigrand the Glory Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Titaniklad the Ash Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Alba-Lenatus the Abyss Dragon",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "World Chalice Guardragon Almarduke",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Predaplant Dragostapelia",
+    "t": "Fusion"
+   },
+   {
+    "q": 1,
+    "n": "Super Starslayer TY-PHON - Sky Crisis",
+    "t": "Xyz"
+   },
+   {
+    "q": 1,
+    "n": "S:P Little Knight",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Knightmare Phoenix",
+    "t": "Link"
+   },
+   {
+    "q": 1,
+    "n": "Knightmare Unicorn",
+    "t": "Link"
+   }
+  ]
+ }
+}
