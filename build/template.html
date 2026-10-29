@@ -1,0 +1,2064 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>The Vault</title>
+<!-- Fonts are bundled locally (SIL Open Font License) so the page looks right with no internet. -->
+<style>
+/* latin-ext */
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:500;font-display:swap;src:url(fonts/Fraunces-italic-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+/* latin */
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:500;font-display:swap;src:url(fonts/Fraunces-italic-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+/* latin-ext */
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/Fraunces-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+/* latin */
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/Fraunces-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+/* latin-ext */
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/JetBrainsMono-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+/* latin */
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/JetBrainsMono-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+/* latin-ext */
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/Manrope-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+/* latin */
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/Manrope-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+</style>
+<style>
+  /* Layout: a single scrolling "codex" — a cover (home) plus six hash-routed
+     collection chapters, each a dossier of deck cards. Dark archive aesthetic:
+     ink ground, aged-gold leaf accent, a single crimson seal for emphasis. */
+  :root{
+    --ink:#0b0a08;
+    --ink-raised:#15120d;
+    --ink-card:#1b1712;
+    --line:#332c22;
+    --parchment:#ece4d3;
+    --parchment-dim:#a79a85;
+    --parchment-faint:#6e6454;
+    --gold:#c9a24b;
+    --gold-bright:#e8c679;
+    --crimson:#8c2f2f;
+    --low:#d58a7a;   /* weakest value in a stats column */
+    /* card frame colors, used only as card-type markers in the card text view */
+    --f-effect:#c9733a;
+    --f-normal:#d1b05a;
+    --f-spell:#2aa58c;
+    --f-trap:#c0538e;
+    --f-fusion:#9a68c9;
+    --f-synchro:#dcd6c8;
+    --f-xyz:#8e929c;
+    --f-link:#3f86d6;
+    --f-ritual:#6f9fe0;
+    --font-display:'Fraunces', 'Iowan Old Style', serif;
+    --font-body:'Manrope', -apple-system, sans-serif;
+    --font-mono:'JetBrains Mono', ui-monospace, monospace;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--ink);
+    color:var(--parchment);
+    font-family:var(--font-body);
+    padding-left:max(16px, env(safe-area-inset-left, 0px));
+    padding-right:max(16px, env(safe-area-inset-right, 0px));
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;margin:0;text-wrap:balance;}
+  p{margin:0;line-height:1.6;}
+  ::selection{background:var(--gold);color:var(--ink);}
+
+  body::before{
+    content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);
+    z-index:50;background:var(--ink-raised);
+  }
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+    background:rgba(11,10,8,0.88);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1180px;margin:0 auto;padding:16px 0;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .brand{
+    font-family:var(--font-display);font-size:1.15rem;letter-spacing:0.02em;
+    display:flex;align-items:baseline;gap:8px;cursor:pointer;background:none;border:none;color:var(--parchment);padding:0;
+    white-space:nowrap;flex-shrink:0;
+  }
+  .brand small{font-family:var(--font-mono);font-size:0.6rem;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;}
+  .nav-links{
+    display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .nav-links::-webkit-scrollbar{display:none;}
+  .nav-links.more-r{-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 40px),transparent);}
+  .nav-links.more-l{-webkit-mask-image:linear-gradient(to left,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(to left,#000 calc(100% - 40px),transparent);}
+  .nav-links.more-l.more-r{-webkit-mask-image:linear-gradient(to right,transparent,#000 40px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(to right,transparent,#000 40px,#000 calc(100% - 40px),transparent);}
+  .nav-link{
+    font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;
+    white-space:nowrap;padding:8px 12px;border-radius:999px;border:1px solid transparent;
+    background:none;color:var(--parchment-dim);cursor:pointer;transition:border-color .2s, color .2s, background .2s;
+  }
+  .nav-link:hover{color:var(--parchment);}
+  .nav-link[aria-current="true"]{color:var(--ink);background:var(--gold);border-color:var(--gold);}
+
+  main{max-width:1180px;margin:0 auto;padding-bottom:96px;}
+  section[hidden]{display:none!important;}
+
+  /* ---------- Home ---------- */
+  .hero{padding:72px 0 48px;}
+  .hero-eyebrow{
+    font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:18px;display:block;
+  }
+  .hero h1{font-size:clamp(2.4rem, 6vw, 4.2rem);line-height:1.03;max-width:16ch;}
+  .hero h1 em{font-style:italic;color:var(--gold-bright);}
+  .hero p.lede{
+    margin-top:22px;max-width:52ch;color:var(--parchment-dim);font-size:1.05rem;line-height:1.7;
+  }
+  .hero-stats{
+    display:flex;gap:36px;margin-top:40px;flex-wrap:wrap;
+    padding-top:28px;border-top:1px solid var(--line);
+  }
+  .stat .n{font-family:var(--font-display);font-size:2.1rem;color:var(--gold-bright);}
+  .stat .l{font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--parchment-faint);margin-top:4px;}
+
+  .collection-grid{
+    display:grid;grid-template-columns:repeat(auto-fill, minmax(300px,1fr));gap:20px;
+    margin-top:56px;
+  }
+  .collection-tile{
+    position:relative;border:1px solid var(--line);border-radius:4px;overflow:hidden;
+    background:var(--ink-card);cursor:pointer;text-align:left;padding:0;
+    transition:transform .25s ease, border-color .25s ease;
+    display:block;width:100%;color:inherit;font:inherit;
+  }
+  .collection-tile:hover{transform:translateY(-4px);border-color:var(--gold);}
+  .collection-tile .art{
+    aspect-ratio:16/10;width:100%;object-fit:cover;object-position:center 18%;
+    filter:brightness(0.55) saturate(0.8) contrast(1.05);
+    transition:filter .3s ease;
+  }
+  .collection-tile:hover .art{filter:brightness(0.7) saturate(0.9) contrast(1.05);}
+  .collection-tile .scrim{
+    position:absolute;inset:0;background:linear-gradient(180deg, rgba(11,10,8,0.15) 0%, rgba(11,10,8,0.45) 40%, rgba(11,10,8,0.95) 100%);
+  }
+  .collection-tile .meta{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;}
+  .collection-tile .chapter-no{
+    font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-bright);
+    text-shadow:0 1px 8px rgba(0,0,0,0.9);
+  }
+  .collection-tile h3{font-size:1.3rem;margin-top:6px;text-shadow:0 1px 10px rgba(0,0,0,0.9);}
+  .collection-tile .count{
+    font-family:var(--font-mono);font-size:0.68rem;color:var(--parchment-dim);margin-top:6px;display:block;
+  }
+
+  /* ---------- Chapter (collection) page ---------- */
+  .chapter-head{padding:56px 0 20px;border-bottom:1px solid var(--line);}
+  .back-link{
+    font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--parchment-dim);background:none;border:none;cursor:pointer;padding:0;
+    display:inline-flex;align-items:center;gap:6px;margin-bottom:22px;transition:color .2s;
+  }
+  .back-link:hover{color:var(--gold-bright);}
+  .chapter-head .chapter-no{
+    display:block;font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);
+  }
+  .chapter-head h2{font-size:clamp(2rem, 4.5vw, 3rem);margin-top:10px;}
+  .chapter-head p{max-width:62ch;color:var(--parchment-dim);margin-top:16px;font-size:1.02rem;}
+  .chapter-head p.chapter-family{
+    font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.06em;color:var(--gold-bright);margin-top:12px;max-width:72ch;line-height:1.6;
+  }
+  .deck-style{
+    display:inline-block;align-self:flex-start;margin:10px 0 2px;padding:5px 10px;border:1px solid var(--gold);border-radius:3px;
+    font-family:var(--font-mono);font-size:0.66rem;line-height:1.3;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-bright);
+    background:rgba(201,162,75,0.08);max-width:100%;
+  }
+  .chapter-count{
+    font-family:var(--font-mono);font-size:0.68rem;color:var(--parchment-faint);margin-top:18px;
+    text-transform:uppercase;letter-spacing:0.08em;
+  }
+
+  .deck-list{display:flex;flex-direction:column;gap:28px;margin-top:40px;}
+  .deck-card{
+    display:grid;grid-template-columns:260px 1fr;gap:28px;
+    border:1px solid var(--line);border-radius:4px;background:var(--ink-card);overflow:hidden;
+  }
+  @media (max-width:720px){.deck-card{grid-template-columns:1fr;}}
+  .deck-card .art-wrap{position:relative;min-width:0;}
+  .deck-card .art-wrap img{width:100%;height:100%;object-fit:cover;min-height:220px;}
+  .deck-card .art-wrap::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg, rgba(11,10,8,0) 70%, rgba(11,10,8,0.35) 100%);
+  }
+  @media (max-width:720px){.deck-card .art-wrap img{min-height:200px;}}
+  .deck-card .art-wrap{overflow:hidden;}
+  .art-trigger{
+    display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in;
+    position:relative;color:inherit;
+  }
+  .art-trigger img{transition:scale .35s var(--ease-out);}
+  @media (hover: hover) and (pointer: fine){ .art-trigger:hover img{scale:1.035;} .sx .art-trigger:hover img{scale:1.11;} }
+  .sx .deck-card .art-wrap img{scale:1.08;will-change:translate;}
+  .art-trigger .peek{
+    position:absolute;left:12px;bottom:12px;z-index:2;
+    font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;
+    background:rgba(11,10,8,0.82);color:var(--gold-bright);border:1px solid var(--line);
+    padding:6px 10px;border-radius:999px;opacity:0.9;transition:opacity .2s, border-color .2s;
+  }
+  .art-trigger:hover .peek{opacity:1;border-color:var(--gold);}
+  .deck-title-link{
+    font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left;
+    text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:6px;
+    text-decoration-thickness:1px;transition:text-decoration-color .2s, color .2s;
+  }
+  .deck-title-link:hover{color:var(--gold-bright);text-decoration-color:var(--gold);}
+  .foot-actions{display:flex;gap:10px;flex-wrap:wrap;}
+  .ghost-btn{
+    font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.04em;text-transform:uppercase;
+    color:var(--parchment);background:transparent;border:1px solid var(--line);padding:9px 16px;border-radius:3px;
+    cursor:pointer;transition:border-color .2s, color .2s;
+  }
+  .ghost-btn:hover{border-color:var(--gold);color:var(--gold-bright);}
+  :focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;}
+
+  /* ---------- Deck viewer ---------- */
+  .viewer{
+    position:fixed;inset:0;z-index:100;background:rgba(6,5,4,0.94);
+    padding:max(20px, env(safe-area-inset-top,0px)) max(16px, env(safe-area-inset-right,0px)) max(20px, env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px));
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;pointer-events:none;visibility:hidden;transition:opacity .25s ease, visibility 0s linear .25s;
+  }
+  .viewer.is-open{opacity:1;pointer-events:auto;visibility:visible;transition:opacity .25s ease;}
+  .viewer-panel{
+    position:relative;width:min(1240px,100%);height:min(860px,100%);
+    display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
+    background:var(--ink-raised);border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    transform:translateY(14px) scale(0.985);transition:transform .32s var(--ease-out);
+  }
+  .viewer.is-open .viewer-panel{transform:none;}
+  .viewer-media{
+    min-width:0;min-height:0;background:#070605;display:flex;align-items:center;justify-content:center;
+    position:relative;overflow:auto;
+  }
+  .viewer-media img{max-width:100%;max-height:100%;object-fit:contain;cursor:zoom-in;}
+  .viewer-media.is-zoomed{align-items:flex-start;justify-content:flex-start;}
+  .viewer-media.is-zoomed img{max-width:none;max-height:none;width:auto;cursor:zoom-out;}
+  .zoom-hint{
+    position:sticky;align-self:flex-end;
+    position:absolute;left:12px;bottom:12px;
+    font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;
+    background:rgba(11,10,8,0.82);color:var(--parchment-dim);border:1px solid var(--line);
+    padding:6px 10px;border-radius:999px;pointer-events:none;
+  }
+  .viewer-media.is-zoomed .zoom-hint{display:none;}
+  .viewer-list{min-width:0;min-height:0;display:flex;flex-direction:column;border-left:1px solid var(--line);}
+  .viewer-head{padding:22px 24px 16px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:6px;padding-right:64px;}
+  .viewer-head .chapter-no{font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);}
+  .viewer-head h3{font-size:1.5rem;}
+  .viewer-head .deck-counts{margin-top:2px;}
+  .viewer-body{overflow-y:auto;padding:8px 24px 24px;flex:1;min-height:0;}
+  .dl-zone{margin-top:18px;}
+  .dl-zone-title{
+    font-family:var(--font-display);font-size:1.05rem;display:flex;justify-content:space-between;align-items:baseline;
+    padding-bottom:8px;border-bottom:1px solid var(--gold);color:var(--parchment);
+  }
+  .dl-zone-title span{font-family:var(--font-mono);font-size:0.72rem;color:var(--gold-bright);font-variant-numeric:tabular-nums;}
+  .dl-group{margin-top:12px;}
+  .dl-group-title{
+    font-family:var(--font-mono);font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--parchment-faint);
+    display:flex;justify-content:space-between;margin-bottom:4px;font-variant-numeric:tabular-nums;
+  }
+  .dl-row{
+    display:grid;grid-template-columns:2.2em minmax(0,1fr) auto;gap:10px;align-items:baseline;
+    padding:5px 0;border-bottom:1px dashed rgba(51,44,34,0.7);font-size:0.9rem;
+  }
+  .dl-row .q{font-family:var(--font-mono);color:var(--gold-bright);font-variant-numeric:tabular-nums;}
+  .dl-row .n{min-width:0;overflow-wrap:anywhere;}
+  .card-link{
+    font:inherit;color:var(--parchment);background:none;border:0;padding:0;text-align:left;cursor:pointer;
+    text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;
+    transition:color .2s, text-decoration-color .2s;overflow-wrap:anywhere;
+  }
+  .card-link:hover{color:var(--gold-bright);text-decoration-color:var(--gold);}
+  .card-link[aria-expanded="true"]{color:var(--gold-bright);text-decoration-color:var(--gold);}
+  .dl-item .dl-row{border-bottom:1px dashed rgba(51,44,34,0.7);}
+  .dl-item.is-open .dl-row{border-bottom-color:transparent;}
+  .dl-detail{
+    margin:2px 0 10px calc(2.2em + 10px);padding:12px 14px;border:1px solid var(--line);border-radius:4px;
+    background:var(--ink-card);font-size:0.84rem;line-height:1.6;color:var(--parchment-dim);
+  }
+  .dl-detail[hidden]{display:none!important;}
+  /* Card entry: one fixed order for every card — stats, materials, effects, record line, notes.
+     The left edge takes the card's frame color so the card type reads before any text. */
+  .dl-detail{border-left:3px solid var(--frame, var(--line));display:flex;flex-direction:column;gap:10px;}
+  .dl-detail[data-frame="effect"]{--frame:var(--f-effect);}
+  .dl-detail[data-frame="normal"]{--frame:var(--f-normal);}
+  .dl-detail[data-frame="spell"]{--frame:var(--f-spell);}
+  .dl-detail[data-frame="trap"]{--frame:var(--f-trap);}
+  .dl-detail[data-frame="fusion"]{--frame:var(--f-fusion);}
+  .dl-detail[data-frame="synchro"]{--frame:var(--f-synchro);}
+  .dl-detail[data-frame="xyz"]{--frame:var(--f-xyz);}
+  .dl-detail[data-frame="link"]{--frame:var(--f-link);}
+  .dl-detail[data-frame="ritual"]{--frame:var(--f-ritual);}
+  .cd-chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .cd-chip{
+    font-family:var(--font-mono);font-size:0.66rem;line-height:1;padding:5px 8px;border-radius:3px;
+    border:1px solid var(--line);color:var(--parchment-dim);background:var(--ink-raised);
+    font-variant-numeric:tabular-nums;white-space:nowrap;
+  }
+  .cd-chip.is-type{border-color:var(--frame);color:var(--parchment);}
+  .cd-chip.is-type::before{
+    content:"";display:inline-block;width:7px;height:7px;border-radius:2px;background:var(--frame);margin-right:6px;vertical-align:0;
+  }
+  .cd-chip.is-stat{color:var(--gold-bright);}
+  .cd-label{
+    font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--parchment-faint);
+    margin-bottom:4px;display:block;
+  }
+  .cd-mat{color:var(--parchment);font-size:0.86rem;}
+  .cd-fx-block{display:flex;flex-direction:column;}
+  .cd-fx{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .cd-fx li{
+    color:var(--parchment);font-size:0.86rem;line-height:1.55;padding-left:12px;position:relative;max-width:68ch;
+  }
+  .cd-fx li::before{content:"";position:absolute;left:0;top:0.62em;width:4px;height:4px;border-radius:50%;background:var(--frame);}
+  .cd-fx .cond{color:var(--gold-bright);font-weight:600;}
+  .cd-fx li.is-rule{color:var(--parchment-faint);font-size:0.8rem;}
+  .cd-fx li.is-rule::before{background:var(--parchment-faint);}
+  .cd-none{color:var(--parchment-faint);font-size:0.82rem;}
+  .cd-record{
+    display:flex;flex-wrap:wrap;gap:4px 14px;padding-top:8px;border-top:1px solid var(--line);
+    font-family:var(--font-mono);font-size:0.62rem;color:var(--parchment-faint);font-variant-numeric:tabular-nums;
+  }
+  .cd-record b{color:var(--parchment-dim);font-weight:500;}
+  .cd-record .fl-limited b, .cd-record .fl-semi-limited b{color:var(--gold-bright);}
+  .cd-notes summary{
+    cursor:pointer;font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--parchment-dim);list-style:none;display:inline-flex;align-items:center;gap:6px;
+  }
+  .cd-notes summary::-webkit-details-marker{display:none;}
+  .cd-notes summary::before{content:"+";font-size:0.8rem;color:var(--gold);width:0.8em;}
+  .cd-notes[open] summary::before{content:"−";}
+  .cd-notes summary:hover{color:var(--gold-bright);}
+  .cd-note{margin-top:10px;}
+  .cd-note ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px;}
+  .cd-note li{color:var(--parchment-dim);font-size:0.82rem;line-height:1.55;max-width:66ch;}
+  .cd-note li::marker{color:var(--gold);}
+  .cd-note p{margin:0 0 6px;color:var(--parchment-dim);font-size:0.82rem;}
+  .cd-note strong{color:var(--parchment);font-weight:600;}
+  .dl-detail .detail-state{font-family:var(--font-mono);font-size:0.7rem;color:var(--parchment-faint);}
+  @media (max-width:520px){.dl-detail{margin-left:0;}}
+  .dl-row .t{font-family:var(--font-mono);font-size:0.62rem;color:var(--parchment-faint);text-align:right;white-space:nowrap;}
+  .viewer-foot{border-top:1px solid var(--line);padding:14px 24px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .copy-status{font-family:var(--font-mono);font-size:0.65rem;color:var(--parchment-dim);}
+  .viewer-help{display:flex;flex-direction:column;gap:22px;padding-top:20px;}
+  .viewer-help[hidden]{display:none!important;}
+  .help-block h4{
+    font-size:1.05rem;padding-bottom:8px;border-bottom:1px solid var(--gold);margin-bottom:12px;
+  }
+  .help-block ol{margin:0;padding-left:1.4em;display:flex;flex-direction:column;gap:10px;}
+  .help-block li{line-height:1.6;color:var(--parchment-dim);font-size:0.92rem;max-width:60ch;}
+  .help-block li::marker{font-family:var(--font-mono);color:var(--gold-bright);}
+  .help-block .help-alt{margin:14px 0 0;line-height:1.6;color:var(--parchment-faint);font-size:0.85rem;max-width:60ch;}
+  .help-block code{
+    font-family:var(--font-mono);font-size:0.8rem;color:var(--parchment);
+    background:var(--ink-card);border:1px solid var(--line);padding:1px 6px;border-radius:3px;overflow-wrap:anywhere;
+  }
+  .inline-btn{
+    font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.04em;text-transform:uppercase;
+    color:var(--ink);background:var(--gold);border:1px solid var(--gold);padding:5px 10px;border-radius:3px;
+    cursor:pointer;margin-left:4px;transition:background .2s;
+  }
+  .inline-btn:hover{background:var(--gold-bright);}
+  #helpBack{align-self:flex-start;}
+  button.ydk-link{cursor:pointer;font:inherit;font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.04em;text-transform:uppercase;}
+
+  .viewer-tabs{display:flex;gap:4px;margin-top:12px;flex-wrap:wrap;}
+  .vtab{
+    font-family:var(--font-mono);font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;
+    padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;
+    color:var(--parchment-dim);cursor:pointer;transition:border-color .2s, color .2s, background .2s;
+  }
+  .vtab:hover{color:var(--parchment);border-color:var(--parchment-faint);}
+  .vtab[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+
+  .viewer-notes[hidden]{display:none!important;}
+  .notes-section{margin-top:22px;}
+  .notes-section > h4{
+    font-size:1.05rem;padding-bottom:8px;border-bottom:1px solid var(--gold);margin-bottom:12px;
+    display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  }
+  .notes-section > h4 span{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--parchment-faint);font-weight:400;}
+  .notes-content{font-size:0.9rem;line-height:1.65;color:var(--parchment-dim);}
+  .notes-content p{margin:0 0 12px;max-width:64ch;}
+  .notes-content p em:only-child{color:var(--parchment-faint);font-size:0.82rem;}
+  .notes-content strong{color:var(--parchment);font-weight:600;}
+  .notes-content ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px;}
+  .notes-content li{max-width:64ch;}
+  .notes-content li::marker{color:var(--gold);}
+  .notes-content ol{margin:0 0 12px;padding-left:1.6em;display:flex;flex-direction:column;gap:6px;}
+  .notes-content ol li::marker{font-family:var(--font-mono);font-size:0.78rem;}
+  .combo-note{margin:18px 0 0;padding:14px 16px 4px;border:1px solid var(--line);border-left:2px solid var(--gold);border-radius:4px;background:rgba(255,255,255,0.015);}
+  .combo-note h5{font-family:var(--font-display);font-size:1rem;color:var(--parchment);margin:0 0 8px;font-weight:600;}
+  .combo-note ul{margin-bottom:12px;}
+  .notes-content dl{margin:0;display:flex;flex-direction:column;gap:12px;}
+  .notes-content dt{color:var(--parchment-dim);}
+  .notes-content dd{margin:4px 0 0;padding-left:12px;border-left:1px solid var(--line);color:var(--parchment-faint);font-size:0.85rem;}
+  .notes-content code{font-family:var(--font-mono);font-size:0.8rem;color:var(--parchment);}
+  .notes-content table{border-collapse:collapse;font-size:0.82rem;}
+  .notes-content th,.notes-content td{border-bottom:1px solid var(--line);padding:6px 10px 6px 0;text-align:left;vertical-align:top;}
+  .table-scroll{overflow-x:auto;}
+  .notes-source{
+    margin-top:24px;padding-top:12px;border-top:1px solid var(--line);
+    font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.04em;color:var(--parchment-faint);line-height:1.6;
+  }
+  .viewer-close{
+    position:absolute;top:14px;right:14px;z-index:3;
+    width:38px;height:38px;border-radius:999px;border:1px solid var(--line);background:var(--ink-card);
+    color:var(--parchment);font-size:1.1rem;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;transition:border-color .2s, color .2s;
+  }
+  .viewer-close:hover{border-color:var(--gold);color:var(--gold-bright);}
+  @media (max-width:860px){
+    .viewer{padding-left:max(10px, env(safe-area-inset-left,0px));padding-right:max(10px, env(safe-area-inset-right,0px));}
+    /* One scrolling column on narrow screens, so the card list isn't squeezed into a strip under the image. */
+    .viewer-panel{display:flex;flex-direction:column;height:100%;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;}
+    .viewer-close{position:sticky;top:8px;flex:none;align-self:flex-end;margin:8px 8px 8px 0;}
+    .viewer-media{flex:none;max-height:38vh;}
+    .viewer-list{flex:none;min-height:auto;border-left:0;border-top:1px solid var(--line);}
+    .viewer-body{flex:none;overflow:visible;}
+    .viewer-foot{position:sticky;bottom:0;z-index:2;background:var(--ink-raised);}
+  }
+  body.viewer-open{overflow:hidden;}
+  .deck-body{padding:26px 26px 22px 0;min-width:0;display:flex;flex-direction:column;gap:16px;}
+  @media (max-width:720px){.deck-body{padding:4px 20px 22px;}}
+  .deck-body h3{font-size:1.5rem;}
+  .deck-body .tagline{color:var(--parchment-dim);font-size:0.97rem;line-height:1.65;max-width:62ch;}
+  .key-cards{display:flex;flex-wrap:wrap;gap:8px;}
+  .key-cards .kc-label{flex-basis:100%;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--parchment-dim);opacity:.75;}
+  .chip{
+    font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.02em;
+    border:1px solid var(--line);color:var(--parchment-dim);padding:5px 10px;border-radius:999px;
+    background:var(--ink-raised);
+  }
+  .deck-foot{
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;
+    margin-top:auto;padding-top:14px;border-top:1px solid var(--line);
+  }
+  .deck-counts{font-family:var(--font-mono);font-size:0.68rem;color:var(--parchment-faint);font-variant-numeric:tabular-nums;}
+  .deck-counts b{color:var(--gold-bright);}
+  .deck-counts .deck-updated{display:block;margin-top:4px;letter-spacing:0.04em;}
+  .ydk-link{
+    font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.04em;text-transform:uppercase;
+    color:var(--ink);background:var(--gold);border:1px solid var(--gold);padding:9px 16px;border-radius:3px;
+    text-decoration:none;transition:background .2s, transform .2s;display:inline-flex;align-items:center;gap:6px;
+  }
+  .ydk-link:hover{background:var(--gold-bright);transform:translateY(-1px);}
+
+  /* ---------- Home: rankings teaser ---------- */
+  .teaser{margin-top:64px;border-top:1px solid var(--line);padding-top:36px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:32px;}
+  @media (max-width:820px){.teaser{grid-template-columns:1fr;}}
+  .teaser .eyebrow{font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);}
+  .teaser h2{font-size:clamp(1.6rem,3.4vw,2.2rem);margin-top:10px;}
+  .teaser p{color:var(--parchment-dim);margin-top:14px;max-width:46ch;}
+  .teaser .ydk-link{margin-top:22px;}
+  .teaser-list{display:flex;flex-direction:column;gap:2px;}
+
+  /* ---------- Analysis page ---------- */
+  .an-section{margin-top:56px;}
+  .an-section > h3{font-size:1.5rem;}
+  .an-section > .sub{color:var(--parchment-dim);margin-top:8px;max-width:70ch;font-size:0.95rem;}
+  .an-asof{font-family:var(--font-mono);font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--parchment-faint);margin-top:14px;}
+
+  .rank-row{
+    display:grid;grid-template-columns:2.2em minmax(0,15em) minmax(0,1fr) 3.4em;gap:12px;align-items:center;
+    padding:7px 0;border-bottom:1px dashed rgba(51,44,34,0.7);
+  }
+  .rank-row .rk{font-family:var(--font-mono);color:var(--parchment-faint);font-variant-numeric:tabular-nums;font-size:0.8rem;}
+  .rank-row .nm{min-width:0;}
+  .rank-row .nm button{font:inherit;font-size:0.92rem;color:var(--parchment);background:none;border:0;padding:0;cursor:pointer;text-align:left;
+    text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;}
+  .rank-row .nm button:hover{color:var(--gold-bright);text-decoration-color:var(--gold);}
+  .rank-row .nm small{display:block;font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--parchment-faint);margin-top:2px;}
+  .bar-track{height:10px;background:var(--ink-raised);border-radius:0 4px 4px 0;position:relative;}
+  .bar-fill{height:100%;background:var(--gold);border-radius:0 4px 4px 0;}
+  .rank-row .val{font-family:var(--font-mono);font-size:0.85rem;color:var(--gold-bright);text-align:right;font-variant-numeric:tabular-nums;}
+  .tier-sep{font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);padding:16px 0 4px;}
+  .tier-sep span{color:var(--parchment-faint);letter-spacing:0.04em;text-transform:none;margin-left:8px;}
+  @media (max-width:560px){.rank-row{grid-template-columns:1.8em minmax(0,1fr) 3em;}.rank-row .bar-track{grid-column:2 / 4;grid-row:2;}}
+
+  .table-wrap{overflow-x:auto;margin-top:18px;border:1px solid var(--line);border-radius:4px;}
+  table.stats{border-collapse:collapse;width:100%;min-width:900px;font-size:0.82rem;}
+  table.stats th, table.stats td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  table.stats th:first-child, table.stats td:first-child, table.stats th:nth-child(2), table.stats td:nth-child(2){text-align:left;}
+  table.stats thead th{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--parchment-faint);font-weight:500;background:var(--ink-raised);position:sticky;top:0;}
+  table.stats thead th button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;letter-spacing:inherit;text-transform:inherit;}
+  table.stats thead th button:hover, table.stats thead th[aria-sort] button{color:var(--gold-bright);}
+  table.stats tbody tr:hover td{background:rgba(201,162,75,0.05);}
+  table.stats td.ov{color:var(--gold-bright);font-weight:600;}
+  table.stats td.dk{color:var(--parchment);}
+  table.stats td .hi{color:var(--gold-bright);}
+  table.stats td .lo{color:var(--low);}
+
+  .col-key-wrap{margin-top:18px;}
+  .col-key-wrap h4{font-size:1rem;margin-bottom:10px;}
+  .col-key{margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px 24px;}
+  .col-key div{display:grid;grid-template-columns:6.6em minmax(0,1fr);gap:10px;align-items:baseline;padding:6px 0;border-bottom:1px dashed rgba(51,44,34,0.7);}
+  .col-key dt{font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold-bright);}
+  .col-key dd{margin:0;font-size:0.82rem;line-height:1.5;color:var(--parchment-dim);}
+  .insights{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:20px;}
+  .insight{border:1px solid var(--line);border-radius:4px;background:var(--ink-card);padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px;}
+  .insight .k{font-family:var(--font-display);font-size:1.7rem;color:var(--gold-bright);line-height:1;}
+  .insight h4{font-size:1.02rem;}
+  .insight p{font-size:0.88rem;color:var(--parchment-dim);line-height:1.6;}
+
+  .meta-box{border:1px solid var(--line);border-radius:4px;background:var(--ink-raised);padding:20px 22px;margin-top:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;}
+  @media (max-width:760px){.meta-box{grid-template-columns:1fr;}}
+  .meta-box h4{font-size:1rem;margin-bottom:8px;}
+  .meta-box ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px;color:var(--parchment-dim);font-size:0.88rem;line-height:1.55;}
+  .meta-box li::marker{color:var(--gold);}
+  .meta-box .src{grid-column:1 / -1;font-family:var(--font-mono);font-size:0.62rem;color:var(--parchment-faint);line-height:1.8;}
+  .meta-box .src a{color:var(--parchment-dim);}
+
+  .deck-an{border:1px solid var(--line);border-radius:4px;background:var(--ink-card);margin-top:20px;overflow:hidden;}
+  .deck-an-head{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--line);}
+  .deck-an-head .big{font-family:var(--font-display);font-size:2.2rem;color:var(--parchment-faint);line-height:1;font-variant-numeric:tabular-nums;min-width:1.6em;}
+  .deck-an-head h4{font-size:1.35rem;}
+  .deck-an-head h4 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left;}
+  .deck-an-head h4 button:hover{color:var(--gold-bright);}
+  .deck-an-head .meta{font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--parchment-faint);margin-top:4px;}
+  .score-badge{text-align:right;}
+  .score-badge .n{font-family:var(--font-display);font-size:2rem;color:var(--gold-bright);line-height:1;}
+  .score-badge .t{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--parchment-dim);margin-top:4px;}
+  .deck-an-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:28px;padding:20px 22px 22px;}
+  @media (max-width:820px){.deck-an-body{grid-template-columns:1fr;}}
+  .ratings{display:flex;flex-direction:column;gap:7px;}
+  .rating{display:grid;grid-template-columns:7.5em minmax(0,1fr) 2.4em;gap:10px;align-items:center;font-size:0.8rem;}
+  .rating .l{color:var(--parchment-dim);}
+  .rating .v{font-family:var(--font-mono);color:var(--parchment);text-align:right;font-variant-numeric:tabular-nums;}
+  .rating.is-info .bar-fill{background:var(--parchment-faint);}
+  .rating .bar-track{height:8px;}
+  .odds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px;}
+  .odd{border:1px solid var(--line);border-radius:3px;padding:9px 10px;background:var(--ink-raised);}
+  .odd .n{font-family:var(--font-mono);font-size:1.02rem;color:var(--parchment);font-variant-numeric:tabular-nums;}
+  .odd .l{font-size:0.66rem;color:var(--parchment-faint);line-height:1.35;margin-top:3px;}
+  .an-text{display:flex;flex-direction:column;gap:12px;}
+  .an-text .verdict{font-family:var(--font-display);font-size:1.08rem;line-height:1.5;color:var(--parchment);}
+  .an-text .pair{font-size:0.88rem;line-height:1.6;color:var(--parchment-dim);}
+  .an-text .pair b{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:500;display:block;margin-bottom:2px;}
+  .preds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:4px;}
+  @media (max-width:560px){.preds{grid-template-columns:1fr;}}
+  .pred{border:1px solid var(--line);border-radius:4px;padding:11px 12px;background:var(--ink-raised);}
+  .pred .lvl{font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--parchment-faint);}
+  .pred .out{font-family:var(--font-display);font-size:0.98rem;color:var(--gold-bright);margin-top:4px;}
+  .pred p{font-size:0.78rem;line-height:1.55;color:var(--parchment-dim);margin-top:6px;}
+  .counted{border-top:1px solid var(--line);padding:12px 22px 14px;}
+  .counted summary{cursor:pointer;font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--parchment-dim);list-style:none;}
+  .counted summary::-webkit-details-marker{display:none;}
+  .counted summary::before{content:"+ ";color:var(--gold);}
+  .counted[open] summary::before{content:"− ";}
+  .counted .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:12px;}
+  @media (max-width:760px){.counted .cols{grid-template-columns:1fr;}}
+  .counted h5{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin:0 0 6px;font-weight:500;}
+  .counted ul{margin:0;padding-left:1em;font-size:0.78rem;color:var(--parchment-dim);line-height:1.6;}
+  .method{color:var(--parchment-dim);font-size:0.9rem;line-height:1.7;max-width:76ch;}
+  .method p{margin-top:10px;}
+  .method strong{color:var(--parchment);}
+  .method code{font-family:var(--font-mono);font-size:0.8rem;color:var(--parchment);}
+  .nav-link.is-analysis{border-color:var(--line);}
+
+  /* ---------- Visual guide (slides) ---------- */
+  .guide-link{
+    font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.04em;text-transform:uppercase;
+    color:var(--gold-bright);background:transparent;border:1px solid var(--gold);padding:9px 16px;border-radius:3px;
+    text-decoration:none;cursor:pointer;transition:background .2s, color .2s;display:inline-flex;align-items:center;
+  }
+  .guide-link:hover{background:var(--gold);color:var(--ink);}
+  .guide{
+    position:fixed;inset:0;z-index:110;background:var(--ink);display:flex;flex-direction:column;
+    padding:max(12px, env(safe-area-inset-top,0px)) max(12px, env(safe-area-inset-right,0px)) max(12px, env(safe-area-inset-bottom,0px)) max(12px, env(safe-area-inset-left,0px));
+  }
+  .guide[hidden]{display:none!important;}
+  .guide-bar{display:flex;align-items:center;gap:14px;max-width:880px;width:100%;margin:0 auto 10px;}
+  .guide-bar .t{flex:1;min-width:0;}
+  .guide-bar .t b{display:block;font-family:var(--font-display);font-size:1.1rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .guide-bar .t span{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--parchment-faint);}
+  .guide-bar .pg{font-family:var(--font-mono);font-size:0.72rem;color:var(--parchment-dim);font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .guide-stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;}
+  .slide-holder{position:relative;flex:none;}
+  .slide-holder > .slide{position:absolute;left:0;top:0;transform-origin:0 0;}
+  .slide{
+    --hue:var(--gold);
+    position:relative;width:min(880px, 100%, calc((100vh - 150px) * 1));aspect-ratio:1/1;max-height:100%;
+    border:1px solid var(--line);border-radius:8px;overflow:hidden;
+    background:radial-gradient(120% 80% at 50% 0%, color-mix(in oklab, var(--hue) 28%, transparent) 0%, transparent 60%),
+               radial-gradient(90% 60% at 100% 100%, color-mix(in oklab, var(--hue) 16%, transparent) 0%, transparent 70%), #0e0c0a;
+    display:flex;flex-direction:column;padding:4.2% 4.6% 3.6%;
+    container-type:inline-size;
+  }
+  @media (max-width:640px){.slide{aspect-ratio:auto;width:100%;max-height:none;min-height:100%;overflow-y:auto;}}
+  .slide[data-col="method"]{--hue:#c9a24b;} .slide[data-col="playstyle-1"]{--hue:#c2553f;} .slide[data-col="playstyle-2"]{--hue:#3aa394;}
+  .slide[data-col="nostalgic-1"]{--hue:#9a68c9;} .slide[data-col="nostalgic-2"]{--hue:#4f84d6;} .slide[data-col="nostalgic-3"]{--hue:#62a85e;}
+  .s-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+  .s-kicker{font-family:var(--font-mono);font-size:max(0.6rem, 1.35cqw);letter-spacing:0.16em;text-transform:uppercase;color:var(--hue);}
+  .s-mark{font-family:var(--font-display);font-size:max(0.7rem, 1.7cqw);color:var(--parchment-faint);white-space:nowrap;}
+  .s-title{font-family:var(--font-display);font-weight:700;font-size:clamp(1.3rem, 5.2cqw, 2.6rem);line-height:1.05;margin-top:1.2cqw;color:var(--parchment);text-wrap:balance;}
+  .s-rule{height:2px;background:var(--hue);width:16cqw;margin:2.2cqw 0 2.6cqw;border-radius:2px;}
+  .s-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:2.4cqw;}
+  .s-foot span:last-child{white-space:nowrap;}
+  .s-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:3cqw;margin-top:2cqw;font-family:var(--font-mono);font-size:max(0.58rem, 1.2cqw);color:var(--parchment-faint);letter-spacing:0.06em;}
+  .s-panel{background:rgba(14,12,10,0.72);border:1px solid color-mix(in oklab, var(--hue) 45%, var(--line));border-radius:6px;padding:2.4cqw 2.8cqw;}
+  .s-text{font-size:max(0.82rem, 2.05cqw);line-height:1.5;color:var(--parchment);}
+  .s-text.dim{color:var(--parchment-dim);}
+  .s-text strong{color:var(--gold-bright);font-weight:700;}
+  .gcard{
+    flex:none;background-repeat:no-repeat;border-radius:max(3px, 0.5cqw);
+    box-shadow:0 0.6cqw 1.6cqw rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.12);
+  }
+  .gcard .gname{display:none;}
+  html.noimg .gcard{display:flex;align-items:flex-start;justify-content:flex-start;background-color:#1d1710;border:1px solid rgba(214,168,76,.35);}
+  html.noimg .gcard .gname{display:block;padding:8% 7%;max-width:62%;text-align:left;font:500 clamp(8px,1.1cqw,12px)/1.25 var(--font-body);color:#e9dcc0;overflow:hidden;word-break:break-word;}
+  .gcard.is-fan{-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent);mask-image:linear-gradient(90deg,#000 80%,transparent);border-radius:max(3px,0.5cqw) 0 0 max(3px,0.5cqw);}
+  .cover{display:grid;grid-template-columns:38% minmax(0,1fr);gap:3.4cqw;align-items:start;flex:1;min-height:0;}
+  @media (max-width:640px){.cover{grid-template-columns:1fr;}}
+  .cover-card{display:flex;justify-content:center;}
+  .chips{display:flex;flex-wrap:wrap;gap:1cqw;}
+  .chips span{font-family:var(--font-mono);font-size:max(0.6rem, 1.35cqw);padding:0.7cqw 1.3cqw;border:1px solid color-mix(in oklab, var(--hue) 50%, var(--line));border-radius:999px;color:var(--parchment-dim);}
+  .eng{display:grid;grid-template-columns:minmax(0,1fr);gap:1.4cqw;}
+  .eng-cards{display:flex;gap:1.1cqw;flex-wrap:wrap;}
+  .eng h4{font-family:var(--font-display);font-size:max(0.95rem, 2.5cqw);color:var(--hue);margin:0;}
+  .flow{display:grid;row-gap:3.2cqw;align-items:start;}
+  .node{position:relative;display:flex;flex-direction:column;align-items:center;gap:1.2cqw;min-width:0;}
+  .node .stack{display:flex;justify-content:center;}
+  .node .no{
+    position:absolute;top:-1.2cqw;left:0;z-index:2;min-width:3.4cqw;height:3.4cqw;padding:0 0.8cqw;border-radius:999px;
+    display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:max(0.6rem,1.5cqw);
+    background:var(--hue);color:#0e0c0a;font-weight:600;box-shadow:0 0 0 0.4cqw #0e0c0a;
+  }
+  .node .cap{font-size:max(0.68rem, 1.65cqw);line-height:1.35;text-align:center;color:var(--parchment);background:rgba(14,12,10,0.8);border:1px solid color-mix(in oklab, var(--hue) 40%, var(--line));border-radius:4px;padding:0.9cqw 1.1cqw;width:100%;overflow-wrap:anywhere;}
+  .node.is-text .cap{margin-top:var(--tpad, 4cqw);border-style:dashed;color:var(--parchment-dim);}
+  .node.has-arrow::before{
+    content:"";position:absolute;left:calc(var(--gap) * -0.7);top:calc(var(--ah) - 1.4cqw);
+    border-top:1.4cqw solid transparent;border-bottom:1.4cqw solid transparent;border-left:calc(var(--gap) * 0.4) solid var(--hue);
+    filter:drop-shadow(0 0 0.6cqw color-mix(in oklab, var(--hue) 60%, transparent));
+  }
+  .toc{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0.8cqw 2cqw;}
+  .toc button{font:inherit;font-size:max(0.72rem,1.7cqw);color:var(--parchment-dim);background:none;border:0;padding:0.4cqw 0;cursor:pointer;text-align:left;display:flex;gap:1.2cqw;align-items:baseline;}
+  .toc button:hover{color:var(--gold-bright);}
+  .toc b{font-family:var(--font-mono);font-weight:500;color:var(--hue);font-size:max(0.6rem,1.4cqw);min-width:2.4cqw;}
+  .s-sub{font-family:var(--font-mono);font-size:max(0.58rem,1.3cqw);letter-spacing:0.14em;text-transform:uppercase;color:var(--parchment-faint);margin:0 0 1.4cqw;}
+  .strip{display:flex;flex-wrap:wrap;gap:1cqw;}
+  .s-text.sm{font-size:max(0.76rem, 1.68cqw);line-height:1.45;}
+  .cov2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.4cqw;align-items:start;flex:1;min-height:0;}
+  .cov2 .col{display:flex;flex-direction:column;gap:2.4cqw;min-width:0;}
+  @media (max-width:640px){.cov2{grid-template-columns:1fr;}}
+  .rules{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:0.9cqw;}
+  .rules li::marker{color:var(--hue);}
+  .facts{display:flex;flex-direction:column;gap:1.6cqw;}
+  .fact{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2cqw;align-items:start;}
+  .fact .num{font-family:var(--font-display);font-size:max(1rem,3cqw);color:var(--hue);line-height:1;min-width:3cqw;}
+  .sw{display:grid;grid-template-columns:1fr 1fr;gap:2.4cqw;}
+  @media (max-width:640px){.sw{grid-template-columns:1fr;}}
+  .sw h4{font-family:var(--font-display);font-size:max(1rem,2.6cqw);margin:0 0 1.2cqw;color:var(--hue);}
+  .sw ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:1.2cqw;}
+  .sw li::marker{color:var(--hue);}
+  .final{display:flex;flex-direction:column;gap:2cqw;align-items:center;flex:1;min-height:0;}
+  .final img{max-height:58cqw;width:auto;border-radius:6px;border:1px solid var(--line);}
+  .final .acts{display:flex;gap:1.4cqw;flex-wrap:wrap;justify-content:center;}
+  .guide-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin:10px auto 0;max-width:880px;width:100%;}
+  .guide-nav .ghost-btn{min-width:96px;}
+  .guide-nav .ghost-btn:disabled{opacity:0.35;cursor:default;}
+  .dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;flex:1;}
+  .dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--parchment-faint);background:transparent;padding:0;cursor:pointer;}
+  .dots button[aria-current="true"]{background:var(--gold);border-color:var(--gold);}
+  .guide-state{color:var(--parchment-dim);font-family:var(--font-mono);font-size:0.8rem;}
+  @media (prefers-reduced-motion: no-preference){ .slide{animation:slideIn .24s ease;} @keyframes slideIn{from{opacity:0;}to{opacity:1;}} }   /* fade only: transform is used for fit-to-screen scaling */
+
+  footer{
+    border-top:1px solid var(--line);padding:32px 0 48px;margin-top:40px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.06em;text-transform:uppercase;
+    color:var(--parchment-faint);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none!important;}
+  }
+
+
+  /* ---------- Scroll choreography: motion tied to scroll position (runs only when motion is allowed) ---------- */
+  .read-progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--gold);transform-origin:left center;transform:scaleX(0);opacity:0;transition:opacity .2s ease;pointer-events:none;}
+  .nav.has-progress .read-progress{opacity:1;}
+  .tour{display:none;}
+  @media (prefers-reduced-motion: no-preference) and (min-width: 860px) and (min-height: 560px){
+    .tour{display:block;position:relative;height:calc(var(--steps, 6) * 70vh + 100vh);margin-top:24px;}
+    .tour-stage{position:sticky;top:var(--navh, 64px);height:calc(100vh - var(--navh, 64px));display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) 28px;align-items:center;gap:44px;overflow:hidden;}
+    .tour-art{position:relative;height:min(68vh, 560px);}
+    .tour-panel{position:absolute;inset:0;opacity:0;}
+    .tour-panel img{position:absolute;top:50%;left:50%;width:56%;aspect-ratio:1.1;object-fit:cover;object-position:center 12%;border:1px solid var(--line);border-radius:6px;background:var(--ink-card);
+      box-shadow:0 30px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);will-change:transform;}
+    .tour-copy{position:relative;height:min(60vh, 440px);}
+    .tour-step{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:14px;opacity:0;will-change:transform, opacity;}
+    .tour-step .chapter-no{font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-bright);}
+    .tour-step h3{font-size:clamp(2rem, 3.6vw, 3rem);line-height:1.05;}
+    .tour-step p{color:var(--parchment-dim);line-height:1.65;max-width:46ch;}
+    .tour-step ul{list-style:none;padding:0;margin:4px 0 6px;display:flex;flex-direction:column;gap:6px;font-family:var(--font-mono);font-size:0.75rem;color:var(--parchment-dim);}
+    .tour-step li::before{content:"— ";color:var(--gold);}
+    .tour-step .ydk-link{align-self:flex-start;}
+    .tour-rail{position:relative;height:min(52vh, 380px);width:2px;background:var(--line);justify-self:center;}
+    .tour-rail i{position:absolute;inset:0;background:var(--gold);transform-origin:top center;transform:scaleY(0);}
+    .tour-rail b{position:absolute;left:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:var(--ink);border:1px solid var(--parchment-faint);transition:background .2s ease, border-color .2s ease;}
+    .tour-rail b.on{background:var(--gold);border-color:var(--gold);}
+    .tour-head{position:absolute;top:28px;left:0;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--parchment-faint);}
+  }
+  /* ---------- Screen choreography: each screen enters in layers (frame -> heading -> detail -> actions) ---------- */
+  :root{--ease-out:cubic-bezier(0.23, 1, 0.32, 1);}
+  @media (prefers-reduced-motion: no-preference){
+    .ly{animation:lyIn .5s var(--ease-out) both;animation-delay:calc(var(--i, 0) * 60ms);}
+    .ly-q{animation:lyIn .34s var(--ease-out) both;animation-delay:calc(var(--i, 0) * 30ms);--ly-y:10px;}
+    .ly-art{animation:lyCurtain .8s var(--ease-out) both;animation-delay:calc(var(--i, 0) * 60ms);}
+    .ly-art img{animation:lySettle .8s var(--ease-out) both;animation-delay:calc(var(--i, 0) * 60ms);}
+    .ly-rule{animation:lyRule .5s var(--ease-out) both;animation-delay:calc(var(--i, 0) * 30ms);transform-origin:left center;}
+    .ly-await{opacity:0;}
+    @keyframes lyIn{from{opacity:0;transform:translateY(var(--ly-y, 16px));}}
+    @keyframes lyCurtain{from{clip-path:inset(0 0 100% 0);}to{clip-path:inset(0 0 0 0);}}
+    @keyframes lySettle{from{transform:scale(1.08);}}
+    @keyframes lyRule{from{transform:scaleX(0);}}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ly, .ly-q, .ly-art, .ly-rule{animation:lyFade .3s ease both;animation-delay:calc(var(--i, 0) * 30ms);}
+    @keyframes lyFade{from{opacity:0;}}
+  }
+</style>
+
+<div class="nav" id="siteNav">
+  <div class="nav-inner">
+    <button class="brand" data-nav="home"><small>⟡</small>The Vault</button>
+    <div class="nav-links" id="navLinks"></div>
+  </div>
+</div>
+
+<main>
+  <section id="page-home">
+    <div class="hero">
+      <span class="hero-eyebrow">A Yu-Gi-Oh! deck collection</span>
+      <h1>Twenty decks.<br>Six reasons to <em>build</em> them.</h1>
+      <p class="lede">Every deck in this collection earns its place for a different reason — a summoning method showcased, a playstyle chased, or a childhood archetype finally done right. This is the record of all of it.</p>
+      <div class="hero-stats" id="heroStats"></div>
+    </div>
+    <div class="collection-grid" id="collectionGrid"></div>
+    <div class="teaser">
+      <div>
+        <span class="eyebrow">Collection report · October 2026</span>
+        <h2>How the twenty decks rank</h2>
+        <p>Every deck scored on one shared scale: consistency, ceiling, floor, both sides of the die roll, resilience, interaction and fit in the current format. Opening-hand odds are calculated exactly from each decklist.</p>
+        <button class="ydk-link" type="button" data-nav="analysis">Read the full analysis</button>
+      </div>
+      <div class="teaser-list" id="teaserList"></div>
+    </div>
+  </section>
+
+  <section id="page-analysis" hidden>
+    <div class="chapter-head">
+      <button class="back-link" data-nav="home">&larr;&nbsp; All collections</button>
+      <span class="chapter-no">Collection report</span>
+      <h2>Deck analysis</h2>
+      <p>All twenty decks, scored on one shared 1–10 scale, ranked, and placed against the current TCG format, with predictions for nationals, regionals and locals.</p>
+      <div class="an-asof" id="anAsOf"></div>
+    </div>
+    <div id="analysisMount"></div>
+  </section>
+
+  <div id="chapterMount"></div>
+</main>
+
+<footer>
+  <span>The Vault — a personal Yu-Gi-Oh! TCG archive</span>
+  <span id="footerUpdated"></span>
+</footer>
+
+<div class="guide" id="guide" role="dialog" aria-modal="true" aria-labelledby="guideTitle" hidden>
+  <div class="guide-bar">
+    <div class="t"><b id="guideTitle"></b><span id="guideSub"></span></div>
+    <span class="pg" id="guidePage" aria-live="polite"></span>
+    <button class="viewer-close" id="guideClose" type="button" aria-label="Close visual guide" style="position:static">&times;</button>
+  </div>
+  <div class="guide-stage" id="guideStage"></div>
+  <div class="guide-nav">
+    <button class="ghost-btn" id="guidePrev" type="button">&larr; Prev</button>
+    <div class="dots" id="guideDots"></div>
+    <button class="ghost-btn" id="guideNext" type="button">Next &rarr;</button>
+  </div>
+</div>
+
+<div class="viewer" id="viewer" aria-hidden="true" inert>
+  <div class="viewer-panel" role="dialog" aria-modal="true" aria-labelledby="viewerTitle">
+    <button class="viewer-close" id="viewerClose" aria-label="Close deck viewer">&times;</button>
+    <div class="viewer-media" id="viewerMedia">
+      <img id="viewerImg" src="" alt="">
+      <span class="zoom-hint">Click image to zoom</span>
+    </div>
+    <div class="viewer-list">
+      <div class="viewer-head">
+        <span class="chapter-no" id="viewerChapter"></span>
+        <h3 id="viewerTitle"></h3>
+        <div class="deck-counts" id="viewerCounts"></div>
+        <div class="viewer-tabs" role="tablist" aria-label="Deck viewer sections">
+          <button class="vtab" role="tab" type="button" data-view="list" aria-controls="viewerBody">Decklist</button>
+          <button class="vtab" role="tab" type="button" data-view="notes" aria-controls="viewerNotes">Deck notes</button>
+          <button class="vtab" role="tab" type="button" data-view="help" aria-controls="viewerHelp">How to use</button>
+        </div>
+      </div>
+      <div class="viewer-body viewer-notes" id="viewerNotes" role="tabpanel" hidden></div>
+      <div class="viewer-body" id="viewerBody"></div>
+      <div class="viewer-body viewer-help" id="viewerHelp" role="tabpanel" hidden>
+        <div class="help-block">
+          <h4>Get the .ydk file</h4>
+          <ol>
+            <li>Click <button class="inline-btn" type="button" data-copy="download">Download .ydk</button>. It saves to your Downloads folder as <code id="helpFilename">deck.ydk</code>.</li>
+            <li>Move the file into your simulator's deck folder, or import it from the simulator's deck menu.</li>
+          </ol>
+          <p class="help-alt">Download blocked? Click <button class="inline-btn" type="button" data-copy="ydk">Copy .ydk text</button>, paste it into Notepad (on Mac, TextEdit with Format › Make Plain Text), and save it with a name ending in <code>.ydk</code>. In Notepad, set "Save as type" to "All files" so it doesn't save as <code>.txt</code>.</p>
+        </div>
+        <div class="help-block">
+          <h4>Load it in Dueling Nexus</h4>
+          <ol>
+            <li>Click <button class="inline-btn" type="button" data-copy="ydke">Copy ydke:// link</button></li>
+            <li>Open the Dueling Nexus deck editor.</li>
+            <li>Press Ctrl+V. The deck loads into the editor.</li>
+          </ol>
+        </div>
+        <button class="ghost-btn" id="helpBack" type="button">&larr; Back to decklist</button>
+      </div>
+      <div class="viewer-foot">
+        <button class="ghost-btn" id="downloadYdk" type="button" title="Save this deck as a .ydk file for EDOPro, YGO Omega and other simulators">Download .ydk</button>
+        <button class="ghost-btn" id="copyYdk" type="button" title="Paste into a blank .ydk file or a simulator that accepts YDK text">Copy .ydk text</button>
+        <button class="ghost-btn" id="copyYdke" type="button" title="Paste into a deck editor that imports ydke:// links">Copy ydke:// link</button>
+        <button class="ghost-btn" id="copyList" type="button">Copy card list</button>
+        <span class="copy-status" id="copyStatus" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Offline build: images are embedded as <script type="text/plain" id="img:PATH"> base64 blocks and used as data: URLs (works in sandboxed previews and file:// pages).
+   The online page has no such blocks, so asset() just returns the path. */
+var ASSET_URLS = {};
+function asset(path){
+  if (ASSET_URLS[path]) return ASSET_URLS[path];
+  var e = document.getElementById("img:" + path);
+  if (!e) return path;
+  return (ASSET_URLS[path] = "data:" + (e.getAttribute("data-type") || "image/webp") + ";base64," + e.textContent.trim());
+}
+(function(){
+  "use strict";
+
+  var COLLECTIONS = /*@COLLECTIONS@*/null;
+
+  function el(tag, attrs, children){
+    var e = document.createElement(tag);
+    attrs = attrs || {};
+    for (var k in attrs){
+      if (k === "class") e.className = attrs[k];
+      else if (k === "html") e.innerHTML = attrs[k];
+      else e.setAttribute(k, attrs[k]);
+    }
+    (children || []).forEach(function(c){ if (c) e.appendChild(c); });
+    return e;
+  }
+  function text(tag, cls, str){
+    var e = el(tag, cls ? {class: cls} : {});
+    e.textContent = str;
+    return e;
+  }
+  /* "2026-10-26" -> "Oct 26, 2026" without depending on the browser's locale. */
+  function fmtDate(iso){
+    var p = String(iso).split("-"), M = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    return p.length === 3 ? M[+p[1] - 1] + " " + (+p[2]) + ", " + p[0] : String(iso);
+  }
+
+  /* Full decklists, parsed from each deck's reference guide (§4); verified 40 Main / 15 Extra. */
+  var DECKLISTS = /*@DECKLISTS@*/null;
+  /* Each deck's .ydk file contents and its ydke:// link (built from the same passcodes, round-trip verified). */
+  var YDK = /*@YDK@*/null;
+  /* §5, §8, §11 and §12 of each reference guide, rendered verbatim from the guide's Markdown. */
+  var NOTES = /*@NOTES@*/null;
+  /* Collection report: ratings (build/scores.py), exact hand odds (build/hands.py), text (build/analysis_text.py). */
+  var ANALYSIS = /*@ANALYSIS@*/null;
+  var DECK_INDEX = {};
+  var totalDecks = COLLECTIONS.reduce(function(n, c){ return n + c.decks.length; }, 0);
+
+  /* ---------- Nav links ---------- */
+  var navLinks = document.getElementById("navLinks");
+  COLLECTIONS.forEach(function(c){
+    var b = el("button", {class: "nav-link", "data-nav": c.id});
+    b.textContent = c.title;
+    navLinks.appendChild(b);
+  });
+  var anLink = el("button", {class: "nav-link is-analysis", "data-nav": "analysis"});
+  anLink.textContent = "Analysis";
+  navLinks.appendChild(anLink);
+  // The link row scrolls sideways on narrow screens with its scrollbar hidden; fade whichever edge has more links.
+  function navFade(){
+    var max = navLinks.scrollWidth - navLinks.clientWidth;
+    navLinks.classList.toggle("more-l", navLinks.scrollLeft > 2);
+    navLinks.classList.toggle("more-r", navLinks.scrollLeft < max - 2);
+  }
+  function navReveal(){
+    var a = navLinks.querySelector('[aria-current="true"]');
+    if (a && navLinks.scrollWidth > navLinks.clientWidth){
+      var nr = navLinks.getBoundingClientRect(), ar = a.getBoundingClientRect();
+      if (ar.left < nr.left || ar.right > nr.right){
+        navLinks.scrollTo({left: navLinks.scrollLeft + ar.left - nr.left - (nr.width - ar.width) / 2, behavior: motionOK ? "smooth" : "auto"});
+      }
+    }
+    navFade();
+  }
+  navLinks.addEventListener("scroll", navFade, {passive: true});
+  window.addEventListener("resize", navFade);
+
+  /* ---------- Hero stats ---------- */
+  var heroStats = document.getElementById("heroStats");
+  [[String(totalDecks), "Decks"], [String(COLLECTIONS.length), "Collections"], ["40 / 15", "Main / Extra"]].forEach(function(s){
+    heroStats.appendChild(el("div", {class: "stat"}, [text("div", "n", s[0]), text("div", "l", s[1])]));
+  });
+
+  /* ---------- Home collection grid ---------- */
+  var grid = document.getElementById("collectionGrid");
+  COLLECTIONS.forEach(function(c){
+    var tile = el("button", {class: "collection-tile", "data-nav": c.id});
+    var img = el("img", {class: "art", src: asset("art/" + c.decks[0].slug + ".png"), alt: c.title, loading: "lazy"});
+    var meta = el("div", {class: "meta"}, [
+      text("span", "chapter-no", c.no),
+      text("h3", null, c.title),
+      text("span", "count", c.decks.length + " deck" + (c.decks.length === 1 ? "" : "s"))
+    ]);
+    tile.appendChild(img);
+    tile.appendChild(el("div", {class: "scrim"}));
+    tile.appendChild(meta);
+    grid.appendChild(tile);
+  });
+  /* ---------- Home: pinned tour of the six collections (scroll-scrubbed) ---------- */
+  var tour = el("div", {class: "tour", id: "tour"}); tour.style.setProperty("--steps", COLLECTIONS.length);
+  var tStage = el("div", {class: "tour-stage"}), tArt = el("div", {class: "tour-art", "aria-hidden": "true"}),
+      tCopy = el("div", {class: "tour-copy"}), tRail = el("div", {class: "tour-rail", "aria-hidden": "true"}, [el("i")]);
+  tStage.appendChild(text("span", "tour-head", "The six collections — scroll"));
+  var TOUR = COLLECTIONS.map(function(c, i){
+    var panel = el("div", {class: "tour-panel"});
+    var imgs = c.decks.slice(0, 3).map(function(d){ var im = el("img", {alt: "", decoding: "async"}); im.setAttribute("data-src", asset("art/" + d.slug + ".png")); panel.appendChild(im); return im; });
+    tArt.appendChild(panel);
+    var list = el("ul"); c.decks.forEach(function(d){ list.appendChild(text("li", null, d.name)); });
+    var step = el("div", {class: "tour-step"}, [text("span", "chapter-no", c.no + " · " + c.decks.length + " deck" + (c.decks.length === 1 ? "" : "s")),
+      text("h3", null, c.title), text("p", null, c.intro), list,
+      text("button", "ydk-link", "Open " + c.title)]);
+    var ob = step.querySelector("button"); ob.type = "button"; ob.setAttribute("data-nav", c.id);
+    step.inert = true;
+    tCopy.appendChild(step);
+    var dot = el("b"); dot.style.top = (COLLECTIONS.length > 1 ? i / (COLLECTIONS.length - 1) * 100 : 0) + "%"; tRail.appendChild(dot);
+    return {panel: panel, imgs: imgs, step: step, dot: dot};
+  });
+  tStage.appendChild(tArt); tStage.appendChild(tCopy); tStage.appendChild(tRail); tour.appendChild(tStage);
+  grid.parentNode.insertBefore(tour, grid);
+  var siteNav = document.getElementById("siteNav"), readBar = el("div", {class: "read-progress", "aria-hidden": "true"});
+  siteNav.appendChild(readBar);
+
+
+  /* ---------- Chapter pages ---------- */
+  var mount = document.getElementById("chapterMount");
+  COLLECTIONS.forEach(function(c){
+    var section = el("section", {id: "page-" + c.id, hidden: "hidden"});
+    var head = el("div", {class: "chapter-head"});
+    var back = el("button", {class: "back-link", "data-nav": "home"});
+    back.innerHTML = "&larr;&nbsp; All collections";
+    head.appendChild(back);
+    head.appendChild(text("span", "chapter-no", c.no));
+    head.appendChild(text("h2", null, c.title));
+    if (c.family) head.appendChild(text("p", "chapter-family", c.family));
+    head.appendChild(text("p", null, c.intro));
+    head.appendChild(text("div", "chapter-count", c.decks.length + " deck" + (c.decks.length === 1 ? "" : "s") + " in this collection"));
+    section.appendChild(head);
+
+    var list = el("div", {class: "deck-list"});
+    c.decks.forEach(function(d){
+      var card = el("article", {class: "deck-card"});
+      var artBtn = el("button", {class: "art-trigger", type: "button", "data-deck": d.slug,
+        "aria-label": "Open " + d.name + " decklist and full image"}, [
+        el("img", {src: asset("art/" + d.slug + ".png"), alt: "", loading: "lazy"}),
+        text("span", "peek", "View decklist")
+      ]);
+      var artWrap = el("div", {class: "art-wrap"}, [artBtn]);
+      var chips = el("div", {class: "key-cards", "aria-label": "Best 5-card opening hand"});
+      chips.appendChild(text("span", "kc-label", "Best opening hand"));
+      var kc = {}; d.keyCards.forEach(function(k){ kc[k] = (kc[k] || 0) + 1; });
+      Object.keys(kc).forEach(function(k){ chips.appendChild(text("span", "chip", kc[k] > 1 ? k + " ×" + kc[k] : k)); });
+
+      var counts = el("div", {class: "deck-counts"});
+      counts.innerHTML = "<b>" + d.main + "</b> Main &nbsp;·&nbsp; <b>" + d.extra + "</b> Extra<br>" + d.breakdown;
+      if (d.updated) counts.appendChild(text("span", "deck-updated", "List updated " + fmtDate(d.updated)));
+
+      var ydk = el("button", {class: "ydk-link", type: "button", "data-deck": d.slug, "data-view": "notes",
+        title: "Engine notes, combo lines, strengths and weaknesses"});
+      ydk.textContent = "Deck notes";
+
+      var viewBtn = el("button", {class: "ghost-btn", type: "button", "data-deck": d.slug});
+      viewBtn.textContent = "Full decklist";
+      var guideA = el("a", {class: "guide-link", href: "#guide-" + d.slug});
+      guideA.textContent = "Visual guide";
+      var foot = el("div", {class: "deck-foot"}, [counts, el("div", {class: "foot-actions"}, [viewBtn, guideA, ydk])]);
+      var titleBtn = el("button", {class: "deck-title-link", type: "button", "data-deck": d.slug});
+      titleBtn.textContent = d.name;
+      var title = el("h3", null, [titleBtn]);
+      DECK_INDEX[d.slug] = {deck: d, collection: c};
+      var body = el("div", {class: "deck-body"}, [
+        title,
+        d.style ? text("span", "deck-style", d.style) : null,
+        text("p", "tagline", d.tagline),
+        chips,
+        foot
+      ]);
+      card.appendChild(artWrap);
+      card.appendChild(body);
+      list.appendChild(card);
+    });
+    section.appendChild(list);
+    mount.appendChild(section);
+  });
+
+  /* ---------- Analysis ---------- */
+  var RLABEL = {cons: "Consistency", ceil: "Ceiling", floor: "Floor", g1: "Going first", g2: "Going second",
+                res: "Resilience", int: "Interaction", meta: "Meta fit"};
+  function tierOf(x){
+    return x >= 7.6 ? {n: 1, t: "Tier 1", d: "Event-ready"} : x >= 7.2 ? {n: 2, t: "Tier 2", d: "Strong rogue"}
+         : x >= 6.6 ? {n: 3, t: "Tier 3", d: "Playable rogue"} : {n: 4, t: "Tier 4", d: "Locals deck"};
+  }
+  function deckBtn(slug, label){
+    var b = el("button", {type: "button", "data-deck": slug}); b.textContent = label || DECK_INDEX[slug].deck.name; return b;
+  }
+  function bar(v, max){
+    var tr = el("div", {class: "bar-track", role: "img", "aria-label": v + " out of " + max});
+    var f = el("div", {class: "bar-fill"}); f.style.width = (100 * v / max) + "%"; tr.appendChild(f); return tr;
+  }
+  function copies(name){
+    var n = 0;
+    Object.keys(DECKLISTS).forEach(function(s){ ["monsters","spells","traps"].forEach(function(z){
+      DECKLISTS[s][z].forEach(function(c){ if (c.n === name) n += c.q; }); }); });
+    return n;
+  }
+  (function renderAnalysis(){
+    var A = ANALYSIS, mount = document.getElementById("analysisMount");
+    document.getElementById("anAsOf").textContent = "Decklists as of 2026-10-26 · format data as of " + A.asOf;
+
+    /* home teaser: top five */
+    var tl = document.getElementById("teaserList");
+    A.rank.slice(0, 5).forEach(function(s, i){
+      var d = A.decks[s];
+      var row = el("div", {class: "rank-row"}, [
+        text("span", "rk", String(i + 1)),
+        el("div", {class: "nm"}, [deckBtn(s), text("small", null, DECK_INDEX[s].collection.title)]),
+        bar(d.overall, 10), text("span", "val", d.overall.toFixed(2))
+      ]);
+      tl.appendChild(row);
+    });
+
+    /* 1. final ranking */
+    var s1 = el("section", {class: "an-section"});
+    s1.appendChild(text("h3", null, "Final ranking"));
+    s1.appendChild(text("p", "sub", "Overall score out of 10, a weighted average of eight ratings (weights listed under Method). Click a deck to open its decklist."));
+    var lastTier = 0;
+    A.rank.forEach(function(s, i){
+      var d = A.decks[s], tr = tierOf(d.overall);
+      if (tr.n !== lastTier){
+        var sep = el("div", {class: "tier-sep"}); sep.appendChild(document.createTextNode(tr.t));
+        sep.appendChild(text("span", null, tr.d)); s1.appendChild(sep); lastTier = tr.n;
+      }
+      s1.appendChild(el("div", {class: "rank-row"}, [
+        text("span", "rk", String(i + 1)),
+        el("div", {class: "nm"}, [deckBtn(s), text("small", null, DECK_INDEX[s].collection.title)]),
+        bar(d.overall, 10), text("span", "val", d.overall.toFixed(2))
+      ]));
+    });
+    mount.appendChild(s1);
+
+    /* 2. comparison table (sortable) */
+    var s2 = el("section", {class: "an-section"});
+    s2.appendChild(text("h3", null, "Side-by-side ratings"));
+    s2.appendChild(text("p", "sub", "Ratings are 1–10. Percentages are exact opening-hand odds from each decklist: brick rate and one-card starter odds use a 5-card hand going first, and interaction and breaker odds use a 6-card hand going second. Gold marks the best value in a column and red the weakest. Click a column to sort."));
+    var cols = [
+      ["#", function(s){ return A.decks[s].rank; }, 0], ["Deck", null, 0],
+      ["Overall", function(s){ return A.decks[s].overall; }, 2],
+      ["Cons.", function(s){ return A.decks[s].cons; }, 1], ["Ceiling", function(s){ return A.decks[s].ceil; }, 1],
+      ["Floor", function(s){ return A.decks[s].floor; }, 1], ["1st", function(s){ return A.decks[s].g1; }, 1],
+      ["2nd", function(s){ return A.decks[s].g2; }, 1], ["Resil.", function(s){ return A.decks[s].res; }, 1],
+      ["Inter.", function(s){ return A.decks[s].int; }, 1], ["Meta", function(s){ return A.decks[s].meta; }, 1],
+      ["Brick %", function(s){ return A.decks[s].odds.brick5; }, 1, true],
+      ["Starter %", function(s){ return A.decks[s].odds.starter5; }, 1],
+      ["Interaction %", function(s){ return A.decks[s].odds.int6; }, 1],
+      ["Breaker %", function(s){ return A.decks[s].odds.breaker6; }, 1],
+      ["Difficulty", function(s){ return A.decks[s].diff; }, 0, null, true]
+    ];
+    var DESC = {
+      "#": "Final ranking position, 1 to 20.",
+      "Deck": "Deck name. Click it to open the decklist.",
+      "Overall": "Weighted average of the eight ratings (Cons. to Meta), out of 10. Decides the ranking.",
+      "Cons.": "Consistency: how reliably the deck opens a real play, based on its starter odds and how many ways it has to start.",
+      "Ceiling": "How strong the deck's best realistic hand is: the size and power of its best board or kill turn.",
+      "Floor": "How well the deck still performs with a weak or interrupted hand.",
+      "1st": "Going first: how strong a board it builds when it wins the die roll.",
+      "2nd": "Going second: how well it breaks an opponent's established board.",
+      "Resil.": "Resilience: how well a play survives a single hand trap or negation.",
+      "Inter.": "Interaction: how much disruption it can hold up during the opponent's turn.",
+      "Meta": "Meta fit: how well it lines up against the decks winning in the current TCG format.",
+      "Brick %": "Chance a 5-card opening hand has no playable line (no starter and fewer than two engine pieces). Lower is better.",
+      "Starter %": "Chance a 5-card opening hand holds at least one card that starts the main combo by itself.",
+      "Interaction %": "Chance a 6-card going-second hand holds at least one hand trap or other interaction.",
+      "Breaker %": "Chance a 6-card going-second hand holds a board breaker such as Nibiru, Super Polymerization or Evenly Matched.",
+      "Difficulty": "How hard the deck is to pilot correctly. Shown for information only; not part of the Overall score."
+    };
+    var wrap = el("div", {class: "table-wrap"}), table = el("table", {class: "stats"});
+    var thead = el("thead"), hr = el("tr");
+    cols.forEach(function(c, i){
+      var th = el("th", {scope: "col"});
+      if (c[1]){ var b = el("button", {type: "button", "data-col": String(i), title: DESC[c[0]]}); b.textContent = c[0]; th.appendChild(b); }
+      else { th.textContent = c[0]; th.title = DESC[c[0]]; }
+      hr.appendChild(th);
+    });
+    thead.appendChild(hr); table.appendChild(thead);
+    var tbody = el("tbody"); table.appendChild(tbody);
+    var ext = cols.map(function(c){
+      if (!c[1] || c[4]) return null;
+      var vals = A.rank.map(c[1]); var lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals);
+      return c[3] ? {best: lo, worst: hi} : {best: hi, worst: lo};
+    });
+    function fillTable(order){
+      tbody.innerHTML = "";
+      order.forEach(function(s){
+        var tr = el("tr");
+        cols.forEach(function(c, i){
+          var td = el("td", i === 2 ? {class: "ov"} : i === 1 ? {class: "dk"} : {});
+          if (i === 1){ td.appendChild(deckBtn(s)); td.firstChild.className = "card-link"; }
+          else {
+            var v = c[1](s), sv = c[2] ? v.toFixed(c[2]) : String(v);
+            if (ext[i] && i > 2 && v === ext[i].best) td.innerHTML = '<span class="hi">' + sv + "</span>";
+            else if (ext[i] && i > 2 && v === ext[i].worst) td.innerHTML = '<span class="lo">' + sv + "</span>";
+            else td.textContent = sv;
+          }
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+    }
+    fillTable(A.rank);
+    var sortState = {col: 0, dir: 1};
+    thead.addEventListener("click", function(e){
+      var b = e.target.closest("[data-col]"); if (!b) return;
+      var i = +b.getAttribute("data-col"), c = cols[i];
+      sortState.dir = (sortState.col === i) ? -sortState.dir : (i === 0 || c[3] || c[4] ? 1 : -1);
+      sortState.col = i;
+      thead.querySelectorAll("th").forEach(function(th){ th.removeAttribute("aria-sort"); });
+      b.parentNode.setAttribute("aria-sort", sortState.dir > 0 ? "ascending" : "descending");
+      fillTable(A.rank.slice().sort(function(a, z){ return (c[1](a) - c[1](z)) * sortState.dir || A.decks[a].rank - A.decks[z].rank; }));
+    });
+    wrap.appendChild(table); s2.appendChild(wrap);
+    var key = el("dl", {class: "col-key"});
+    cols.forEach(function(c){
+      if (c[0] === "#" || c[0] === "Deck") return;
+      key.appendChild(el("div", null, [text("dt", null, c[0]), text("dd", null, DESC[c[0]])]));
+    });
+    s2.appendChild(el("div", {class: "col-key-wrap"}, [text("h4", null, "What the columns mean"), key]));
+    mount.appendChild(s2);
+
+    /* 3. insights */
+    var avgBrick = A.rank.reduce(function(n, s){ return n + A.decks[s].odds.brick5; }, 0) / A.rank.length;
+    var avgStart = A.rank.reduce(function(n, s){ return n + A.decks[s].odds.starter5; }, 0) / A.rank.length;
+    var noBreak = A.rank.filter(function(s){ return A.decks[s].odds.B === 0; });
+    var colAvg = COLLECTIONS.map(function(c){
+      var v = c.decks.reduce(function(n, d){ return n + A.decks[d.slug].overall; }, 0) / c.decks.length; return {c: c, v: v};
+    }).sort(function(a, b){ return b.v - a.v; });
+    var hard = A.rank.filter(function(s){ return A.decks[s].diff >= 9; });
+    function nm(s){ return DECK_INDEX[s].deck.name; }
+    function listNames(arr){ return arr.length < 2 ? arr.map(nm).join("") : arr.slice(0, -1).map(nm).join(", ") + " and " + nm(arr[arr.length - 1]); }
+    var INS = [
+      [avgBrick.toFixed(1) + "%", "Bricking isn't the problem",
+       "The average brick rate across all 20 decks is " + avgBrick.toFixed(1) + "%, and " + avgStart.toFixed(0) + "% of 5-card hands hold a one-card starter. The ranking is decided by interaction and the going-second plan, not by whether a deck can open."],
+      [String(noBreak.length), "Decks with no going-second breaker",
+       listNames(noBreak) + " have no Nibiru, Evenly Matched, Super Polymerization or similar card. Each loses ground when it loses the die roll; one or two breakers from the side deck would help the most."],
+      ["9 / 32", "Angelechy is the engine to watch",
+       "Angelechy took 9 of the 32 top-cut spots at YCS Houston and wasn't touched by the Oct 19 list. Radiant Typhoon Angelechy (#" + A.decks["radiant-typhoon"].rank + ") and Blackwing Angelechy (#" + A.decks["blackwing-angelechy"].rank + ") share it. Radiant Typhoon Angelechy has the highest meta-fit rating in the collection."],
+      [colAvg[0].v.toFixed(2), colAvg[0].c.title + " is the strongest collection",
+       "Its decks average " + colAvg[0].v.toFixed(2) + ", ahead of " + colAvg[1].c.title + " (" + colAvg[1].v.toFixed(2) + "). The weakest is " + colAvg[colAvg.length - 1].c.title + " (" + colAvg[colAvg.length - 1].v.toFixed(2) + ")."],
+      [String(hard.length), "Hardest decks to pilot",
+       listNames(hard) + " are rated 9 out of 10 for difficulty. Their ratings assume clean sequencing, so practice pays off more with these decks than with any others here."],
+      [String(copies("Ash Blossom & Joyous Spring")), "Ash Blossoms in the collection",
+       "Keeping all 20 decks built at once takes " + copies("Ash Blossom & Joyous Spring") + " Ash Blossom, " + copies("Infinite Impermanence") + " Infinite Impermanence, " + copies("Super Polymerization") + " Super Polymerization and " + copies("Effect Veiler") + " Effect Veiler. The overlap is useful to know when trading or sleeving."]
+    ];
+    var s3 = el("section", {class: "an-section"});
+    s3.appendChild(text("h3", null, "Insights"));
+    var grid = el("div", {class: "insights"});
+    INS.forEach(function(x){ grid.appendChild(el("div", {class: "insight"}, [text("div", "k", x[0]), text("h4", null, x[1]), text("p", null, x[2])])); });
+    s3.appendChild(grid); mount.appendChild(s3);
+
+    /* 4. format snapshot */
+    var s4 = el("section", {class: "an-section"});
+    s4.appendChild(text("h3", null, "The current format"));
+    s4.appendChild(text("p", "sub", "The predictions below are made against this field. The October 19 list is only a week old, so expect this picture to shift."));
+    var mb = el("div", {class: "meta-box"});
+    mb.innerHTML =
+      "<div><h4>YCS Houston, October 17 (1,074 players)</h4><ul>" +
+      "<li>Won by Light and Darkness Ritual Azamina Dark Magician.</li>" +
+      "<li>Elfnote / Ars Magna took 10 of the 32 top-cut spots and finished second.</li>" +
+      "<li>Angelechy took 9 spots, including three in the top 8.</li>" +
+      "<li>Branded decks took 4 spots, and Sky Striker Radiant Typhoon took one.</li>" +
+      "</ul></div>" +
+      "<div><h4>October 19 Forbidden &amp; Limited list</h4><ul>" +
+      "<li>Forbidden: Elfnote Tinia, Magicians' Souls, Pharaonic Advent, Azamina Ilia Silvia, Albion the Branded Dragon, Red-Eyes Dark Dragoon, Called by the Grave, Ame no Habakiri no Mitsurugi and others.</li>" +
+      "<li>Limited: Droll &amp; Lock Bird, Branded Opening, Branded in High Spirits, Gustav Max. Semi-Limited: Sky Striker Mobilize - Engage!</li>" +
+      "<li>Angelechy came through untouched. In the month since, the most-listed TCG decks are Elfnote, Blitzclique, Dark Magician Chaos Ritual, Angelechy, Sacred Beast and Branded.</li>" +
+      "<li>All 20 decklists here already comply with this list.</li>" +
+      "</ul></div>" +
+      '<div class="src">Sources: <a href="https://ygoprodeck.com/tournament/ycs-houston-5185" target="_blank" rel="noopener">YGOPRODeck — YCS Houston</a> · ' +
+      '<a href="https://www.yugioh-card.com/en/limited/list_2026-10-19/" target="_blank" rel="noopener">Konami — Forbidden &amp; Limited list, Oct 19 2026</a> · ' +
+      '<a href="https://www.yugiohmeta.com/top-decks" target="_blank" rel="noopener">yugiohmeta — top decks, last month</a> · ' +
+      '<a href="https://yugiohblog.konami.com/2026/ycs/advanced-format-main-event-top-32-deck-lists/" target="_blank" rel="noopener">Konami — YCS Columbus top 32 (May)</a></div>';
+    s4.appendChild(mb); mount.appendChild(s4);
+
+    /* 5. per-deck breakdown */
+    var s5 = el("section", {class: "an-section"});
+    s5.appendChild(text("h3", null, "Deck by deck"));
+    s5.appendChild(text("p", "sub", "In ranking order. Predictions are the most likely result for an experienced pilot, assuming the field described above."));
+    A.rank.forEach(function(s){
+      var d = A.decks[s], tr = tierOf(d.overall), o = d.odds;
+      var card = el("article", {class: "deck-an", id: "an-" + s});
+      var h4 = el("h4"); h4.appendChild(deckBtn(s));
+      card.appendChild(el("div", {class: "deck-an-head"}, [
+        text("div", "big", "#" + d.rank),
+        el("div", null, [h4, text("div", "meta", DECK_INDEX[s].collection.title + " · " + tr.t + " · " + tr.d)]),
+        el("div", {class: "score-badge"}, [text("div", "n", d.overall.toFixed(2)), text("div", "t", "Overall")])
+      ]));
+      var left = el("div");
+      var rs = el("div", {class: "ratings"});
+      Object.keys(RLABEL).forEach(function(k){
+        rs.appendChild(el("div", {class: "rating"}, [text("span", "l", RLABEL[k]), bar(d[k], 10), text("span", "v", d[k].toFixed(1))]));
+      });
+      rs.appendChild(el("div", {class: "rating is-info"}, [text("span", "l", "Difficulty"), bar(d.diff, 10), text("span", "v", String(d.diff))]));
+      left.appendChild(rs);
+      var od = el("div", {class: "odds"});
+      [[o.brick5, "brick rate (5 cards)"], [o.starter5, "one-card starter in opening 5"], [o.ideal5, "play + interaction in opening 5"],
+       [o.int6, "interaction in 6 going second"], [o.int6x2, "2+ interaction in 6"], [o.breaker6, "board breaker in 6"]]
+      .map(function(x){ return [x[0].toFixed(1) + "%", x[1]]; })
+      .forEach(function(x){ od.appendChild(el("div", {class: "odd"}, [text("div", "n", x[0]), text("div", "l", x[1])])); });
+      left.appendChild(od);
+      var right = el("div", {class: "an-text"});
+      right.appendChild(text("p", "verdict", d.verdict));
+      var e1 = el("p", {class: "pair"}); e1.appendChild(text("b", null, "Edge")); e1.appendChild(document.createTextNode(d.edge)); right.appendChild(e1);
+      var e2 = el("p", {class: "pair"}); e2.appendChild(text("b", null, "Risk")); e2.appendChild(document.createTextNode(d.risk)); right.appendChild(e2);
+      var pr = el("div", {class: "preds"});
+      [["Nationals / YCS", d.nat], ["Regionals", d.reg], ["Locals", d.loc]].forEach(function(p){
+        pr.appendChild(el("div", {class: "pred"}, [text("div", "lvl", p[0]), text("div", "out", p[1][0]), text("p", null, p[1][1])]));
+      });
+      right.appendChild(pr);
+      card.appendChild(el("div", {class: "deck-an-body"}, [left, right]));
+      var det = el("details", {class: "counted"});
+      det.appendChild(text("summary", null, "How the odds were counted"));
+      var colsEl = el("div", {class: "cols"});
+      [["Starters (" + o.S + ")", o.starters], ["Engine pieces (" + o.E + ")", o.pieces], ["Interaction (" + o.I + ")", o.interaction]].forEach(function(g){
+        var ul = el("ul"); g[1].forEach(function(n){ ul.appendChild(text("li", null, n)); });
+        colsEl.appendChild(el("div", null, [text("h5", null, g[0]), ul]));
+      });
+      det.appendChild(colsEl); card.appendChild(det);
+      s5.appendChild(card);
+    });
+    mount.appendChild(s5);
+
+    /* 6. method */
+    var s6 = el("section", {class: "an-section"});
+    s6.appendChild(text("h3", null, "Method"));
+    var m = el("div", {class: "method"});
+    var w = A.weights;
+    m.innerHTML =
+      "<p><strong>Opening-hand odds are calculated exactly, not simulated.</strong> Each Main Deck card is sorted into one role: a <em>starter</em> begins the main line by itself, an <em>engine piece</em> needs one more engine card, and <em>interaction</em> works on the opponent's turn. A hand is playable with one starter or two engine pieces, and a <em>brick</em> is any hand that isn't. Probabilities come from the hypergeometric distribution over every possible hand, and a 200,000-hand simulation matched them to within 0.1%. The cards counted for each deck are listed under its breakdown.</p>" +
+      "<p><strong>Ratings are judgments on one shared scale,</strong> informed by those odds, each deck's reference guide (strengths, weaknesses, matchups, locks and dead text), the collection AI reports, and the current format. The overall score is a weighted average: consistency " + Math.round(w.cons * 100) + "%, going first " + Math.round(w.g1 * 100) + "%, going second " + Math.round(w.g2 * 100) + "%, ceiling " + Math.round(w.ceil * 100) + "%, floor " + Math.round(w.floor * 100) + "%, meta fit " + Math.round(w.meta * 100) + "%, resilience " + Math.round(w.res * 100) + "% and interaction " + Math.round(w.int * 100) + "%. Difficulty is shown for information only and doesn't count.</p>" +
+      "<p><strong>Why these numbers differ from the collection AI reports.</strong> Each report scored its decks against the other decks in the same collection, so an 8.6 in one report and an 8.2 in another aren't on the same scale. Some reports were also written against earlier decklists. Their brick rates range from 1% (a simulation) to 16% (estimates). Here all 20 decks use the same rules and the current lists, so a score means the same thing across collections. The reports' win-rate figures were estimates, so they aren't repeated here.</p>" +
+      "<p><strong>Predictions</strong> assume an experienced pilot and the field described above. They aren't guarantees: pairings, side decking and the next few weeks of results will move them.</p>";
+    s6.appendChild(m); mount.appendChild(s6);
+  })();
+
+  /* ---------- Visual guides ----------
+     Slides are built from data/guides.json (content from each reference guide, plus where every
+     card sits inside that deck's image, so card pictures are shown straight from art/<slug>.png). */
+  var GD = null, gdPromise = null;
+  var gEl = document.getElementById("guide"), gStage = document.getElementById("guideStage");
+  var gSlides = [], gIdx = 0, gSlug = null, gReturnFocus = null;
+  function inlineJSON(id){
+    var e = document.getElementById(id);
+    if (!e) return null;
+    try { return JSON.parse(e.textContent); } catch (x) { return null; }
+  }
+  function loadGuides(){
+    if (!gdPromise){
+      var inl = inlineJSON("data-guides");   /* embedded copy: works when the page is opened as a local file */
+      gdPromise = (inl ? Promise.resolve(inl) : fetch("data/guides.json").then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); }))
+        .then(function(d){ GD = d; return d; });
+      gdPromise.catch(function(){ gdPromise = null; });
+    }
+    return gdPromise;
+  }
+  function esc(s){ return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function md(s){ return esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"); }
+  var imgChecked = {};
+  function noImgCheck(src){
+    if (imgChecked[src]) return; imgChecked[src] = 1;
+    var t = new Image(); t.onerror = function(){ document.documentElement.classList.add("noimg"); }; t.src = src;
+  }
+  function gcard(slug, name, w){
+    var R = GD.rects[slug], r = R.r[name]; if (!r) return null;
+    var P = GD.sprites && GD.sprites[slug], p = P && P.p[name];
+    if (p){
+      var k = w / P.cell[0];
+      var s = el("div", {class: "gcard", role: "img", "aria-label": name, title: name});
+      s.style.width = w + "px"; s.style.height = (P.cell[1] * k) + "px";
+      s.style.backgroundImage = "url(" + asset("cards/" + slug + ".webp") + ")";
+      s.style.backgroundSize = (P.size[0] * k) + "px " + (P.size[1] * k) + "px";
+      s.style.backgroundPosition = (-p[0] * k) + "px " + (-p[1] * k) + "px";
+      s.appendChild(text("span", "gname", name));   /* shown only when the card pictures can't load (page opened as a local file) */
+      noImgCheck(asset("cards/" + slug + ".webp"));
+      return s;
+    }
+    var sc = w / 127.5;
+    var d = el("div", {class: "gcard" + (r[2] < 120 ? " is-fan" : ""), role: "img", "aria-label": name, title: name});
+    d.style.width = (r[2] * sc) + "px"; d.style.height = (r[3] * sc) + "px";
+    d.style.backgroundImage = "url(" + asset("art/" + slug + ".png") + ")";
+    d.appendChild(text("span", "gname", name)); noImgCheck(asset("art/" + slug + ".png"));
+    d.style.backgroundSize = (R.size[0] * sc) + "px " + (R.size[1] * sc) + "px";
+    d.style.backgroundPosition = (-r[0] * sc) + "px " + (-r[1] * sc) + "px";
+    return d;
+  }
+  function chunk(a, n){ var o = []; for (var i = 0; i < a.length; i += n) o.push(a.slice(i, i + n)); return o; }
+
+  function buildSlides(slug){
+    var g = GD.guides[slug], deck = DECK_INDEX[slug].deck, col = DECK_INDEX[slug].collection, S = [];
+    function key(){
+      for (var i = 0; i < deck.keyCards.length; i++){ if (GD.rects[slug].r[deck.keyCards[i]]) return deck.keyCards[i]; }
+      return (ANALYSIS.decks[slug].odds.starters || [])[0];
+    }
+    S.push({k: "Visual guide", t: deck.name, f: function(b, W){
+      var cov = el("div", {class: "cover"});
+      var cc = el("div", {class: "cover-card"}); var c = gcard(slug, key(), W * 0.33); if (c) cc.appendChild(c);
+      var right = el("div", {class: "s-panel"});
+      right.appendChild(el("p", {class: "s-text", html: md(g.arch)}));
+      var ch = el("div", {class: "chips"}); ch.style.marginTop = "2.2cqw";
+      g.engines.forEach(function(e){ ch.appendChild(text("span", null, e.h)); });
+      right.appendChild(ch);
+      var col2 = el("div", {style: "display:flex;flex-direction:column;gap:2.4cqw;min-width:0"});
+      col2.appendChild(right);
+      var tocP = el("div", {class: "s-panel"}); tocP.appendChild(text("p", "s-sub", "In this guide"));
+      var toc = el("ul", {class: "toc"});
+      S.forEach(function(s, i){
+        if (!i || s.toc === false) return;
+        var bt = el("button", {type: "button", "data-goto": String(i)});
+        bt.innerHTML = "<b>" + (i + 1) + "</b><span></span>"; bt.lastChild.textContent = s.t;
+        toc.appendChild(el("li", null, [bt]));
+      });
+      tocP.appendChild(toc); col2.appendChild(tocP);
+      var others = deck.keyCards.filter(function(n){ return GD.rects[slug].r[n]; });
+      if (others.length){
+        var ks = el("div", {class: "s-panel", "data-optional": "1"}); ks.appendChild(text("p", "s-sub", "Best opening hand"));
+        var st = el("div", {class: "strip"}); others.slice(0, 5).forEach(function(n){ var c = gcard(slug, n, W * 0.075); if (c) st.appendChild(c); });
+        ks.appendChild(st); col2.appendChild(ks);
+      }
+      cov.appendChild(cc); cov.appendChild(col2); b.appendChild(cov);
+    }});
+    chunk(g.engines, 2).forEach(function(grp, i, all){
+      S.push({k: "How the deck works" + (all.length > 1 ? " · " + (i + 1) + "/" + all.length : ""), t: grp.map(function(e){ return e.h; }).join(" & "), f: function(b, W){
+        grp.forEach(function(e){
+          var box = el("div", {class: "s-panel eng"});
+          box.appendChild(text("h4", null, e.h));
+          var cs = el("div", {class: "eng-cards"});
+          e.cards.slice(0, 9).forEach(function(n){ var c = gcard(slug, n, W * (grp.length > 1 ? 0.078 : 0.1)); if (c) cs.appendChild(c); });
+          if (cs.children.length) box.appendChild(cs);
+          box.appendChild(el("p", {class: "s-text", html: md(e.t)}));
+          b.appendChild(box);
+        });
+      }});
+    });
+    var COMBO_NOTE = "Checked against the card text in your reference guide. Practise a line before you rely on it.";
+    function cstrip(names, w, cls){
+      var st = el("div", {class: "strip" + (cls ? " " + cls : "")});
+      names.forEach(function(n){ var c = gcard(slug, n, w); if (c) st.appendChild(c); });
+      return st;
+    }
+    (g.combos || []).forEach(function(l){
+      var parts = l.h.split(" — "), lab = parts.length > 1 ? parts[0] : "Combo", ttl = parts.length > 1 ? parts.slice(1).join(" — ") : l.h;
+      S.push({k: "Combo · " + lab, t: ttl, note: COMBO_NOTE, f: function(b, W){
+        var narrow = W < 560, cw = W * (narrow ? 0.15 : 0.08);
+        var grid = el("div", {class: "cov2"});
+        var L = el("div", {class: "col"}), R = el("div", {class: "col"});
+        var ab = el("div", {class: "s-panel"}); ab.appendChild(text("p", "s-sub", "What this combo is about"));
+        ab.appendChild(el("p", {class: "s-text sm", html: md(l.about)})); L.appendChild(ab);
+        var hp = el("div", {class: "s-panel"}); hp.appendChild(text("p", "s-sub", "Starting hand"));
+        hp.appendChild(cstrip(l.hand, cw));
+        var ns = el("div", {class: "chips"}); ns.style.marginTop = "1.4cqw";
+        ns.appendChild(text("span", null, l.ns ? "Normal Summon: " + l.ns : "No Normal Summon needed"));
+        hp.appendChild(ns); L.appendChild(hp);
+        var ep = el("div", {class: "s-panel"}); ep.appendChild(text("p", "s-sub", "End board"));
+        ep.appendChild(cstrip(l.end.cards.slice(0, 5), cw));
+        var et = el("p", {class: "s-text sm", html: md(l.end.t)}); et.style.marginTop = "1.4cqw"; ep.appendChild(et); R.appendChild(ep);
+        var rp = el("div", {class: "s-panel"}); rp.appendChild(text("p", "s-sub", "Key rules"));
+        var ul = el("ul", {class: "rules"}); l.rules.forEach(function(r){ ul.appendChild(el("li", {class: "s-text sm", html: md(r)})); });
+        rp.appendChild(ul); R.appendChild(rp);
+        grid.appendChild(L); grid.appendChild(R); b.appendChild(grid);
+      }});
+      var groups = chunk(l.steps, 6);
+      groups.forEach(function(grp, gi){
+        var first = gi * 6 + 1, last = first + grp.length - 1;
+        S.push({k: "Combo · " + lab + " · Steps " + first + "–" + last + (groups.length > 1 ? " of " + l.steps.length : ""), t: ttl, note: COMBO_NOTE, toc: false, f: function(b, W){
+          var n = grp.length, narrow = W < 560;
+          var perRow = narrow ? 2 : (n <= 3 ? n : 3), rows = Math.ceil(n / perRow);
+          var contentW = W * 0.908, gap = W * (narrow ? 0.07 : 0.05);
+          var nodeW = (contentW - (perRow - 1) * gap) / perRow;
+          var cw = Math.min(nodeW * 0.5, W * (narrow ? 0.17 : rows === 1 ? 0.14 : 0.098));
+          var flow = el("div", {class: "flow"});
+          flow.style.gridTemplateColumns = "repeat(" + perRow + ", " + nodeW + "px)";
+          flow.style.columnGap = gap + "px";
+          flow.style.setProperty("--gap", gap + "px"); flow.style.setProperty("--ah", (cw * 1.46 / 2) + "px");
+          grp.forEach(function(st, i){
+            var node = el("div", {class: "node" + (i % perRow ? " has-arrow" : "")});
+            node.appendChild(text("span", "no", String(first + i)));
+            var k = Math.min(st.cards.length, 3), stack = el("div", {class: "stack"});
+            var shift = k > 1 ? Math.min(cw * 0.55, (nodeW * 0.96 - cw) / (k - 1)) : 0;
+            st.cards.slice(0, 3).forEach(function(nm, j){
+              var c = gcard(slug, nm, cw); if (!c) return;
+              if (j) c.style.marginLeft = (shift - cw) + "px";
+              stack.appendChild(c);
+            });
+            node.appendChild(stack);
+            node.appendChild(el("div", {class: "cap", html: md(st.t)}));
+            flow.appendChild(node);
+          });
+          b.appendChild(flow);
+        }});
+      });
+    });
+    if (!g.combos) g.lines.forEach(function(l){
+      var parts = l.h.split(" — ");
+      S.push({k: parts.length > 1 ? "Combo · " + parts[0] : "Combo", t: parts.length > 1 ? parts.slice(1).join(" — ") : l.h, note: g.lineNote, f: function(b, W){
+        if (l.steps){
+          var n = l.steps.length, narrow = W < 560;
+          var perRow = narrow ? 2 : (n <= 4 ? n : Math.ceil(n / Math.ceil(n / 4))), rows = Math.ceil(n / perRow);   // balanced rows: 5 -> 3+2
+          var contentW = W * 0.908, gap = W * (narrow ? 0.07 : 0.05);
+          var nodeW = (contentW - (perRow - 1) * gap) / perRow;
+          var cw = Math.min(nodeW * 0.62, W * (narrow ? 0.2 : rows === 1 ? 0.16 : rows === 2 ? 0.115 : 0.088));
+          var flow = el("div", {class: "flow"});
+          flow.style.gridTemplateColumns = "repeat(" + perRow + ", " + nodeW + "px)";
+          flow.style.columnGap = gap + "px";
+          flow.style.setProperty("--gap", gap + "px"); flow.style.setProperty("--ah", (cw * 1.47 / 2) + "px");
+          l.steps.forEach(function(st, i){
+            var node = el("div", {class: "node" + (st.cards.length ? "" : " is-text") + (i % perRow ? " has-arrow" : "")});
+            node.appendChild(text("span", "no", String(i + 1)));
+            var k = Math.min(st.cards.length, 3);
+            if (k){
+              var stack = el("div", {class: "stack"});
+              var shift = k > 1 ? Math.min(cw * 0.5, (nodeW * 0.96 - cw) / (k - 1)) : 0;
+              st.cards.slice(0, 3).forEach(function(nm, j){
+                var c = gcard(slug, nm, cw); if (!c) return;
+                if (j) c.style.marginLeft = (shift - cw) + "px";
+                stack.appendChild(c);
+              });
+              node.appendChild(stack);
+            } else node.style.setProperty("--tpad", (cw * 1.47 * 0.32) + "px");
+            node.appendChild(text("div", "cap", st.t));
+            flow.appendChild(node);
+          });
+          b.appendChild(flow);
+        } else {
+          var strip = el("div", {class: "strip"});
+          l.cards.slice(0, 10).forEach(function(n){ var c = gcard(slug, n, W * 0.082); if (c) strip.appendChild(c); });
+          if (strip.children.length) b.appendChild(strip);
+          b.appendChild(el("div", {class: "s-panel"}, [el("p", {class: "s-text", html: md(l.t)})]));
+        }
+      }});
+    });
+    chunk(g.facts, 4).forEach(function(grp, i, all){
+      S.push({k: "Key rulings" + (all.length > 1 ? " · " + (i + 1) + "/" + all.length : ""), t: "Things to remember", f: function(b, W){
+        var list = el("div", {class: "facts"});
+        grp.forEach(function(f, j){
+          var row = el("div", {class: "fact s-panel"});
+          var lead = el("div"); var c = f.cards.length ? gcard(slug, f.cards[0], W * 0.07) : null;
+          lead.appendChild(c || text("span", "num", String(i * 4 + j + 1)));
+          row.appendChild(lead); row.appendChild(el("p", {class: "s-text", html: md(f.t)}));
+          list.appendChild(row);
+        });
+        b.appendChild(list);
+      }});
+    });
+    S.push({k: "Summary", t: "Strengths & weaknesses", f: function(b){
+      var sw = el("div", {class: "sw"});
+      [["Strengths", g.str], ["Weaknesses", g.weak]].forEach(function(x){
+        var p = el("div", {class: "s-panel"}); p.appendChild(text("h4", null, x[0]));
+        var ul = el("ul"); x[1].forEach(function(t){ ul.appendChild(el("li", {class: "s-text", html: md(t)})); }); p.appendChild(ul);
+        sw.appendChild(p);
+      });
+      b.appendChild(sw);
+      var a = ANALYSIS.decks[slug];
+      b.appendChild(el("div", {class: "s-panel"}, [el("p", {class: "s-text dim", html:
+        "Collection ranking: <strong>#" + a.rank + "</strong> of 20 · overall <strong>" + a.overall.toFixed(2) + "</strong> · " + esc(a.verdict)})]));
+    }});
+    S.push({k: "The decklist", t: "40 Main · 15 Extra", f: function(b){
+      var fin = el("div", {class: "final"});
+      fin.appendChild(el("img", {src: asset("art/" + slug + ".png"), alt: deck.name + " decklist"}));
+      var open = el("button", {class: "ydk-link", type: "button", "data-guide-deck": slug}); open.textContent = "Open decklist";
+      var notes = el("button", {class: "guide-link", type: "button", "data-guide-deck": slug, "data-view": "notes"}); notes.textContent = "Deck notes";
+      fin.appendChild(el("div", {class: "acts"}, [open, notes]));
+      b.appendChild(fin);
+    }});
+    return S;
+  }
+  function renderSlide(){
+    var s = gSlides[gIdx], col = DECK_INDEX[gSlug].collection;
+    gStage.innerHTML = "";
+    var sl = el("section", {class: "slide", "data-col": col.id, "aria-roledescription": "slide", "aria-label": (gIdx + 1) + " of " + gSlides.length + ": " + s.t});
+    sl.appendChild(el("div", {class: "s-head"}, [text("span", "s-kicker", s.k), text("span", "s-mark", "The Vault")]));
+    sl.appendChild(text("h3", "s-title", s.t));
+    sl.appendChild(el("div", {class: "s-rule"}));
+    var body = el("div", {class: "s-body"}); sl.appendChild(body);
+    var foot = el("div", {class: "s-foot"}, [text("span", null, s.note && /^Combo/.test(s.k) ? s.note : DECK_INDEX[gSlug].deck.name + " · " + col.title), text("span", null, (gIdx + 1) + " / " + gSlides.length)]);
+    sl.appendChild(foot);
+    /* Wide screens: lay the slide out at one fixed size and scale it to fit, like a printed guide page.
+       Phones: the slide flows and scrolls at full width instead. */
+    var BASE = 880, fixedSize = window.innerWidth > 640;
+    if (fixedSize){
+      sl.style.width = BASE + "px"; sl.style.height = BASE + "px"; sl.style.aspectRatio = "auto"; sl.style.maxHeight = "none";
+      var holder = el("div", {class: "slide-holder"}); holder.appendChild(sl); gStage.appendChild(holder);
+      var box = gStage.getBoundingClientRect(), k = Math.min(box.width / BASE, box.height / BASE, 1.2);
+      holder.style.width = (BASE * k) + "px"; holder.style.height = (BASE * k) + "px";
+      sl.style.transform = "scale(" + k + ")";
+    } else gStage.appendChild(sl);
+    s.f(body, fixedSize ? BASE : sl.clientWidth);
+    /* drop optional extras (cover key-card strip) if the slide would overflow its square */
+    body.querySelectorAll("[data-optional]").forEach(function(x){ if (body.scrollHeight > body.clientHeight + 1) x.remove(); });
+    choreographSlide(sl);
+    document.getElementById("guidePage").textContent = (gIdx + 1) + " / " + gSlides.length;
+    document.getElementById("guidePrev").disabled = gIdx === 0;
+    document.getElementById("guideNext").disabled = gIdx === gSlides.length - 1;
+    document.querySelectorAll("#guideDots button").forEach(function(d, i){ d.setAttribute("aria-current", i === gIdx ? "true" : "false"); });
+  }
+  function goSlide(i){ if (i < 0 || i >= gSlides.length) return; gIdx = i; renderSlide(); }
+  function openGuide(slug){
+    if (gSlug === slug && !gEl.hidden) return;
+    gReturnFocus = document.activeElement; gSlug = slug; gIdx = 0;
+    document.getElementById("guideTitle").textContent = DECK_INDEX[slug].deck.name;
+    document.getElementById("guideSub").textContent = "Visual guide · " + DECK_INDEX[slug].collection.title;
+    gEl.hidden = false; document.body.classList.add("viewer-open");
+    gStage.innerHTML = '<p class="guide-state">Loading guide…</p>';
+    loadGuides().then(function(){
+      if (gSlug !== slug) return;
+      gSlides = buildSlides(slug);
+      var dots = document.getElementById("guideDots"); dots.innerHTML = "";
+      gSlides.forEach(function(s, i){ var d = el("button", {type: "button", "aria-label": "Slide " + (i + 1) + ": " + s.t}); d.addEventListener("click", function(){ goSlide(i); }); dots.appendChild(d); });
+      renderSlide();
+      document.getElementById("guideNext").focus();
+    }, function(){ gStage.innerHTML = '<p class="guide-state">The guide didn’t load. Close it and open it again to retry.</p>'; });
+  }
+  function closeGuide(){
+    if (gEl.hidden) return;
+    gEl.hidden = true; gSlug = null; document.body.classList.remove("viewer-open");
+    if (gReturnFocus && gReturnFocus.focus) gReturnFocus.focus();
+  }
+  function leaveGuide(){ var c = gSlug && DECK_INDEX[gSlug].collection.id; if (c) location.hash = c; }
+  document.getElementById("guideClose").addEventListener("click", leaveGuide);
+  document.getElementById("guidePrev").addEventListener("click", function(){ goSlide(gIdx - 1); });
+  document.getElementById("guideNext").addEventListener("click", function(){ goSlide(gIdx + 1); });
+  gStage.addEventListener("click", function(e){
+    var j = e.target.closest("[data-goto]"); if (j){ goSlide(+j.getAttribute("data-goto")); return; }
+    var b = e.target.closest("[data-guide-deck]"); if (!b) return;
+    var slug = b.getAttribute("data-guide-deck"), view = b.getAttribute("data-view") || "list";
+    leaveGuide(); setTimeout(function(){ openViewer(slug, null, view); }, 30);
+  });
+  document.addEventListener("keydown", function(e){
+    if (gEl.hidden) return;
+    if (e.key === "Escape"){ leaveGuide(); e.stopPropagation(); }
+    else if (e.key === "ArrowRight"){ goSlide(gIdx + 1); }
+    else if (e.key === "ArrowLeft"){ goSlide(gIdx - 1); }
+  }, true);
+  var tx = null;
+  gStage.addEventListener("touchstart", function(e){ tx = e.touches[0].clientX; }, {passive: true});
+  gStage.addEventListener("touchend", function(e){
+    if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; tx = null;
+    if (Math.abs(dx) > 50) goSlide(gIdx + (dx < 0 ? 1 : -1));
+  });
+  var rT = null;
+  window.addEventListener("resize", function(){ if (gEl.hidden || !gSlides.length) return; clearTimeout(rT); rT = setTimeout(renderSlide, 120); });
+
+  /* ---------- Router ---------- */
+  var validIds = ["home", "analysis"].concat(COLLECTIONS.map(function(c){ return c.id; }));
+  var currentPage = null;
+
+  /* ---------- Screen choreography ----------
+     layer(els, cls, start): give each element its place in the sequence (--i) and play the entrance once.
+     Classes are removed when the entrance ends, so hover and other transitions behave normally afterwards. */
+  function layer(els, cls, start){
+    var n = start || 0;
+    els.forEach(function(e){
+      if (!e) return;
+      e.classList.remove(cls, "ly-await"); void e.offsetWidth;
+      e.style.setProperty("--i", n++); e.classList.add(cls);
+      e.addEventListener("animationend", function done(ev){
+        if (ev.target !== e) return;
+        e.classList.remove(cls); e.style.removeProperty("--i"); e.removeEventListener("animationend", done);
+      });
+    });
+    return n;
+  }
+  function kids(x){ return x ? Array.prototype.slice.call(x.children) : []; }
+  function playCard(card, start){
+    var body = card.querySelector(".deck-body"), chips = card.querySelector(".key-cards");
+    card.classList.remove("ly-await");
+    layer([card.querySelector(".art-wrap")], "ly-art", start);
+    var n = layer([body.children[0], body.children[1], chips.querySelector(".kc-label")], "ly", start + 1);
+    n = layer(Array.prototype.slice.call(chips.querySelectorAll(".chip")), "ly-q", n * 2);
+    layer([body.lastElementChild], "ly", Math.ceil(n / 2));
+  }
+  var cardWatch = ("IntersectionObserver" in window) ? new IntersectionObserver(function(entries){
+    var k = 0;
+    entries.forEach(function(en){
+      if (!en.isIntersecting) return;
+      cardWatch.unobserve(en.target); playCard(en.target, k++);
+    });
+  }, {rootMargin: "0px 0px -8% 0px", threshold: 0.12}) : null;
+  function choreograph(id){
+    var page = document.getElementById("page-" + id); if (!page) return;
+    if (id === "home"){
+      var hero = page.querySelector(".hero");
+      var n = layer([hero.children[0], hero.children[1], hero.children[2]], "ly", 0);
+      n = layer(kids(document.getElementById("heroStats")), "ly", n);
+      layer(kids(document.getElementById("collectionGrid")).concat([page.querySelector(".teaser")]), "ly", n);
+      return;
+    }
+    var head = page.querySelector(".chapter-head");
+    var m = layer(kids(head), "ly", 0);
+    if (id === "analysis"){ layer(kids(document.getElementById("analysisMount")).slice(0, 4), "ly", m); return; }
+    var vh = window.innerHeight, first = 0;
+    page.querySelectorAll(".deck-card").forEach(function(card){
+      if (card.getBoundingClientRect().top < vh * 0.92 || !cardWatch){ playCard(card, Math.max(1, m - 2) + first); first += 2; }
+      else { card.classList.add("ly-await"); cardWatch.observe(card); }
+    });
+  }
+  function choreographSlide(sl){
+    var head = sl.querySelector(".s-head"), title = sl.querySelector(".s-title"), rule = sl.querySelector(".s-rule");
+    var n = layer([head, title], "ly-q", 0); n = layer([rule], "ly-rule", n);
+    var parts = kids(sl.querySelector(".s-body"));
+    while (parts.length === 1 && parts[0].children.length > 1) parts = kids(parts[0]);
+    layer(parts.slice(0, 14), "ly-q", n);
+  }
+
+  /* ---------- Scroll choreography engine ----------
+     One passive scroll listener, one rAF per frame, transforms and opacity only.
+     Home: hero drifts away, the tour pins and scrubs through the six collections.
+     Collection pages: deck photos parallax inside their frames; a gold line under the nav tracks reading progress. */
+  var motionOK = !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+  if (motionOK) document.documentElement.classList.add("sx");
+  var sxQueued = false, sxImgs = [];
+  function clamp(v, a, b){ return v < a ? a : v > b ? b : v; }
+  function sxCollect(){
+    var pg = document.getElementById("page-" + currentPage);
+    sxImgs = pg ? Array.prototype.slice.call(pg.querySelectorAll(".deck-card .art-wrap img")) : [];
+    document.documentElement.style.setProperty("--navh", siteNav.getBoundingClientRect().height + "px");
+    siteNav.classList.toggle("has-progress", currentPage !== "home");
+    sxFrame();
+  }
+  function sxTour(vh){
+    if (tour.offsetHeight === 0) return;
+    var r = tour.getBoundingClientRect(), span = tour.offsetHeight - tStage.offsetHeight;
+    if (r.bottom < -vh || r.top > vh * 1.5) return;
+    var prog = clamp(-r.top / span, 0, 1), n = TOUR.length, p = prog * n;
+    tRail.firstChild.style.transform = "scaleY(" + prog.toFixed(4) + ")";
+    var near = Math.min(n - 1, Math.floor(p));
+    TOUR.forEach(function(T, i){
+      var d = p - (i + 0.5);
+      if (i === 0 && d < 0) d = 0; if (i === n - 1 && d > 0) d = 0;
+      var o = clamp(1 - (Math.abs(d) - 0.28) / 0.22, 0, 1);
+      if (Math.abs(d) < 1.6) T.imgs.forEach(function(im){ if (!im.src) im.src = im.getAttribute("data-src"); });
+      T.step.style.opacity = o.toFixed(3);
+      T.step.style.transform = "translateY(" + (-d * 56).toFixed(1) + "px)";
+      T.step.inert = i !== near;
+      T.dot.classList.toggle("on", i <= near);
+      T.panel.style.opacity = o.toFixed(3);
+      var fan = clamp(1 - Math.abs(d) * 2.2, 0, 1), m = T.imgs.length;
+      T.imgs.forEach(function(im, k){
+        var off = m === 1 ? 0 : (k - (m - 1) / 2);
+        im.style.transform = "translate(-50%, -50%) translate(" + (off * fan * 30).toFixed(2) + "%, " + (-d * (70 + k * 40)).toFixed(1) + "px) rotate(" + (off * fan * 7).toFixed(2) + "deg) scale(" + (1 + Math.abs(d) * 0.1 - (m - 1 - k) * 0.04).toFixed(4) + ")";
+        im.style.zIndex = String(k + 1);
+      });
+    });
+  }
+  function sxFrame(){
+    sxQueued = false;
+    var vh = window.innerHeight, y = window.scrollY;
+    if (currentPage === "home"){
+      if (motionOK){
+        var hero = document.querySelector("#page-home .hero");
+        if (y < vh * 1.5){ hero.style.transform = "translateY(" + (y * 0.28).toFixed(1) + "px)"; hero.style.opacity = (1 - clamp(y / (vh * 0.9), 0, 0.7)).toFixed(3); }
+        sxTour(vh);
+      }
+      return;
+    }
+    var doc = document.documentElement, max = doc.scrollHeight - vh;
+    readBar.style.transform = "scaleX(" + (max > 0 ? clamp(y / max, 0, 1) : 1).toFixed(4) + ")";
+    if (!motionOK) return;
+    sxImgs.forEach(function(im){
+      var r = im.parentNode.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      var c = (r.top + r.height / 2 - vh / 2) / vh;
+      im.style.translate = "0 " + (c * -30).toFixed(1) + "px";
+    });
+  }
+  function sxRequest(){ if (!sxQueued){ sxQueued = true; requestAnimationFrame(sxFrame); } }
+  window.addEventListener("scroll", sxRequest, {passive: true});
+  window.addEventListener("resize", function(){ sxCollect(); });
+  function show(id){
+    var guideSlug = null;
+    if (id.indexOf("guide-") === 0 && DECK_INDEX[id.slice(6)]){ guideSlug = id.slice(6); id = DECK_INDEX[guideSlug].collection.id; }
+    if (validIds.indexOf(id) === -1) id = "home";
+    var samePage = (id === currentPage); currentPage = id;
+    if (guideSlug) openGuide(guideSlug); else closeGuide();
+    if (guideSlug || samePage) {
+      document.querySelectorAll(".nav-link").forEach(function(l){ l.setAttribute("aria-current", l.getAttribute("data-nav") === id ? "true" : "false"); });
+      navReveal();
+      if (samePage) return;
+    }
+    document.getElementById("page-home").hidden = (id !== "home");
+    document.getElementById("page-analysis").hidden = (id !== "analysis");
+    COLLECTIONS.forEach(function(c){
+      document.getElementById("page-" + c.id).hidden = (id !== c.id);
+    });
+    document.querySelectorAll(".nav-link").forEach(function(l){
+      l.setAttribute("aria-current", l.getAttribute("data-nav") === id ? "true" : "false");
+    });
+    navReveal();
+    window.scrollTo({top: 0, behavior: "instant" in window ? "instant" : "auto"});
+    choreograph(id);
+    sxCollect();
+  }
+  function go(id){
+    if (location.hash === "#" + id) { show(id); return; }
+    location.hash = id === "home" ? "" : id;
+  }
+  document.addEventListener("click", function(e){
+    var t = e.target.closest("[data-nav]");
+    if (!t) return;
+    e.preventDefault();
+    go(t.getAttribute("data-nav"));
+  });
+  window.addEventListener("hashchange", function(){
+    show((location.hash || "#home").slice(1) || "home");
+  });
+  show((location.hash || "#home").slice(1) || "home");
+
+  document.getElementById("footerUpdated").textContent = "October 2026";
+
+  /* ---------- Deck viewer ---------- */
+  var viewer = document.getElementById("viewer");
+  var vMedia = document.getElementById("viewerMedia");
+  var vImg = document.getElementById("viewerImg");
+  var vBody = document.getElementById("viewerBody");
+  var copyStatus = document.getElementById("copyStatus");
+  var lastFocused = null, currentSlug = null, viewerPushed = false;
+
+  function sum(arr){ return arr.reduce(function(n, c){ return n + c.q; }, 0); }
+
+  var vHelp = document.getElementById("viewerHelp");
+  var vNotes = document.getElementById("viewerNotes");
+  var PANELS = {list: vBody, notes: vNotes, help: vHelp};
+  function setView(name){
+    if (!PANELS[name]) name = "list";
+    Object.keys(PANELS).forEach(function(k){ PANELS[k].hidden = (k !== name); });
+    document.querySelectorAll(".vtab").forEach(function(t){
+      var on = t.getAttribute("data-view") === name;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+    });
+    PANELS[name].scrollTop = 0;
+  }
+  document.querySelector(".viewer-tabs").addEventListener("click", function(e){
+    var t = e.target.closest(".vtab"); if (t) setView(t.getAttribute("data-view"));
+  });
+  document.querySelector(".viewer-tabs").addEventListener("keydown", function(e){
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    var tabs = Array.prototype.slice.call(document.querySelectorAll(".vtab"));
+    var i = tabs.indexOf(document.activeElement); if (i < 0) return;
+    var next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+    setView(next.getAttribute("data-view")); next.focus(); e.preventDefault();
+  });
+  document.getElementById("helpBack").addEventListener("click", function(){ setView("list"); });
+
+  function renderNotes(slug){
+    var n = NOTES[slug]; vNotes.innerHTML = "";
+    if (!n) { vNotes.appendChild(text("p", "notes-content", "No notes recorded for this deck yet.")); return; }
+    [["Engine notes", n.engine], ["Combo lines", n.lines], ["Strengths", n.str], ["Weaknesses", n.weak]].forEach(function(s){
+      s = [s[0], null, s[1]];
+      var sec = el("section", {class: "notes-section"});
+      var h = el("h4"); h.appendChild(document.createTextNode(s[0]));
+      sec.appendChild(h);
+      var body = el("div", {class: "notes-content"}); body.innerHTML = s[2];
+      body.querySelectorAll("table").forEach(function(tb){
+        var w = el("div", {class: "table-scroll"}); tb.parentNode.insertBefore(w, tb); w.appendChild(tb);
+      });
+      sec.appendChild(body);
+      vNotes.appendChild(sec);
+    });
+    vNotes.appendChild(text("p", "notes-source",
+      "Source: " + n.src + " reference guide" + (n.ver ? ", v" + n.ver : "") + (n.date ? " (decklist dated " + n.date + ")" : "") + "."));
+  }
+
+  var detailSeq = 0, cardsPromise = null;
+
+  /* Card text arrives pre-escaped from the build step (HTML-escaped strings), so innerHTML is safe here. */
+  function renderCard(box, c){
+    box.innerHTML = "";
+    box.setAttribute("data-frame", c.f);
+    var chips = el("div", {class: "cd-chips"});
+    c.chips.forEach(function(ch, i){
+      var cls = "cd-chip" + (i === 0 ? " is-type" : "") + (/^(ATK|Level|Rank|Link-|Pendulum Scale)/.test(ch) ? " is-stat" : "");
+      chips.appendChild(text("span", cls, ch.replace(/^Arrows: /, "Arrows ")));
+    });
+    box.appendChild(chips);
+
+    if (c.mat){
+      var m = el("div");
+      m.appendChild(text("span", "cd-label", "Materials"));
+      var mt = el("div", {class: "cd-mat"}); mt.innerHTML = c.mat; m.appendChild(mt);
+      box.appendChild(m);
+    }
+
+    var hasText = c.fx.some(function(b){ return b.x.length; });
+    if (!hasText){
+      box.appendChild(text("div", "cd-none", "This card has no effects."));
+    }
+    c.fx.forEach(function(b){
+      if (!b.x.length) return;
+      var blk = el("div", {class: "cd-fx-block"});
+      if (b.l) blk.appendChild(text("span", "cd-label", b.l));
+      var ul = el("ul", {class: "cd-fx"});
+      b.x.forEach(function(x){
+        var li = el("li", x.r ? {class: "is-rule"} : {});
+        li.innerHTML = (x.c ? '<span class="cond">' + x.c + "</span> " : "") + x.t;
+        ul.appendChild(li);
+      });
+      blk.appendChild(ul);
+      box.appendChild(blk);
+    });
+
+    var rec = el("div", {class: "cd-record"});
+    function rp(label, val, cls){ var s = el("span", cls ? {class: cls} : {}); s.innerHTML = label + " <b></b>"; s.querySelector("b").textContent = val; rec.appendChild(s); }
+    if (c.fl) rp("TCG", c.fl, "fl-" + c.fl.toLowerCase());
+    if (c.ocg) rp("OCG", c.ocg);
+    if (c.rel) rp("Released", c.rel);
+    if (c.pw) rp("Password", c.pw);
+    box.appendChild(rec);
+
+    if (c.n && c.n.length){
+      var det = el("details", {class: "cd-notes"});
+      det.appendChild(text("summary", null, "Guide notes"));
+      c.n.forEach(function(n){
+        var w = el("div", {class: "cd-note"});
+        w.appendChild(text("span", "cd-label", n.l));
+        var h = el("div"); h.innerHTML = n.h; w.appendChild(h);
+        det.appendChild(w);
+      });
+      box.appendChild(det);
+    }
+  }
+  function loadCards(){
+    if (!cardsPromise){
+      var inl = null, ie = document.getElementById("data-cards"); if (ie) { try { inl = JSON.parse(ie.textContent); } catch (x) {} }   /* embedded copy: works when the page is opened as a local file */
+      cardsPromise = inl ? Promise.resolve(inl) : fetch("data/cards.json").then(function(r){
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      });
+      cardsPromise.catch(function(){ cardsPromise = null; });   // allow a retry after a failed load
+    }
+    return cardsPromise;
+  }
+  vBody.addEventListener("click", function(e){
+    var link = e.target.closest(".card-link"); if (!link) return;
+    var item = link.closest(".dl-item"), detail = item.querySelector(".dl-detail");
+    var open = link.getAttribute("aria-expanded") === "true";
+    link.setAttribute("aria-expanded", open ? "false" : "true");
+    item.classList.toggle("is-open", !open);
+    detail.hidden = open;
+    if (open || detail.getAttribute("data-loaded")) return;
+    var slug = currentSlug, name = link.getAttribute("data-card");
+    detail.innerHTML = '<span class="detail-state">Loading card text…</span>';
+    loadCards().then(function(all){
+      var c = all[slug] && all[slug][name];
+      if (c){ renderCard(detail, c); detail.setAttribute("data-loaded", "1"); }
+      else detail.innerHTML = '<span class="detail-state">This card has no entry in the reference guide.</span>';
+    }, function(){
+      detail.innerHTML = '<span class="detail-state">Card text didn’t load. Close and reopen this card to try again.</span>';
+    });
+  });
+
+  function renderList(list){
+    vBody.innerHTML = "";
+    var mainTotal = sum(list.monsters) + sum(list.spells) + sum(list.traps);
+    function zone(title, total, groups){
+      var z = el("div", {class: "dl-zone"});
+      var h = el("div", {class: "dl-zone-title"});
+      h.appendChild(document.createTextNode(title));
+      h.appendChild(text("span", null, total + " cards"));
+      z.appendChild(h);
+      groups.forEach(function(g){
+        if (!g.cards.length) return;
+        var grp = el("div", {class: "dl-group"});
+        var gt = el("div", {class: "dl-group-title"});
+        gt.appendChild(text("span", null, g.label));
+        gt.appendChild(text("span", null, String(sum(g.cards))));
+        grp.appendChild(gt);
+        g.cards.forEach(function(card){
+          var id = "cd-" + (++detailSeq);
+          var link = el("button", {class: "card-link", type: "button", "data-card": card.n,
+            "aria-expanded": "false", "aria-controls": id, title: "Show card text from the reference guide"});
+          link.textContent = card.n;
+          var row = el("div", {class: "dl-row"}, [
+            text("span", "q", card.q + "×"), el("span", {class: "n"}, [link]), text("span", "t", card.t)
+          ]);
+          var detail = el("div", {class: "dl-detail", id: id, hidden: "hidden"});
+          grp.appendChild(el("div", {class: "dl-item"}, [row, detail]));
+        });
+        z.appendChild(grp);
+      });
+      return z;
+    }
+    vBody.appendChild(zone("Main Deck", mainTotal, [
+      {label: "Monsters", cards: list.monsters},
+      {label: "Spells", cards: list.spells},
+      {label: "Traps", cards: list.traps}
+    ]));
+    vBody.appendChild(zone("Extra Deck", sum(list.extra), [{label: "Extra Deck monsters", cards: list.extra}]));
+    vBody.scrollTop = 0;
+  }
+
+  function plainText(slug){
+    var d = DECK_INDEX[slug].deck, list = DECKLISTS[slug], out = [d.name, ""];
+    function block(label, cards){
+      if (!cards.length) return;
+      out.push(label + " (" + sum(cards) + ")");
+      cards.forEach(function(c){ out.push(c.q + "x " + c.n); });
+      out.push("");
+    }
+    out.push("MAIN DECK (" + (sum(list.monsters) + sum(list.spells) + sum(list.traps)) + ")");
+    block("Monsters", list.monsters); block("Spells", list.spells); block("Traps", list.traps);
+    block("EXTRA DECK", list.extra);
+    return out.join("\n").trim();
+  }
+
+  function openViewer(slug, trigger, view){
+    var entry = DECK_INDEX[slug]; if (!entry || !DECKLISTS[slug]) return;
+    currentSlug = slug;
+    var d = entry.deck;
+    vImg.src = asset("art/" + slug + ".png");
+    vImg.alt = d.name + " — full decklist image";
+    vMedia.classList.remove("is-zoomed");
+    vMedia.scrollTop = 0; vMedia.scrollLeft = 0;
+    document.getElementById("viewerChapter").textContent = entry.collection.no + " · " + entry.collection.title;
+    document.getElementById("viewerTitle").textContent = d.name;
+    document.getElementById("viewerCounts").innerHTML =
+      "<b>" + d.main + "</b> Main &nbsp;·&nbsp; <b>" + d.extra + "</b> Extra<br>" + d.breakdown;
+    document.getElementById("helpFilename").textContent = d.name.replace(/[\\/:*?"<>|]/g, "-") + ".ydk";
+    copyStatus.textContent = "";
+    renderList(DECKLISTS[slug]);
+    renderNotes(slug);
+    setView(view);
+    lastFocused = trigger || document.activeElement;
+    viewer.classList.add("is-open");
+    var vl = layer([vImg], "ly", 1);
+    vl = layer(kids(document.querySelector(".viewer-head")), "ly-q", 2);
+    var act = document.querySelector(".viewer-body:not([hidden])");
+    if (act) layer(kids(act).slice(0, 10), "ly-q", vl);
+    viewer.setAttribute("aria-hidden", "false");
+    viewer.inert = false;
+    document.body.classList.add("viewer-open");
+    document.getElementById("viewerClose").focus();
+    // Give the viewer its own history entry so browser Back closes it instead of leaving the page.
+    if (!viewerPushed){ try { history.pushState({vaultViewer: true}, ""); viewerPushed = true; } catch (err) {} }
+  }
+  // fromHistory: the history entry is already gone (Back, or the hash changed), so don't pop it again.
+  function closeViewer(fromHistory){
+    if (!viewer.classList.contains("is-open")) return;
+    viewer.classList.remove("is-open");
+    viewer.setAttribute("aria-hidden", "true");
+    viewer.inert = true;
+    document.body.classList.remove("viewer-open");
+    if (viewerPushed){ viewerPushed = false; if (fromHistory !== true) history.back(); }
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+  window.addEventListener("popstate", function(){ closeViewer(true); });
+  window.addEventListener("hashchange", function(){ closeViewer(true); });
+
+  document.addEventListener("click", function(e){
+    var t = e.target.closest("[data-deck]");
+    if (t){ openViewer(t.getAttribute("data-deck"), t, t.getAttribute("data-view") || "list"); return; }
+    if (e.target === viewer || e.target.closest("#viewerClose")){ closeViewer(); return; }
+    if (e.target === vImg){ vMedia.classList.toggle("is-zoomed"); }
+  });
+  document.addEventListener("keydown", function(e){
+    if (!viewer.classList.contains("is-open")) return;
+    if (e.key === "Escape"){ closeViewer(); return; }
+    if (e.key === "Tab"){
+      var f = viewer.querySelectorAll("button, a[href]");
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  });
+
+  function copyText(txt, label){
+    var done = label + " copied";
+    function fallback(){
+      var ta = document.createElement("textarea");
+      ta.value = txt; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      var ok = false; try { ok = document.execCommand("copy"); } catch (err) {}
+      document.body.removeChild(ta);
+      copyStatus.textContent = ok ? done : "Copy was blocked here. Use Download .ydk instead.";
+    }
+    try {
+      navigator.clipboard.writeText(txt).then(function(){ copyStatus.textContent = done; }, fallback);
+    } catch (err) { fallback(); }
+  }
+  // Build the .ydk from the embedded deck data, so it works when the page is opened straight from disk.
+  function downloadYdk(){
+    if (!currentSlug || !YDK[currentSlug]) return;
+    var name = DECK_INDEX[currentSlug].deck.name.replace(/[\\/:*?"<>|]/g, "-") + ".ydk";
+    var url = URL.createObjectURL(new Blob([YDK[currentSlug].ydk], {type: "text/plain"}));
+    var a = document.createElement("a");
+    a.href = url; a.download = name; a.style.display = "none";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+    copyStatus.textContent = "Saved " + name;
+  }
+  document.getElementById("downloadYdk").addEventListener("click", downloadYdk);
+  document.getElementById("copyList").addEventListener("click", function(){
+    if (currentSlug) copyText(plainText(currentSlug), "Card list");
+  });
+  document.getElementById("copyYdk").addEventListener("click", function(){
+    if (currentSlug && YDK[currentSlug]) copyText(YDK[currentSlug].ydk, ".ydk text");
+  });
+  document.getElementById("copyYdke").addEventListener("click", function(){
+    if (currentSlug && YDK[currentSlug]) copyText(YDK[currentSlug].ydke, "ydke:// link");
+  });
+  vHelp.addEventListener("click", function(e){
+    var b = e.target.closest("[data-copy]");
+    if (!b || !currentSlug || !YDK[currentSlug]) return;
+    if (b.getAttribute("data-copy") === "download") downloadYdk();
+    else if (b.getAttribute("data-copy") === "ydk") copyText(YDK[currentSlug].ydk, ".ydk text");
+    else copyText(YDK[currentSlug].ydke, "ydke:// link");
+  });
+})();
+</script>
+<script type="application/json" id="data-guides">/*@DATA_GUIDES@*/</script>
+<script type="application/json" id="data-cards">/*@DATA_CARDS@*/</script>

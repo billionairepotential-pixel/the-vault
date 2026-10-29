@@ -1,0 +1,71 @@
+name: Build The Vault
+
+# Runs whenever something is pushed to main (for example a new .ydk file uploaded on GitHub).
+# 1. Rebuilds the page from the deck sources and saves it back to main, so the live site updates.
+# 2. Publishes the offline copies (standalone file + zip) to the "offline" release.
+# On pull requests it only checks that everything builds and attaches the offline copies to the run.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vault-build-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TZ: America/La_Paz
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install image tools
+        run: pip install Pillow==11.0.0
+
+      - name: Rebuild the site from the deck sources
+        run: python build/build.py --dist dist
+
+      - name: Save the rebuilt page to main
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "vault-build"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html content data
+          if git diff --cached --quiet; then
+            echo "Nothing to save: the page was already up to date."
+          else
+            git commit -m "Rebuild site from deck sources"
+            git push
+          fi
+
+      - name: Publish the offline copies
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp "dist/The Vault offline (standalone).html" dist/The-Vault-offline-standalone.html
+          cp "dist/The Vault offline package (local host).zip" dist/The-Vault-offline-package.zip
+          if ! gh release view offline >/dev/null 2>&1; then
+            gh release create offline --title "The Vault: offline copies" \
+              --notes "Always the latest offline copies of The Vault, rebuilt automatically whenever the site changes. Standalone: one file that opens anywhere. Package: unzip and open index.html; it keeps the full-quality photos."
+          fi
+          gh release upload offline dist/The-Vault-offline-standalone.html dist/The-Vault-offline-package.zip --clobber
+
+      - name: Attach the offline copies to this run
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: the-vault-offline-copies
+          path: dist/The Vault offline*
+          retention-days: 14

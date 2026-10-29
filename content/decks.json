@@ -1,0 +1,331 @@
+{
+  "_readme": "Chapters and deck text shown on the site. Edit freely. Decklists come from ydk/<slug>.ydk; card counts, the type breakdown and hand odds are calculated by the build. 'updated' is set automatically when a deck's .ydk changes.",
+  "collections": [
+    {
+      "id": "method",
+      "no": "Chapter I",
+      "title": "Method",
+      "family": "Method — decks that each showcase a summoning method.",
+      "intro": "Five decks covering all six summoning methods — Synchro, Xyz, Ritual, Link, Fusion and Pendulum — each built to showcase its method.",
+      "decks": [
+        {
+          "slug": "white-forest",
+          "name": "White Forest / Diabellstar",
+          "style": "Method: Synchro",
+          "tagline": "A LIGHT Spellcaster Synchro engine fused with the Diabellstar / Sinful Spoils package and a Super Polymerization removal suite.",
+          "keyCards": [
+            "Elzette of the White Forest",
+            "Pressured Planet Wraitsoth",
+            "WANTED: Seeker of Sinful Spoils",
+            "Ash Blossom & Joyous Spring",
+            "Super Polymerization"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "horus-mitsurugi",
+          "name": "Horus Mitsurugi",
+          "style": "Method: Xyz / Ritual",
+          "tagline": "A Horus Level 8 graveyard-revival engine braided into the Mitsurugi DARK Reptile Ritual line, sharing a Rank 8 Xyz toolbox.",
+          "keyCards": [
+            "Imsety, Glory of Horus",
+            "Imsety, Glory of Horus",
+            "Mitsurugi Prayers",
+            "Mitsurugi Ritual",
+            "Infinite Impermanence"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "kashtira-maliss",
+          "name": "Kashtira Maliss",
+          "style": "Method: Link",
+          "tagline": "A Maliss DARK Cyberse banish-loop combo through the Link Monster line, backed by Bystials and an empty-field Kashtira package.",
+          "keyCards": [
+            "Maliss <P> Dormouse",
+            "Maliss <P> March Hare",
+            "Cynet Mining",
+            "Ash Blossom & Joyous Spring",
+            "Infinite Impermanence"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "runick-typhoon",
+          "name": "Runick Typhoon",
+          "style": "Method: Fusion",
+          "tagline": "A Runick Quick-Play mill / control shell locked behind Inspector Boarder and Dimensional Fissure, closing with Radiant Typhoon Fonix and TY-PHON.",
+          "keyCards": [
+            "Inspector Boarder",
+            "Inspector Boarder",
+            "Terraforming",
+            "Runick Tip",
+            "Runick Flashing Fire"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "ryu-ge-mitsurugi",
+          "name": "Ryu-Ge Mitsurugi",
+          "style": "Method: Pendulum",
+          "tagline": "A Level 10 Pendulum / Realm control shell fused with the Mitsurugi Ritual line, climbing a Rank 10–12 Xyz and Synchro toolbox.",
+          "keyCards": [
+            "Ryu-Ge Rising",
+            "Ryu-Ge War Zone",
+            "Mitsurugi Prayers",
+            "Mitsurugi Ritual",
+            "Ash Blossom & Joyous Spring"
+          ],
+          "updated": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "id": "playstyle-1",
+      "no": "Chapter II",
+      "title": "Playstyle Pt. 1",
+      "family": "Playstyle — decks that each play the game their own way. Part 1 is how a deck controls the game; Part 2 is how it closes it.",
+      "intro": "Four decks defined by how they control the game — Defense-Position Battle Phase dominance, a Synchro grind, tempo control going first, and tempo control going second.",
+      "decks": [
+        {
+          "slug": "scareclaw-kashtira",
+          "name": "Scareclaw Kashtira",
+          "style": "Battle Phase Dominance: Defense Position",
+          "tagline": "Defense-Position beatdown and OTK built around Scareclaw's self-Summon chain, with a Kashtira disruption package and Visas Starfrost as the glue.",
+          "keyCards": [
+            "Scareclaw Reichheart",
+            "Scareclaw Acro",
+            "Kashtira Fenrir",
+            "Ash Blossom & Joyous Spring",
+            "Infinite Impermanence"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "earthbound-resonator",
+          "name": "Earthbound Resonator",
+          "style": "Synchro Grind",
+          "tagline": "A DARK Dragon Synchro grind deck built on the Resonator engine into the Red Dragon Archfiend family, with Earthbound Immortal Red Nova as a Level 12 shortcut.",
+          "keyCards": [
+            "Soul Resonator",
+            "Super Polymerization",
+            "Imsety, Glory of Horus",
+            "Ash Blossom & Joyous Spring",
+            "Infinite Impermanence"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "primite-blue-eyes",
+          "name": "Primite Blue-Eyes",
+          "style": "Tempo Control: Going First",
+          "tagline": "The classic Blue-Eyes White Dragon Synchro / Fusion control shell, reinforced with the Primite Normal-Monster sub-engine for extra consistency.",
+          "keyCards": [
+            "Sage with Eyes of Blue",
+            "Wishes for Eyes of Blue",
+            "Primite Drillbeam",
+            "Ash Blossom & Joyous Spring",
+            "Infinite Impermanence"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "swordsoul-tenyi",
+          "name": "Swordsoul Tenyi",
+          "style": "Tempo Control: Going Second",
+          "tagline": "A Wyrm Synchro shell built on Swordsoul Tokens and the Tenyi non-Effect sub-engine, running one of the heaviest going-second suites in the collection.",
+          "keyCards": [
+            "Swordsoul of Mo Ye",
+            "Swordsoul Strategist Longyuan",
+            "Tenyi Spirit - Vishuda",
+            "Ash Blossom & Joyous Spring",
+            "Infinite Impermanence"
+          ],
+          "updated": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "id": "playstyle-2",
+      "no": "Chapter III",
+      "title": "Playstyle Pt. 2",
+      "family": "Playstyle — decks that each play the game their own way. Part 1 is how a deck controls the game; Part 2 is how it closes it.",
+      "intro": "Three decks defined by how they close the game — swift Battle Phase OTKs, Synchro spam, and an unaffected Link tower.",
+      "decks": [
+        {
+          "slug": "tenpai-wyrm",
+          "name": "Tenpai Wyrm Striker",
+          "style": "Battle Phase Dominance: Swift OTK",
+          "tagline": "A three-engine hybrid: Swordsoul Tokens and Tenyi build Wyrm Synchros on the Main Phase, then Tenpai / Sangen Synchro Summons FIRE Dragons mid-Battle Phase for the kill, backed by Sky Striker interaction.",
+          "keyCards": [
+            "Swordsoul of Mo Ye",
+            "Swordsoul Strategist Longyuan",
+            "Swordsoul of Taia",
+            "Ash Blossom & Joyous Spring",
+            "Infinite Impermanence"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "synchron",
+          "name": "Synchron Adventurer",
+          "style": "Synchro Spam",
+          "tagline": "The classic Synchron / Stardust Synchro combo engine, supplemented by an Adventurer Token sub-engine for a free body and a hard negate.",
+          "keyCards": [
+            "Synchro Fellowship",
+            "Tuning",
+            "Ash Blossom & Joyous Spring",
+            "Infinite Impermanence",
+            "Effect Veiler"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "ignister",
+          "name": "Ignister",
+          "style": "Unaffected Tower",
+          "tagline": "A @Ignister Cyberse Link climb from Level 1–5 searchers into Dark Templar, Allied Code Talker, and Accesscode Talker, topped by The Arrival Cyberse @Ignister — a Link-6 tower unaffected by other cards' effects.",
+          "keyCards": [
+            "Achichi @Ignister",
+            "Doyon @Ignister",
+            "Cynet Mining",
+            "Ash Blossom & Joyous Spring",
+            "Infinite Impermanence"
+          ],
+          "updated": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "id": "nostalgic-1",
+      "no": "Chapter IV",
+      "title": "Nostalgic Fun Pt. 1",
+      "family": "Nostalgic Fun — archetypes I love, rebuilt to hold up today.",
+      "intro": "Old favorites rebuilt with modern support — a Fusion toolbox, a low-LP floodgate deck, and a Trap-driven boss-monster shell.",
+      "decks": [
+        {
+          "slug": "branded-dracotail",
+          "name": "Branded Dracotail",
+          "tagline": "A Fusion toolbox built on Fallen of Albaz and Branded Fusion, reinforced by the Dracotail engine's Quick-Effect Fusions and on-material removal triggers.",
+          "keyCards": [
+            "Aluber the Jester of Despia",
+            "Mulcharmy Purulia",
+            "Ash Blossom & Joyous Spring",
+            "Effect Veiler",
+            "Super Polymerization"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "dinomorphia-ryzeal",
+          "name": "Dinomorphia Ryzeal",
+          "tagline": "A Trap-Fusion floodgate deck that scales its bosses off low Life Points, paired with a Ryzeal Rank 4 toolbox and a small Kashtira package.",
+          "keyCards": [
+            "Ice Ryzeal",
+            "Ash Blossom & Joyous Spring",
+            "Infinite Impermanence",
+            "Effect Veiler",
+            "Ghost Belle & Haunted Mansion"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "metalmorph-fiendsmith",
+          "name": "Metalmorph Fiendsmith",
+          "tagline": "A Max Metalmorph Trap toolbox running three boss monsters off Red-Eyes Dragons and Zoa, with the Fiendsmith LIGHT Fiend engine layered in for extension.",
+          "keyCards": [
+            "Zoa the Fiendish Beast",
+            "Red-Eyes Metal Claws Dragon",
+            "Infinite Impermanence",
+            "Fiendsmith Engraver",
+            "Ash Blossom & Joyous Spring"
+          ],
+          "updated": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "id": "nostalgic-2",
+      "no": "Chapter V",
+      "title": "Nostalgic Fun Pt. 2",
+      "family": "Nostalgic Fun — archetypes I love, rebuilt to hold up today.",
+      "intro": "Three throwbacks built on birds, wind and moonlight — a Blackwing Synchro combo, a Radiant Typhoon Quick-Play engine, and a Lunalight Fusion chain — with two of them sharing the Angelechy engine.",
+      "decks": [
+        {
+          "slug": "blackwing-angelechy",
+          "name": "Blackwing Angelechy",
+          "tagline": "The Blackwing DARK Synchro combo fused with the Angelechy LIGHT Fairy engine, whose Synchros sit face-up as Continuous Spells for extra utility.",
+          "keyCards": [
+            "Blackwing - Simoon the Poison Wind",
+            "Blackwing - Sudri the Phantom Glimmer",
+            "Blackwing - Shamal the Sandstorm",
+            "Ash Blossom & Joyous Spring",
+            "Infinite Impermanence"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "radiant-typhoon",
+          "name": "Radiant Typhoon Angelechy",
+          "tagline": "A Radiant Typhoon WIND Quick-Play / MST engine layered with Angelechy Synchro placement and a Fallen of Albaz Fusion package.",
+          "keyCards": [
+            "Radiant Typhoon Eldam",
+            "Radiant Typhoon Vision",
+            "Radiant Typhoon Fonix, the Great Flame",
+            "Mystical Space Typhoon",
+            "Ash Blossom & Joyous Spring"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "lunalight",
+          "name": "Lunalight",
+          "tagline": "The Lunalight DARK Beast-Warrior Fusion engine running the full Dancer chain, from Cat Dancer up to Liger Dancer, backed by a deep hand-trap suite.",
+          "keyCards": [
+            "Lunalight Gold Leo",
+            "Polymerization",
+            "Lunalight Black Sheep",
+            "Ash Blossom & Joyous Spring",
+            "Infinite Impermanence"
+          ],
+          "updated": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "id": "nostalgic-3",
+      "no": "Chapter VI",
+      "title": "Nostalgic Fun Pt. 3",
+      "family": "Nostalgic Fun — archetypes I love, rebuilt to hold up today.",
+      "intro": "Two decks that each define a format in their own way — a Level 2 toolbox engine and a floodgate control shell built around one enormous beater.",
+      "decks": [
+        {
+          "slug": "spright",
+          "name": "Spright Dogmatika",
+          "tagline": "The Spright Level / Rank / Link 2 engine paired with the Dogmatika Extra-Deck-send package, running one of the heaviest hand-trap suites in the collection.",
+          "keyCards": [
+            "Spright Starter",
+            "Spright Blue",
+            "Ash Blossom & Joyous Spring",
+            "Infinite Impermanence",
+            "Effect Veiler"
+          ],
+          "updated": "2026-10-26"
+        },
+        {
+          "slug": "gren-maju",
+          "name": "Gren Maju Da Eiza",
+          "tagline": "A floodgate control shell stacking Macro Cosmos, Necrovalley, and Inspector Boarder, closing games with a Gren Maju Da Eiza whose attack grows with every banished card.",
+          "keyCards": [
+            "Pot of Duality",
+            "Inspector Boarder",
+            "Necrovalley",
+            "Macro Cosmos",
+            "Solemn Judgment"
+          ],
+          "updated": "2026-10-26"
+        }
+      ]
+    }
+  ]
+}
