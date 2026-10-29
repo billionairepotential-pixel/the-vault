@@ -32,6 +32,8 @@ If a run fails (a red ✗), the live site is left as it was. The summary says wh
 
 Don't edit `index.html` or `content/decklists.json` directly. The build rewrites both from the files above.
 
+Photos go in `art/` (deck photos) and `cards/` (card photos) at full quality. The build makes smaller copies in `web/` for the live site, so it loads quickly; don't edit `web/` by hand.
+
 ## Offline copies
 
 The [offline release](https://github.com/billionairepotential-pixel/the-vault/releases/tag/offline) always has the latest:

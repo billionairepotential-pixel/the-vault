@@ -856,12 +856,14 @@
 
 <script>
 /* Offline build: images are embedded as <script type="text/plain" id="img:PATH"> base64 blocks and used as data: URLs (works in sandboxed previews and file:// pages).
-   The online page has no such blocks, so asset() just returns the path. */
+   The online page has no such blocks, so asset() returns the smaller web/ copy of the photo
+   (WEB_IMAGES; the build turns it off for the offline zip, which keeps the full-quality originals). */
+var WEB_IMAGES = true;
 var ASSET_URLS = {};
 function asset(path){
   if (ASSET_URLS[path]) return ASSET_URLS[path];
   var e = document.getElementById("img:" + path);
-  if (!e) return path;
+  if (!e) return WEB_IMAGES && /^(art|cards)\//.test(path) ? "web/" + path.replace(/\.(png|jpe?g)$/i, ".webp") : path;
   return (ASSET_URLS[path] = "data:" + (e.getAttribute("data-type") || "image/webp") + ";base64," + e.textContent.trim());
 }
 (function(){

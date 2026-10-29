@@ -13,7 +13,8 @@ Sources (edit these):
 Generated (do not edit by hand):
   index.html                the live page, with all data built in
   content/decklists.json    decklists rebuilt from the .ydk files
-  dist/                     offline copies (with --dist)
+  web/                      smaller copies of art/ and cards/ that the live site loads
+  dist/                    offline copies (with --dist)
 
 What the build does:
   * reads every .ydk file and rebuilds that deck's list; when a list changes, the
@@ -26,7 +27,7 @@ What the build does:
 
 Usage:  python build/build.py [--dist DIR] [--offline-ok]
 """
-import argparse, base64, datetime, io, json, os, re, struct, sys, urllib.parse, urllib.request, zipfile
+import argparse, base64, datetime, hashlib, io, json, os, re, struct, sys, urllib.parse, urllib.request, zipfile
 from math import comb
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -344,10 +345,44 @@ def build(allow_offline):
         with open(P("index.html"), "w", encoding="utf8", newline="\n") as f: f.write(page)
     return page
 
+# ---------------------------------------------------------------- web images
+# The live site loads smaller copies of the photos from web/ (the offline zip keeps the full-quality originals).
+WEB_SCALES = (("art", 0.85), ("cards", 0.6))
+def web_path(folder, f): return P("web", folder, os.path.splitext(f)[0] + ".webp")
+
+def web_images():
+    """Write web/<folder>/<name>.webp for every photo whose source changed since the last build."""
+    try:
+        from PIL import Image
+    except ImportError:
+        error("the photo step needs Pillow: pip install Pillow"); return
+    manifest_path = "web/sources.json"
+    manifest = load(manifest_path) if os.path.exists(P(manifest_path)) else {}
+    fresh, made = {}, []
+    for folder, scale in WEB_SCALES:
+        os.makedirs(P("web", folder), exist_ok=True)
+        for f in sorted(os.listdir(P(folder))):
+            src = f"{folder}/{f}"
+            digest = hashlib.sha1(open(P(folder, f), "rb").read()).hexdigest()
+            fresh[src] = digest
+            if manifest.get(src) == digest and os.path.exists(web_path(folder, f)): continue
+            im = Image.open(P(folder, f)); im = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
+            im = im.resize((round(im.width * scale), round(im.height * scale)), Image.LANCZOS)
+            im.save(web_path(folder, f), "WEBP", quality=68, method=6)
+            made.append(src)
+        keep = {os.path.basename(web_path(folder, f)) for f in os.listdir(P(folder))}
+        for f in os.listdir(P("web", folder)):            # photos whose source was deleted
+            if f not in keep: os.remove(P("web", folder, f)); made.append(f"web/{folder}/{f} (removed)")
+    save(manifest_path, fresh)
+    if made: changes.append(f"web photos updated: {', '.join(made)}")
+
 # ---------------------------------------------------------------- offline copies
 def build_dist(page, out):
-    from PIL import Image
     os.makedirs(out, exist_ok=True)
+    # the offline copies load the original photos (package) or embedded ones (standalone), not web/
+    flag = "var WEB_IMAGES = true;"
+    if page.count(flag) != 1: raise SystemExit("offline copies: could not find the WEB_IMAGES switch")
+    page = page.replace(flag, "var WEB_IMAGES = false;")
     # 1. package: the site folder as a zip
     top = "The Vault offline package (local host)/The Vault/"
     zpath = os.path.join(out, "The Vault offline package (local host).zip")
@@ -364,12 +399,10 @@ def build_dist(page, out):
         return "url(data:font/woff2;base64," + base64.b64encode(b).decode() + ")"
     st = re.sub(r"url\((fonts/[^)]+\.woff2)\)", font, page)
     blocks = []
-    for folder, scale in (("art", 0.85), ("cards", 0.6)):
+    for folder, _ in WEB_SCALES:                         # same smaller photos as the live site
         for f in sorted(os.listdir(P(folder))):
-            im = Image.open(P(folder, f)); im = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
-            im = im.resize((round(im.width * scale), round(im.height * scale)), Image.LANCZOS)
-            b = io.BytesIO(); im.save(b, "WEBP", quality=68, method=6)
-            blocks.append(f'<script type="text/plain" id="img:{folder}/{f}" data-type="image/webp">{base64.b64encode(b.getvalue()).decode()}</script>')
+            b = open(web_path(folder, f), "rb").read()
+            blocks.append(f'<script type="text/plain" id="img:{folder}/{f}" data-type="image/webp">{base64.b64encode(b).decode()}</script>')
     anchor = "<script>\n/* Offline build"
     if st.count(anchor) != 1: raise SystemExit("standalone: could not find where to insert the photos")
     st = st.replace(anchor, "\n".join(blocks) + "\n" + anchor)
@@ -380,6 +413,7 @@ def main():
     ap.add_argument("--dist", help="also build the offline copies into this folder")
     ap.add_argument("--offline-ok", action="store_true", help="don't fail when YGOPRODeck can't be reached")
     a = ap.parse_args()
+    web_images()
     page = build(a.offline_ok)
     report = []
     if changes: report += ["## Changes", *[f"- {c}" for c in changes]]
