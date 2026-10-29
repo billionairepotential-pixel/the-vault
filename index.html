@@ -123,6 +123,9 @@
     display:flex;gap:36px;margin-top:40px;flex-wrap:wrap;
     padding-top:28px;border-top:1px solid var(--line);
   }
+  .hero-offline{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap;margin-top:26px;}
+  .hero-offline[hidden]{display:none;}
+  .hero-offline span{font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.04em;color:var(--parchment-faint);}
   .stat .n{font-family:var(--font-display);font-size:2.1rem;color:var(--gold-bright);}
   .stat .l{font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--parchment-faint);margin-top:4px;}
 
@@ -748,6 +751,11 @@
       <span class="hero-eyebrow">A Yu-Gi-Oh! deck collection</span>
       <h1>Twenty decks.<br>Six reasons to <em>build</em> them.</h1>
       <p class="lede">Every deck in this collection earns its place for a different reason — a summoning method showcased, a playstyle chased, or a childhood archetype finally done right. This is the record of all of it.</p>
+      <div class="hero-offline" id="heroOffline">
+        <a class="ydk-link" href="https://github.com/billionairepotential-pixel/the-vault/releases/download/offline/The-Vault-offline-standalone.html">Download offline copy</a>
+        <span>One file, about 16 MB · opens in any browser, no internet needed</span>
+      </div>
+      <script>if (location.protocol === "file:") document.getElementById("heroOffline").hidden = true; /* already offline */</script>
       <div class="hero-stats" id="heroStats"></div>
     </div>
     <div class="collection-grid" id="collectionGrid"></div>
