@@ -124,6 +124,9 @@
     display:flex;gap:36px;margin-top:40px;flex-wrap:wrap;
     padding-top:28px;border-top:1px solid var(--line);
   }
+  .home-visits{margin-top:64px;border-top:1px solid var(--line);padding-top:36px;}
+  .home-visits[hidden]{display:none;}
+  .home-visits:not([hidden]) + .home-offline{margin-top:28px;border-top:0;padding-top:0;}
   .home-offline{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap;margin-top:64px;border-top:1px solid var(--line);padding-top:36px;}
   .home-offline[hidden]{display:none;}
   .home-offline span{font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.04em;color:var(--parchment-faint);}
@@ -766,11 +769,32 @@
       </div>
       <div class="teaser-list" id="teaserList"></div>
     </div>
+    <div class="home-visits" id="homeVisits" hidden>
+      <div class="stat"><div class="n" id="visitCount"></div><div class="l">Visits since Oct 2026</div></div>
+    </div>
     <div class="home-offline" id="homeOffline">
       <a class="ydk-link" href="https://github.com/billionairepotential-pixel/the-vault/releases/download/offline/The-Vault-offline-standalone.html">Download offline copy</a>
       <span>One file, about 16 MB · opens in any browser, no internet needed</span>
     </div>
     <script>if (location.protocol === "file:") document.getElementById("homeOffline").hidden = true; /* already offline */</script>
+    <script>
+    /* Visitor stats (GoatCounter: no cookies, no personal data). Only the online site counts visits;
+       the total shows once GoatCounter's "Allow adding visitor counts" setting is on, and stays hidden if it can't be read. */
+    (function(){
+      if (!/^https?:$/.test(location.protocol)) return;
+      var GC = "https://billionairepotential-pixel.goatcounter.com";
+      var s = document.createElement("script");
+      s.async = true; s.src = "https://gc.zgo.at/count.js"; s.setAttribute("data-goatcounter", GC + "/count");
+      document.head.appendChild(s);
+      if (!window.fetch) return;
+      fetch(GC + "/counter/TOTAL.json").then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function(d){
+          if (!d || d.count == null) return;
+          document.getElementById("visitCount").textContent = d.count;
+          document.getElementById("homeVisits").hidden = false;
+        }).catch(function(){});
+    })();
+    </script>
   </section>
 
   <section id="page-analysis" hidden>
