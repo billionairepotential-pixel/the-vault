@@ -188,25 +188,25 @@
 
   .deck-list{display:flex;flex-direction:column;gap:28px;margin-top:40px;}
   .deck-card{
-    display:grid;grid-template-columns:260px 1fr;gap:28px;
+    display:grid;grid-template-columns:340px 1fr;gap:28px;
     border:1px solid var(--line);border-radius:4px;background:var(--ink-card);overflow:hidden;
   }
   @media (max-width:720px){.deck-card{grid-template-columns:1fr;}}
-  .deck-card .art-wrap{position:relative;min-width:0;}
-  .deck-card .art-wrap img{width:100%;height:100%;object-fit:cover;min-height:220px;}
+  /* Every deck photo sits in the same 11:10 frame (the photos' own shape), pinned to the top,
+     so the whole decklist shows and the crop is identical from deck to deck. */
+  .deck-card .art-wrap{position:relative;min-width:0;align-self:start;}
+  .deck-card .art-wrap img{display:block;width:100%;height:auto;aspect-ratio:11/10;object-fit:cover;object-position:center top;}
   .deck-card .art-wrap::after{
     content:"";position:absolute;inset:0;
     background:linear-gradient(90deg, rgba(11,10,8,0) 70%, rgba(11,10,8,0.35) 100%);
   }
-  @media (max-width:720px){.deck-card .art-wrap img{min-height:200px;}}
   .deck-card .art-wrap{overflow:hidden;}
   .art-trigger{
-    display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in;
+    display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;
     position:relative;color:inherit;
   }
   .art-trigger img{transition:scale .35s var(--ease-out);}
-  @media (hover: hover) and (pointer: fine){ .art-trigger:hover img{scale:1.035;} .sx .art-trigger:hover img{scale:1.11;} }
-  .sx .deck-card .art-wrap img{scale:1.08;will-change:translate;}
+  @media (hover: hover) and (pointer: fine){ .art-trigger:hover img{scale:1.035;} }
   .art-trigger .peek{
     position:absolute;left:12px;bottom:12px;z-index:2;
     font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;
@@ -214,6 +214,8 @@
     padding:6px 10px;border-radius:999px;opacity:0.9;transition:opacity .2s, border-color .2s;
   }
   .art-trigger:hover .peek{opacity:1;border-color:var(--gold);}
+  /* with a mouse the label waits for hover, so it doesn't sit on the Extra Deck row */
+  @media (hover: hover) and (pointer: fine){ .art-trigger .peek{opacity:0;} .art-trigger:hover .peek, .art-trigger:focus-visible .peek{opacity:1;} }
   .deck-title-link{
     font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left;
     text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:6px;
@@ -1669,14 +1671,12 @@ function asset(path){
   /* ---------- Scroll choreography engine ----------
      One passive scroll listener, one rAF per frame, transforms and opacity only.
      Home: hero drifts away, the tour pins and scrubs through the six collections.
-     Collection pages: deck photos parallax inside their frames; a gold line under the nav tracks reading progress. */
+     Collection pages: a gold line under the nav tracks reading progress (deck photos stay still so the whole list shows). */
   var motionOK = !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
   if (motionOK) document.documentElement.classList.add("sx");
-  var sxQueued = false, sxImgs = [];
+  var sxQueued = false;
   function clamp(v, a, b){ return v < a ? a : v > b ? b : v; }
   function sxCollect(){
-    var pg = document.getElementById("page-" + currentPage);
-    sxImgs = pg ? Array.prototype.slice.call(pg.querySelectorAll(".deck-card .art-wrap img")) : [];
     document.documentElement.style.setProperty("--navh", siteNav.getBoundingClientRect().height + "px");
     siteNav.classList.toggle("has-progress", currentPage !== "home");
     sxFrame();
@@ -1720,12 +1720,6 @@ function asset(path){
     var doc = document.documentElement, max = doc.scrollHeight - vh;
     readBar.style.transform = "scaleX(" + (max > 0 ? clamp(y / max, 0, 1) : 1).toFixed(4) + ")";
     if (!motionOK) return;
-    sxImgs.forEach(function(im){
-      var r = im.parentNode.getBoundingClientRect();
-      if (r.bottom < 0 || r.top > vh) return;
-      var c = (r.top + r.height / 2 - vh / 2) / vh;
-      im.style.translate = "0 " + (c * -30).toFixed(1) + "px";
-    });
   }
   function sxRequest(){ if (!sxQueued){ sxQueued = true; requestAnimationFrame(sxFrame); } }
   window.addEventListener("scroll", sxRequest, {passive: true});
