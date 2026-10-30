@@ -616,8 +616,10 @@
     display:flex;flex-direction:column;padding:4.2% 4.6% 3.6%;
     container-type:inline-size;
   }
-  @media (max-width:640px){.slide{aspect-ratio:auto;width:100%;max-height:none;min-height:100%;overflow-y:auto;}}
-  .slide.is-flow{aspect-ratio:auto;width:min(880px, 100%);height:100%;max-height:none;overflow-y:auto;}
+  /* Phones and short windows: the slide fills the stage and scrolls inside it. (A slide taller than the stage
+     must not grow past it: the centred stage would push its top off-screen and its bottom under Prev/Next.) */
+  @media (max-width:640px){.slide{aspect-ratio:auto;width:100%;height:100%;max-height:none;overflow-y:auto;overscroll-behavior:contain;} .slide .s-body{flex:1 0 auto;}}
+  .slide.is-flow{aspect-ratio:auto;width:min(880px, 100%);height:100%;max-height:none;overflow-y:auto;overscroll-behavior:contain;}
   .slide.is-flow .s-body{flex:1 0 auto;}   /* grow with the content and scroll, rather than squeeze it under the footer */
   .slide[data-col="method"]{--hue:#c9a24b;} .slide[data-col="playstyle-1"]{--hue:#c2553f;} .slide[data-col="playstyle-2"]{--hue:#3aa394;}
   .slide[data-col="nostalgic-1"]{--hue:#9a68c9;} .slide[data-col="nostalgic-2"]{--hue:#4f84d6;} .slide[data-col="nostalgic-3"]{--hue:#62a85e;}
