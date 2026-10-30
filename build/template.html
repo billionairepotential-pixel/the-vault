@@ -264,6 +264,13 @@
     padding:6px 10px;border-radius:999px;pointer-events:none;
   }
   .viewer-media.is-zoomed .zoom-hint{display:none;}
+  .zoom-hint .hint-tap{display:none;}
+  @media (hover: none){ .zoom-hint .hint-click{display:none;} .zoom-hint .hint-tap{display:inline;} }
+  /* phones: the deck photo fills the width, so the pill sits on the Extra Deck; show it briefly, then get out of the way */
+  @media (max-width:860px){
+    .viewer.is-open .zoom-hint{animation:hintAway .4s ease 2.5s forwards;}
+    @keyframes hintAway{to{opacity:0;visibility:hidden;}}
+  }
   .viewer-list{min-width:0;min-height:0;display:flex;flex-direction:column;border-left:1px solid var(--line);}
   .viewer-head{padding:22px 24px 16px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:6px;padding-right:64px;}
   .viewer-head .chapter-no{font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);}
@@ -610,6 +617,8 @@
     container-type:inline-size;
   }
   @media (max-width:640px){.slide{aspect-ratio:auto;width:100%;max-height:none;min-height:100%;overflow-y:auto;}}
+  .slide.is-flow{aspect-ratio:auto;width:min(880px, 100%);height:100%;max-height:none;overflow-y:auto;}
+  .slide.is-flow .s-body{flex:1 0 auto;}   /* grow with the content and scroll, rather than squeeze it under the footer */
   .slide[data-col="method"]{--hue:#c9a24b;} .slide[data-col="playstyle-1"]{--hue:#c2553f;} .slide[data-col="playstyle-2"]{--hue:#3aa394;}
   .slide[data-col="nostalgic-1"]{--hue:#9a68c9;} .slide[data-col="nostalgic-2"]{--hue:#4f84d6;} .slide[data-col="nostalgic-3"]{--hue:#62a85e;}
   .s-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
@@ -770,7 +779,7 @@
       <div class="teaser-list" id="teaserList"></div>
     </div>
     <div class="home-visits" id="homeVisits" hidden>
-      <div class="stat"><div class="n" id="visitCount"></div><div class="l">Visits since Oct 2026</div></div>
+      <div class="stat"><div class="n" id="visitCount"></div><div class="l" id="visitLabel">Visits since Oct 2026</div></div>
     </div>
     <div class="home-offline" id="homeOffline">
       <a class="ydk-link" href="https://github.com/billionairepotential-pixel/the-vault/releases/download/offline/The-Vault-offline-standalone.html">Download offline copy</a>
@@ -791,6 +800,7 @@
         .then(function(d){
           if (!d || d.count == null) return;
           document.getElementById("visitCount").textContent = d.count;
+          if (String(d.count).replace(/\D/g, "") === "1") document.getElementById("visitLabel").textContent = "Visit since Oct 2026";
           document.getElementById("homeVisits").hidden = false;
         }).catch(function(){});
     })();
@@ -835,7 +845,7 @@
     <button class="viewer-close" id="viewerClose" aria-label="Close deck viewer">&times;</button>
     <div class="viewer-media" id="viewerMedia">
       <img id="viewerImg" src="" alt="">
-      <span class="zoom-hint">Click image to zoom</span>
+      <span class="zoom-hint"><span class="hint-click">Click</span><span class="hint-tap">Tap</span> image to zoom</span>
     </div>
     <div class="viewer-list">
       <div class="viewer-head">
@@ -1375,6 +1385,8 @@ function asset(path){
     return d;
   }
   function chunk(a, n){ var o = []; for (var i = 0; i < a.length; i += n) o.push(a.slice(i, i + n)); return o; }
+  /* same number of slides as chunk(), but evenly filled (5 at 4 per slide -> 3+2, not 4+1) */
+  function balancedChunk(a, n){ return chunk(a, Math.ceil(a.length / Math.max(1, Math.ceil(a.length / n)))); }
 
   function buildSlides(slug){
     var g = GD.guides[slug], deck = DECK_INDEX[slug].deck, col = DECK_INDEX[slug].collection, S = [];
@@ -1409,7 +1421,7 @@ function asset(path){
       }
       cov.appendChild(cc); cov.appendChild(col2); b.appendChild(cov);
     }});
-    chunk(g.engines, 2).forEach(function(grp, i, all){
+    balancedChunk(g.engines, 2).forEach(function(grp, i, all){
       S.push({k: "How the deck works" + (all.length > 1 ? " · " + (i + 1) + "/" + all.length : ""), t: grp.map(function(e){ return e.h; }).join(" & "), f: function(b, W){
         grp.forEach(function(e){
           var box = el("div", {class: "s-panel eng"});
@@ -1422,7 +1434,7 @@ function asset(path){
         });
       }});
     });
-    var COMBO_NOTE = "Checked against the card text in your reference guide. Practise a line before you rely on it.";
+    var COMBO_NOTE = "Checked against official card text. Practice a line before you rely on it.";
     function cstrip(names, w, cls){
       var st = el("div", {class: "strip" + (cls ? " " + cls : "")});
       names.forEach(function(n){ var c = gcard(slug, n, w); if (c) st.appendChild(c); });
@@ -1519,13 +1531,13 @@ function asset(path){
         }
       }});
     });
-    chunk(g.facts, 4).forEach(function(grp, i, all){
-      S.push({k: "Key rulings" + (all.length > 1 ? " · " + (i + 1) + "/" + all.length : ""), t: "Things to remember", f: function(b, W){
+    balancedChunk(g.facts, 4).forEach(function(grp, i, all){
+      S.push({k: "Key rulings" + (all.length > 1 ? " · " + (i + 1) + "/" + all.length : ""), t: "Things to remember", toc: i === 0, f: function(b, W){
         var list = el("div", {class: "facts"});
         grp.forEach(function(f, j){
           var row = el("div", {class: "fact s-panel"});
           var lead = el("div"); var c = f.cards.length ? gcard(slug, f.cards[0], W * 0.07) : null;
-          lead.appendChild(c || text("span", "num", String(i * 4 + j + 1)));
+          lead.appendChild(c || text("span", "num", String(i * all[0].length + j + 1)));
           row.appendChild(lead); row.appendChild(el("p", {class: "s-text", html: md(f.t)}));
           list.appendChild(row);
         });
@@ -1565,15 +1577,18 @@ function asset(path){
     var foot = el("div", {class: "s-foot"}, [text("span", null, s.note && /^Combo/.test(s.k) ? s.note : DECK_INDEX[gSlug].deck.name + " · " + col.title), text("span", null, (gIdx + 1) + " / " + gSlides.length)]);
     sl.appendChild(foot);
     /* Wide screens: lay the slide out at one fixed size and scale it to fit, like a printed guide page.
-       Phones: the slide flows and scrolls at full width instead. */
-    var BASE = 880, fixedSize = window.innerWidth > 640;
+       Phones, and windows too short to show it without shrinking the text below ~70%: the slide flows and scrolls instead. */
+    var BASE = 880, box = gStage.getBoundingClientRect(), k = Math.min(box.width / BASE, box.height / BASE, 1.2);
+    var fixedSize = window.innerWidth > 640 && k >= 0.72;
     if (fixedSize){
       sl.style.width = BASE + "px"; sl.style.height = BASE + "px"; sl.style.aspectRatio = "auto"; sl.style.maxHeight = "none";
       var holder = el("div", {class: "slide-holder"}); holder.appendChild(sl); gStage.appendChild(holder);
-      var box = gStage.getBoundingClientRect(), k = Math.min(box.width / BASE, box.height / BASE, 1.2);
       holder.style.width = (BASE * k) + "px"; holder.style.height = (BASE * k) + "px";
       sl.style.transform = "scale(" + k + ")";
-    } else gStage.appendChild(sl);
+    } else {
+      if (window.innerWidth > 640) sl.classList.add("is-flow");
+      gStage.appendChild(sl);
+    }
     s.f(body, fixedSize ? BASE : sl.clientWidth);
     /* drop optional extras (cover key-card strip) if the slide would overflow its square */
     body.querySelectorAll("[data-optional]").forEach(function(x){ if (body.scrollHeight > body.clientHeight + 1) x.remove(); });
